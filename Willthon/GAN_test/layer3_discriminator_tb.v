@@ -41,6 +41,16 @@ module layer3_discriminator_tb;
         end
     endfunction
 
+    // Sigmoid activation function: 1 / (1 + exp(-x))
+    function real sigmoid;
+        input real x;
+        real exp_neg_x;
+        begin
+            exp_neg_x = 2.718281828 ** (-x);
+            sigmoid = 1.0 / (1.0 + exp_neg_x);
+        end
+    endfunction
+
     integer k;
 
     // Clock generator: 10ns period (100 MHz)
@@ -66,7 +76,7 @@ module layer3_discriminator_tb;
 
         $display("--------------------------------------------------");
         $display("   TESTING DISCRIMINATOR LAYER 3 (FINAL)");
-        $display("   32 inputs -> 1 output (REAL/FAKE decision)");
+        $display("   256 inputs -> 1 output (after Sigmoid)");
         $display("--------------------------------------------------");
 
         // Test Case 1: Zero inputs (output should be bias only)
@@ -83,10 +93,11 @@ module layer3_discriminator_tb;
         wait(done == 1);
         #1;
 
-        $display("Output Score (zero input): %f (hex: %h)", 
+        $display("Layer 3 Output (with zero input):");
+        $display("[ 0] = %f (hex: 0x%h)", 
                  q8_8_to_real(score_out),
                  score_out);
-        $display("Decision: %b (1=REAL, 0=FAKE)", decision_real);
+        $display("With Sigmoid Activation: %f", sigmoid(q8_8_to_real(score_out)));
 
         // Test Case 2: Small random inputs
         $display("\nTest Case 2: Random Inputs");
@@ -102,10 +113,11 @@ module layer3_discriminator_tb;
         wait(done == 1);
         #1;
 
-        $display("Output Score (random input): %f (hex: %h)", 
+        $display("Layer 3 Output (with random input):");
+        $display("[ 0] = %f (hex: 0x%h)", 
                  q8_8_to_real(score_out),
                  score_out);
-        $display("Decision: %b (1=REAL, 0=FAKE)", decision_real);
+        $display("With Sigmoid Activation: %f", sigmoid(q8_8_to_real(score_out)));
 
         // Test Case 3: Positive bias (should favor REAL)
         $display("\nTest Case 3: Large Positive Inputs");
@@ -121,10 +133,11 @@ module layer3_discriminator_tb;
         wait(done == 1);
         #1;
 
-        $display("Output Score (positive input): %f (hex: %h)", 
+        $display("Layer 3 Output (with large positive input):");
+        $display("[ 0] = %f (hex: 0x%h)", 
                  q8_8_to_real(score_out),
                  score_out);
-        $display("Decision: %b (1=REAL, 0=FAKE)", decision_real);
+        $display("With Sigmoid Activation: %f", sigmoid(q8_8_to_real(score_out)));
 
         $display("--------------------------------------------------");
         $display("Layer 3 Test Complete");

@@ -2,82 +2,88 @@ module layer1_discriminator (
     input wire clk,
     input wire rst,
     input wire start,
-    // Verilog-2001 compatible: flatten 256 x 16-bit inputs into one packed vector
-    // Each input element is Q8.8 (16 bits). Total width = 16 * 256 = 4096 bits
-    input wire signed [16*256-1:0] flat_input, // flattened input bus (MSB first)
-    output reg signed [15:0] score_out,            // Output Skor Logit (Q8.8)
-    output reg decision_real,                      // 1 = Real, 0 = Fake
-    output reg done                                // High when result is ready
+    // Flattened input bus: 256 elements * 16 bits = 4096 bits
+    input wire signed [16*256-1:0] flat_input_flat,
+    // Flattened output bus: 128 elements * 16 bits = 2048 bits
+    output reg signed [16*128-1:0] flat_output_flat,
+    output reg done
 );
 
     // ==========================================
-    // Memory Parameters
+    // Memory untuk Parameter (Weights & Biases)
     // ==========================================
-    reg signed [15:0] layer1_disc_weights [0:255]; // 256 Bobot (1 per input)
-    reg signed [15:0] layer1_disc_bias [0:0];      // 1 Bias saja untuk output node
+    // Total weights: 128 neuron * 256 input = 32768
+    reg signed [15:0] layer1_disc_weights [0:32767]; 
+    reg signed [15:0] layer1_disc_bias  [0:127];
 
     initial begin
-        // Load file hex yang dibuat oleh Python
-        $readmemh("layer1_disc_weights.hex", layer1_disc_weights);
-        $readmemh("layer1_disc_bias.hex", layer1_disc_bias);
+        // Load data hex dari hex_data directory (expanded format)
+        $readmemh("hex_data/Discriminator_Layer1_Weights_All.hex", layer1_disc_weights);
+        $readmemh("hex_data/Discriminator_Layer1_Biases_All.hex", layer1_disc_bias);
     end
 
     // ==========================================
-    // Perhitungan Neural Network
+    // Sequential MAC Pipeline State
     // ==========================================
-    integer i;
-    reg signed [31:0] accumulator; // 32-bit agar tidak overflow saat penjumlahan
-    reg signed [31:0] bias_shifted;
-    // compute product combinationally for the current index to avoid register update races
-    wire signed [15:0] slice_w;
-    wire signed [31:0] current_product;
-    reg signed [31:0] next_acc;
-    reg [7:0] idx;                 // 0..255
+    // Outer loop: neuron index (0..127)
+    // Inner loop: input index (0..255)
+    // For each neuron, compute dot product over 256 inputs, then advance to next neuron
+    reg [7:0] neuron_idx;   // 0..127
+    reg [8:0] input_idx;    // 0..255
     reg busy;
-    
-    // slice and product wires
-    assign slice_w = $signed(flat_input[(idx+1)*16-1 -: 16]);
-    assign current_product = $signed(slice_w) * $signed(layer1_disc_weights[idx]);
+    reg signed [31:0] accumulator;
+    reg signed [31:0] bias_shifted;
 
-    // Sequential MAC pipeline: perform one multiply-accumulate per clock
-    // Protocol: assert `start` for one cycle. Module loads bias, then performs
-    // 256 MAC cycles; when done, `done` is asserted and `score_out`/`decision_real` are valid.
+    // Combinational wires for current input and product
+    wire signed [15:0] current_input;
+    wire signed [31:0] current_product;
+    wire signed [31:0] next_acc;
+
+    assign current_input = $signed(flat_input_flat[(input_idx+1)*16-1 -: 16]);
+    assign current_product = $signed(current_input) * $signed(layer1_disc_weights[neuron_idx*256 + input_idx]);
+    assign next_acc = accumulator + current_product;
+
+    // Sequential MAC pipeline: one MAC operation per clock cycle
     always @(posedge clk or posedge rst) begin
         if (rst) begin
+            neuron_idx <= 8'd0;
+            input_idx <= 9'd0;
             accumulator <= 32'sd0;
             bias_shifted <= 32'sd0;
-            next_acc <= 32'sd0;
-            idx <= 8'd0;
             busy <= 1'b0;
             done <= 1'b0;
-            score_out <= 16'sd0;
-            decision_real <= 1'b0;
         end else begin
             if (start && !busy) begin
-                // Start a new MAC run: load bias and begin from index 0
+                // Start a new computation: begin with neuron 0, input 0, load bias
+                neuron_idx <= 8'd0;
+                input_idx <= 9'd0;
                 bias_shifted <= $signed(layer1_disc_bias[0]) <<< 8;
                 accumulator <= $signed(layer1_disc_bias[0]) <<< 8;
-                idx <= 8'd0;
                 busy <= 1'b1;
                 done <= 1'b0;
             end else if (busy) begin
-                // Compute product for current index (combinational) and accumulate
-                // Note: `current_product` uses the current `idx` value (from previous cycle),
-                // which is the intended behavior for one MAC per clock.
-                // next_acc is a combinational expression of the current accumulator and product
-                // so we can update accumulator and drive outputs based on it.
-                next_acc = accumulator + current_product;
+                // Perform one MAC: accumulator += input[input_idx] * weight[neuron_idx*256 + input_idx]
                 accumulator <= next_acc;
 
-                if (idx == 8'd255) begin
-                    // Last element processed this cycle; produce outputs using next_acc
-                    score_out <= next_acc[23:8];
-                    decision_real <= (next_acc > 0) ? 1'b1 : 1'b0;
-                    busy <= 1'b0;
-                    done <= 1'b1;
+                if (input_idx == 9'd255) begin
+                    // Finished all 256 inputs for this neuron; write output and advance neuron
+                    flat_output_flat[(neuron_idx+1)*16-1 -: 16] <= next_acc[23:8]; // scale Q16.16 -> Q8.8
+                    
+                    if (neuron_idx == 8'd127) begin
+                        // All 128 neurons done
+                        busy <= 1'b0;
+                        done <= 1'b1;
+                    end else begin
+                        // Advance to next neuron
+                        neuron_idx <= neuron_idx + 1'b1;
+                        bias_shifted <= $signed(layer1_disc_bias[neuron_idx + 1]) <<< 8;
+                        accumulator <= $signed(layer1_disc_bias[neuron_idx + 1]) <<< 8;
+                        input_idx <= 9'd0;
+                    end
+                end else begin
+                    // Continue with next input for same neuron
+                    input_idx <= input_idx + 1'b1;
                 end
-
-                idx <= idx + 1'b1;
             end else begin
                 // idle: clear done after one cycle so user can pulse start again
                 if (done)
