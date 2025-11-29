@@ -125,13 +125,14 @@ always @(*) begin
     else if (x <= NB1)
         y = 0;
     else if (x > NB1 && x < NB2)
-        y = (((x <<< 1) + VAL15) >>> 2 + A125) >>> 1;
+        y = ((((x <<< 1) + VAL15) >>> 2) + A125) >>> 1;
     else if (x < B1 && x > B2)
-        y = (((x <<< 1) - VAL15) >>> 2 + VAL875) >>> 1;
+        y = ((((x <<< 1) - VAL15) >>> 2) + VAL875) >>> 1;
     else
         y = ((x >>> 1) + ONE) >>> 1;
 end
 endmodule
+
 
 
 // Q8.8 (16 bit)
@@ -156,13 +157,14 @@ always @(*) begin
     else if (x <= NB1)
         y = 0;
     else if (x > NB1 && x < NB2)
-        y = (((x <<< 1) + VAL15) >>> 2 + A125) >>> 1;
+        y = ((((x <<< 1) + VAL15) >>> 2) + A125) >>> 1;
     else if (x < B1 && x > B2)
-        y = (((x <<< 1) - VAL15) >>> 2 + VAL875) >>> 1;
+        y = ((((x <<< 1) - VAL15) >>> 2) + VAL875) >>> 1;
     else
         y = ((x >>> 1) + ONE) >>> 1;
 end
 endmodule
+
 
 
 // Q16.16 (32 bit)
@@ -187,13 +189,14 @@ always @(*) begin
     else if (x <= NB1)
         y = 0;
     else if (x > NB1 && x < NB2)
-        y = (((x <<< 1) + VAL15) >>> 2 + A125) >>> 1;
+        y = ((((x <<< 1) + VAL15) >>> 2) + A125) >>> 1;
     else if (x < B1 && x > B2)
-        y = (((x <<< 1) - VAL15) >>> 2 + VAL875) >>> 1;
+        y = ((((x <<< 1) - VAL15) >>> 2) + VAL875) >>> 1;
     else
         y = ((x >>> 1) + ONE) >>> 1;
 end
 endmodule
+
 
 
 
