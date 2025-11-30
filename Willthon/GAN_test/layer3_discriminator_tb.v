@@ -98,8 +98,8 @@ module layer3_discriminator_tb;
         @(posedge clk);
         start = 0;
 
-        // Pipeline: done after 2 cycles
-        repeat (2) @(posedge clk);
+        // Pipeline: done after 8 cycles
+        repeat (8) @(posedge clk);
         #1;
 
         $display("Layer 3 Output (with zero input):");
@@ -121,8 +121,8 @@ module layer3_discriminator_tb;
         @(posedge clk);
         start = 0;
 
-        // Pipeline: done after 2 cycles
-        repeat (2) @(posedge clk);
+        // Pipeline: done after 8 cycles
+        repeat (8) @(posedge clk);
         #1;
 
         $display("Layer 3 Output (with random input):");
@@ -144,8 +144,8 @@ module layer3_discriminator_tb;
         @(posedge clk);
         start = 0;
 
-        // Pipeline: done after 2 cycles
-        repeat (2) @(posedge clk);
+        // Pipeline: done after 8 cycles
+        repeat (8) @(posedge clk);
         #1;
 
         $display("Layer 3 Output (with large positive input):");

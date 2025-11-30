@@ -158,7 +158,7 @@ module pipelined_mac (
             // STEP 7: Final Sum & Bias (2 -> 1)
             // ============================================================
             if (d5) begin
-                total_sum <= s4[0] + s4[1] + {{16{bias[15]}}, bias};
+                total_sum <= s4[0] + s4[1] + (bias <<< 8);
             end
             d6 <= d5;
 
@@ -166,7 +166,7 @@ module pipelined_mac (
             // STEP 8: Output Scaling
             // ============================================================
             if (d6) begin
-                result <= total_sum[25:10]; // Q16.16 to Q8.8
+                result <= total_sum[23:8]; // Q16.16 to Q8.8
                 done <= 1'b1;
             end else begin
                 done <= 1'b0;

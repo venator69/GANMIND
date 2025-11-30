@@ -48,7 +48,7 @@ module gan_functions;
         input real x;
         real exp_neg_x;
         begin
-            exp_neg_x = 2.718281828 ** (-x);
+            exp_neg_x = $exp(-x);
             sigmoid = 1.0 / (1.0 + exp_neg_x);
         end
     endfunction
@@ -104,4 +104,3 @@ module gan_functions;
     endfunction
 
 endmodule
-```

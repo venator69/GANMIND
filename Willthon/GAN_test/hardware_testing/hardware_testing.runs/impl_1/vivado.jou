@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2025.1 (64-bit)
+# SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Sun Nov 30 22:46:37 2025
+# Process ID         : 31816
+# Current directory  : D:/GANMIND/GANMIND/Willthon/GAN_test/hardware_testing/hardware_testing.runs/impl_1
+# Command line       : vivado.exe -log layer1_generator.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source layer1_generator.tcl -notrace
+# Log file           : D:/GANMIND/GANMIND/Willthon/GAN_test/hardware_testing/hardware_testing.runs/impl_1/layer1_generator.vdi
+# Journal file       : D:/GANMIND/GANMIND/Willthon/GAN_test/hardware_testing/hardware_testing.runs/impl_1\vivado.jou
+# Running On         : DESKTOP-3S5LN80
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26100
+# Processor Detail   : Intel(R) Core(TM) i7-9750H CPU @ 2.60GHz
+# CPU Frequency      : 2592 MHz
+# CPU Physical cores : 6
+# CPU Logical cores  : 12
+# Host memory        : 17095 MB
+# Swap memory        : 19327 MB
+# Total Virtual      : 36422 MB
+# Available Virtual  : 9822 MB
+#-----------------------------------------------------------
+source layer1_generator.tcl -notrace
