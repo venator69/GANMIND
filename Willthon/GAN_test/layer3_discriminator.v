@@ -3,7 +3,8 @@ module layer3_discriminator (
     input wire rst,
     input wire start,
     // Flattened input bus: 32 elements * 16 bits = 512 bits
-    input wire signed [16*32-1:0] flat_input_flat,
+    // Input ini sudah dalam bentuk "Gepeng/Flat", jadi siap masuk MAC
+    input wire signed [511:0] flat_input_flat, 
     // Output: single 16-bit score (final decision)
     output reg signed [15:0] score_out,
     output reg decision_real,
@@ -11,73 +12,76 @@ module layer3_discriminator (
 );
 
     // ==========================================
-    // Memory untuk Parameter (Weights & Biases)
+    // 1. Memory untuk Parameter (Weights & Biases)
     // ==========================================
-    // Total weights: 1 neuron * 32 input = 32
-    reg signed [15:0] layer3_disc_weights [0:31]; 
-    reg signed [15:0] layer3_disc_bias  [0:0];
+    reg signed [15:0] w [0:31]; // Weights array (dari file hex)
+    reg signed [15:0] b [0:0];  // Bias (dari file hex)
 
     initial begin
-        // Load data hex dari hex_data directory (expanded format)
-        $readmemh("hex_data/Discriminator_Layer3_Weights_All.hex", layer3_disc_weights);
-        $readmemh("hex_data/Discriminator_Layer3_Biases_All.hex", layer3_disc_bias);
+        // Load data hex
+        $readmemh("hex_data/Discriminator_Layer3_Weights_All.hex", w);
+        $readmemh("hex_data/Discriminator_Layer3_Biases_All.hex", b);
     end
 
     // ==========================================
-    // Sequential MAC Pipeline State
+    // 2. Flattening Weights (PENTING)
     // ==========================================
-    // Single neuron, 32 inputs
-    // Inner loop: input index (0..31)
-    reg [5:0] input_idx;    // 0..31
-    reg busy;
-    reg signed [31:0] accumulator;
-    reg signed [31:0] bias_shifted;
+    // Kita harus mengubah Array 'w' menjadi kawat panjang 'weights_flat'
+    // secara manual agar bisa masuk ke port MAC.
+    wire signed [511:0] weights_flat;
+    
+    // Manual Concatenation (Tanpa Loop)
+    // Menggabungkan w[31] sampai w[0] menjadi 1 bus lebar
+    assign weights_flat = {
+        w[31], w[30], w[29], w[28], w[27], w[26], w[25], w[24],
+        w[23], w[22], w[21], w[20], w[19], w[18], w[17], w[16],
+        w[15], w[14], w[13], w[12], w[11], w[10], w[9],  w[8],
+        w[7],  w[6],  w[5],  w[4],  w[3],  w[2],  w[1],  w[0]
+    };
 
-    // Combinational wires for current input and product
-    wire signed [15:0] current_input;
-    wire signed [31:0] current_product;
-    wire signed [31:0] next_acc;
+    // Wires untuk koneksi ke output MAC
+    wire mac_done;
+    wire signed [15:0] mac_result;
 
-    assign current_input = $signed(flat_input_flat[(input_idx+1)*16-1 -: 16]);
-    assign current_product = $signed(current_input) * $signed(layer3_disc_weights[input_idx]);
-    assign next_acc = accumulator + current_product;
+    // ==========================================
+    // 3. Instantiate Shared Pipelined MAC Module
+    // ==========================================
+    pipelined_mac mac_unit (
+        .clk(clk),
+        .rst(rst),
+        .start(start),
+        
+        // PERHATIKAN DISINI:
+        // Input Data: Langsung pass wire dari luar (Hemat resource)
+        .a_flat(flat_input_flat), 
+        
+        // Input Weights: Pass wire yang baru kita 'gepengkan' di atas
+        .b_flat(weights_flat),    
+        
+        .bias(b[0]),
+        .result(mac_result),
+        .done(mac_done)
+    );
 
-    // Sequential MAC pipeline: one MAC operation per clock cycle
+    // ==========================================
+    // 4. Decision Logic
+    // ==========================================
     always @(posedge clk or posedge rst) begin
         if (rst) begin
-            input_idx <= 6'd0;
-            accumulator <= 32'sd0;
-            bias_shifted <= 32'sd0;
-            busy <= 1'b0;
-            done <= 1'b0;
             score_out <= 16'sd0;
             decision_real <= 1'b0;
+            done <= 1'b0;
         end else begin
-            if (start && !busy) begin
-                // Start a new computation: begin with input 0, load bias
-                input_idx <= 6'd0;
-                bias_shifted <= $signed(layer3_disc_bias[0]) <<< 8;
-                accumulator <= $signed(layer3_disc_bias[0]) <<< 8;
-                busy <= 1'b1;
-                done <= 1'b0;
-            end else if (busy) begin
-                // Perform one MAC: accumulator += input[input_idx] * weight[input_idx]
-                accumulator <= next_acc;
-
-                if (input_idx == 6'd31) begin
-                    // Finished all 32 inputs; write output and finish
-                    score_out <= next_acc[23:8]; // scale Q16.16 -> Q8.8
-                    decision_real <= (next_acc > 0) ? 1'b1 : 1'b0; // decision threshold at 0
-                    busy <= 1'b0;
-                    done <= 1'b1;
-                end else begin
-                    // Continue with next input
-                    input_idx <= input_idx + 1'b1;
-                end
-            end else begin
-                // idle: clear done after one cycle so user can pulse start again
-                if (done)
-                    done <= 1'b0;
+            // Pass sinyal done dari MAC ke output modul ini
+            done <= mac_done; 
+            
+            if (mac_done) begin
+                score_out <= mac_result;
+                // Logika Keputusan: Real jika score > 0
+                if (mac_result > 16'sd0) 
+                    decision_real <= 1'b1;
+                else 
+                    decision_real <= 1'b0;
             end
         end
     end
