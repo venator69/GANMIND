@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7z007sclg400-2" LaunchTime="1764516640">
+  <File Type="PA-TCL" Name="layer1_discriminator.tcl"/>
+  <File Type="REPORTS-TCL" Name="layer1_discriminator_reports.tcl"/>
+  <File Type="INIT-TIMING" Name="layer1_discriminator_timing_summary_init.rpt"/>
+  <File Type="OPT-DCP" Name="layer1_discriminator_opt.dcp"/>
+  <File Type="OPT-DRC" Name="layer1_discriminator_drc_opted.rpt"/>
+  <File Type="OPT-UTIL" Name="layer1_discriminator_utilization_opted.rpt"/>
+  <File Type="OPT-UTIL-PB" Name="layer1_discriminator_utilization_opted.pb"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="layer1_discriminator_methodology_drc_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="layer1_discriminator.hwdef"/>
+  <File Type="OPT-TIMING" Name="layer1_discriminator_timing_summary_opted.rpt"/>
+  <File Type="OPT-RQA-PB" Name="layer1_discriminator_rqa_opted.pb"/>
+  <File Type="PWROPT-DCP" Name="layer1_discriminator_pwropt.dcp"/>
+  <File Type="PWROPT-DRC" Name="layer1_discriminator_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="layer1_discriminator_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="layer1_discriminator_placed.dcp"/>
+  <File Type="PLACE-IO" Name="layer1_discriminator_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="layer1_discriminator_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="layer1_discriminator_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="layer1_discriminator_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="layer1_discriminator_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="layer1_discriminator_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="layer1_discriminator_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-TIMING" Name="layer1_discriminator_timing_summary_placed.rpt"/>
+  <File Type="PLACE-RQA-PB" Name="layer1_discriminator_rqa_placed.pb"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="layer1_discriminator_postplace_pwropt.dcp"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="layer1_discriminator_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="layer1_discriminator_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="layer1_discriminator_drc_physopted.rpt"/>
+  <File Type="PHYSOPT-TIMING" Name="layer1_discriminator_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="layer1_discriminator_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="layer1_discriminator_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="layer1_discriminator_routed_bb.dcp"/>
+  <File Type="ROUTE-UTIL" Name="layer1_discriminator_utilization_routed.rpt"/>
+  <File Type="ROUTE-UTIL-PB" Name="layer1_discriminator_utilization_routed.pb"/>
+  <File Type="ROUTE-DRC" Name="layer1_discriminator_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="layer1_discriminator_drc_routed.pb"/>
+  <File Type="ROUTE-DRC-RPX" Name="layer1_discriminator_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="layer1_discriminator_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="layer1_discriminator_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="layer1_discriminator_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-PWR" Name="layer1_discriminator_power_routed.rpt"/>
+  <File Type="ROUTE-PWR-SUM" Name="layer1_discriminator_power_summary_routed.pb"/>
+  <File Type="ROUTE-PWR-RPX" Name="layer1_discriminator_power_routed.rpx"/>
+  <File Type="ROUTE-STATUS" Name="layer1_discriminator_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="layer1_discriminator_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="layer1_discriminator_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="layer1_discriminator_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="layer1_discriminator_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="layer1_discriminator_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="layer1_discriminator_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW" Name="layer1_discriminator_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="layer1_discriminator_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="layer1_discriminator_bus_skew_routed.rpx"/>
+  <File Type="ROUTE-RQS-PB" Name="layer1_discriminator_rqs_routed.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="layer1_discriminator_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="layer1_discriminator_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="layer1_discriminator_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="layer1_discriminator_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="layer1_discriminator_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="layer1_discriminator_bus_skew_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="layer1_discriminator_bus_skew_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="layer1_discriminator_bus_skew_postroute_physopted.rpx"/>
+  <File Type="BG-BIT" Name="layer1_discriminator.bit"/>
+  <File Type="BG-BIN" Name="layer1_discriminator.bin"/>
+  <File Type="BITSTR-MSK" Name="layer1_discriminator.msk"/>
+  <File Type="BITSTR-RBT" Name="layer1_discriminator.rbt"/>
+  <File Type="BITSTR-NKY" Name="layer1_discriminator.nky"/>
+  <File Type="BITSTR-BMM" Name="layer1_discriminator_bd.bmm"/>
+  <File Type="BITSTR-MMI" Name="layer1_discriminator.mmi"/>
+  <File Type="PDI-FILE" Name="layer1_discriminator.pdi"/>
+  <File Type="BOOT-PDI-FILE" Name="layer1_discriminator_boot.pdi"/>
+  <File Type="PL-PDI-FILE" Name="layer1_discriminator_pld.pdi"/>
+  <File Type="RCFI_FILE" Name="layer1_discriminator.rcfi"/>
+  <File Type="CFI_FILE" Name="layer1_discriminator.cfi"/>
+  <File Type="RNPI_FILE" Name="layer1_discriminator.rnpi"/>
+  <File Type="RCDO-FILE" Name="layer1_discriminator.rcdo"/>
+  <File Type="MARKER-RNPI-FILE" Name="layer1_discriminator_markers.rnpi"/>
+  <File Type="MARKER-RCDO-FILE" Name="layer1_discriminator_markers.rcdo"/>
+  <File Type="BOOT_RNPI_FILE" Name="layer1_discriminator_boot.rnpi"/>
+  <File Type="BOOT_MARKER_RNPI_FILE" Name="layer1_discriminator_boot_markers.rnpi"/>
+  <File Type="PL_RNPI_FILE" Name="layer1_discriminator_pld.rnpi"/>
+  <File Type="PL_MARKER_RNPI_FILE" Name="layer1_discriminator_pld_markers.rnpi"/>
+  <File Type="PL_MASK_RNPI_FILE" Name="layer1_discriminator_pld_mask.rnpi"/>
+  <File Type="PL_SHUTDOWN_RNPI_FILE" Name="layer1_discriminator_pld_shutdown.rnpi"/>
+  <File Type="PL_UNMASK_RNPI_FILE" Name="layer1_discriminator_pld_unmask.rnpi"/>
+  <File Type="PL-RCDO-FILE" Name="layer1_discriminator_pld.rcdo"/>
+  <File Type="PL-CLEAR-RCDO-FILE" Name="layer1_discriminator_pld_clear.rcdo"/>
+  <File Type="PL_MARKER_RCDO_FILE" Name="layer1_discriminator_pld_markers.rcdo"/>
+  <File Type="PL_MASK_RCDO_FILE" Name="layer1_discriminator_pld_mask.rcdo"/>
+  <File Type="PL_UNMASK_MARKER_RCDO_FILE" Name="layer1_discriminator_pld_unmask_markers.rcdo"/>
+  <File Type="PL_UNMASK_RCDO_FILE" Name="layer1_discriminator_pld_unmask.rcdo"/>
+  <File Type="NPI_FILE" Name="layer1_discriminator.npi"/>
+  <File Type="RBD_FILE" Name="layer1_discriminator.rbd"/>
+  <File Type="MMI-FILE" Name="layer1_discriminator.mmi"/>
+  <File Type="BIF-FILE" Name="layer1_discriminator.bif"/>
+  <File Type="BOOT-BIF-FILE" Name="layer1_discriminator_boot.bif"/>
+  <File Type="PL-BIF-FILE" Name="layer1_discriminator_pld.bif"/>
+  <File Type="LTX-FILE" Name="layer1_discriminator.ltx"/>
+  <File Type="BOOT-LTX-FILE" Name="layer1_discriminator_boot.ltx"/>
+  <File Type="PL-LTX-FILE" Name="layer1_discriminator_pld.ltx"/>
+  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
+  <File Type="BITSTR-LTX" Name="layer1_discriminator.ltx"/>
+  <File Type="BITSTR-SYSDEF" Name="layer1_discriminator.sysdef"/>
+  <File Type="BG-BGN" Name="layer1_discriminator.bgn"/>
+  <File Type="BG-DRC" Name="layer1_discriminator.drc"/>
+  <File Type="RDI-RDI" Name="layer1_discriminator.vdi"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <File Type="ROUTE-RQS" Name="layer1_discriminator_routed.rqs"/>
+  <File Type="POSTROUTE-PHYSOPT-RQS" Name="layer1_discriminator_postroute_physopted.rqs"/>
+  <File Type="ROUTE-RQS-RPT" Name="route_report_qor_suggestions_0.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-RQS-RPT" Name="postroute_physopt_report_qor_suggestions_0.rpt"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PPRDIR/../layer1_discriminator.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../layer1_discriminator_tb.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../gan_functions.v">
+      <FileInfo SFType="VHeader">
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+        <Attr Name="IsVisible" Val="1"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../complete_gan_tb.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../layer1_generator_tb.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../layer1_generator.v">
+      <FileInfo SFType="VHeader">
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+        <Attr Name="IsVisible" Val="1"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../layer1_tb.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../layer2_discriminator.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../layer2_discriminator_tb.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../layer2_generator.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../layer2_generator_tb.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../layer3_discriminator.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../layer3_discriminator_tb.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../layer3_generator.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../layer3_generator_tb.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../pipelined_mac.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="layer1_discriminator"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1" RelGenDir="$PGENDIR/utils_1">
+    <Filter Type="Utils"/>
+    <File Path="$PSRCDIR/utils_1/imports/synth_1/layer1_discriminator_tb.dcp">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedInSteps" Val="synth_1"/>
+        <Attr Name="UsedInSteps" Val="synth_1_copy_1"/>
+        <Attr Name="AutoDcp" Val="1"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2025">
+      <Desc>Default settings for Implementation.</Desc>
+    </StratHandle>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+  </Strategy>
+</GenRun>

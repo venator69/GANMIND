@@ -1,0 +1,274 @@
+
+*** Running vivado
+    with args -log layer1_generator.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source layer1_generator.tcl
+
+
+
+****** Vivado v2025.1 (64-bit)
+  **** SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+  **** IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+  **** SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+  **** Start of session at: Sun Nov 30 22:43:50 2025
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source layer1_generator.tcl -notrace
+create_project: Time (s): cpu = 00:00:11 ; elapsed = 00:00:08 . Memory (MB): peak = 490.836 ; gain = 211.758
+Command: read_checkpoint -auto_incremental -incremental D:/GANMIND/GANMIND/Willthon/GAN_test/hardware_testing/hardware_testing.srcs/utils_1/imports/synth_1/layer1_discriminator.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from D:/GANMIND/GANMIND/Willthon/GAN_test/hardware_testing/hardware_testing.srcs/utils_1/imports/synth_1/layer1_discriminator.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+Command: synth_design -top layer1_generator -part xc7z010clg400-3
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 33540
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 998.051 ; gain = 494.059
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'layer1_generator' [D:/GANMIND/GANMIND/Willthon/GAN_test/layer1_generator.v:1]
+INFO: [Synth 8-3876] $readmem data file 'layer1_gen_weights.hex' is read successfully [D:/GANMIND/GANMIND/Willthon/GAN_test/layer1_generator.v:21]
+INFO: [Synth 8-3876] $readmem data file 'layer1_gen_bias.hex' is read successfully [D:/GANMIND/GANMIND/Willthon/GAN_test/layer1_generator.v:22]
+INFO: [Synth 8-6155] done synthesizing module 'layer1_generator' (0#1) [D:/GANMIND/GANMIND/Willthon/GAN_test/layer1_generator.v:1]
+WARNING: [Synth 8-6014] Unused sequential element bias_shifted_reg was removed.  [D:/GANMIND/GANMIND/Willthon/GAN_test/layer1_generator.v:58]
+WARNING: [Synth 8-7137] Register flat_output_flat_reg in module layer1_generator has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GAN_test/layer1_generator.v:76]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1139.832 ; gain = 635.840
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1139.832 ; gain = 635.840
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z010clg400-3
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z010clg400-3
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1139.832 ; gain = 635.840
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Preparing Guide Design
+---------------------------------------------------------------------------------
+CRITICAL WARNING: [Synth 8-6895] The reference checkpoint D:/GANMIND/GANMIND/Willthon/GAN_test/hardware_testing/hardware_testing.srcs/utils_1/imports/synth_1/layer1_discriminator.dcp is not suitable for use with incremental synthesis for this design. Please regenerate the checkpoint for this design with -incremental_synth switch in the same Vivado session that synth_design has been run. Synthesis will continue with the default flow
+---------------------------------------------------------------------------------
+Finished Doing Graph Differ : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1139.832 ; gain = 635.840
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Preparing Guide Design : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1139.832 ; gain = 635.840
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1155.648 ; gain = 651.656
+---------------------------------------------------------------------------------
+
+
+Incremental Synthesis Report Summary:
+
+1. Incremental synthesis run: no
+
+   Reason for not running incremental synthesis : 
+
+
+INFO: [Synth 8-7130] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input    9 Bit       Adders := 2     
+	   2 Input    7 Bit       Adders := 1     
++---Registers : 
+	             4096 Bit    Registers := 1     
+	               32 Bit    Registers := 1     
+	                9 Bit    Registers := 2     
+	                7 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input 4096 Bit        Muxes := 4     
+	   2 Input   32 Bit        Muxes := 3     
+	   2 Input    9 Bit        Muxes := 2     
+	   2 Input    7 Bit        Muxes := 2     
+	   2 Input    1 Bit        Muxes := 11    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 80 (col length:40)
+BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+DSP Report: Generating DSP next_acc, operation Mode is: C+A*B.
+DSP Report: operator next_acc is absorbed into DSP next_acc.
+DSP Report: operator current_product is absorbed into DSP next_acc.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:02:10 ; elapsed = 00:02:14 . Memory (MB): peak = 1523.117 ; gain = 1019.125
+---------------------------------------------------------------------------------
+ Sort Area is layer1_generator__GB0 next_acc_0 : 0 0 : 1156 1156 : Used 1 time 0
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+ROM: Preliminary Mapping Report
++-----------------+--------------------+---------------+----------------+
+|Module Name      | RTL Object         | Depth x Width | Implemented As | 
++-----------------+--------------------+---------------+----------------+
+|layer1_generator | layer1_gen_bias    | 512x10        | LUT            | 
+|layer1_generator | layer1_gen_weights | 16384x10      | LUT            | 
+|layer1_generator | p_0_out            | 512x10        | LUT            | 
+|layer1_generator | p_0_out            | 16384x10      | LUT            | 
++-----------------+--------------------+---------------+----------------+
+
+
+DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
++-----------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name      | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++-----------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|layer1_generator | C+A*B       | 16     | 10     | 32     | -      | 32     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
++-----------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:02:10 ; elapsed = 00:02:14 . Memory (MB): peak = 1523.117 ; gain = 1019.125
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:02:11 ; elapsed = 00:02:15 . Memory (MB): peak = 1523.117 ; gain = 1019.125
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:02:16 ; elapsed = 00:02:21 . Memory (MB): peak = 1576.891 ; gain = 1072.898
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:02:16 ; elapsed = 00:02:21 . Memory (MB): peak = 1576.891 ; gain = 1072.898
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:17 ; elapsed = 00:02:21 . Memory (MB): peak = 1576.891 ; gain = 1072.898
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:02:17 ; elapsed = 00:02:21 . Memory (MB): peak = 1576.891 ; gain = 1072.898
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:02:17 ; elapsed = 00:02:21 . Memory (MB): peak = 1576.891 ; gain = 1072.898
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:02:17 ; elapsed = 00:02:21 . Memory (MB): peak = 1576.891 ; gain = 1072.898
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+DSP Final Report (the ' indicates corresponding REG is set)
++-----------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name      | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++-----------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|layer1_generator | C+A*B       | 30     | 18     | 48     | -      | 32     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
++-----------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+--------+------+
+|      |Cell    |Count |
++------+--------+------+
+|1     |BUFG    |     1|
+|2     |CARRY4  |     3|
+|3     |DSP48E1 |     1|
+|4     |LUT2    |    15|
+|5     |LUT3    |    33|
+|6     |LUT4    |   179|
+|7     |LUT5    |    49|
+|8     |LUT6    |  2808|
+|9     |MUXF7   |  1098|
+|10    |MUXF8   |   539|
+|11    |FDCE    |   160|
+|12    |FDRE    |  4096|
+|13    |IBUF    |  1027|
+|14    |OBUF    |  4097|
++------+--------+------+
+
+Report Instance Areas: 
++------+---------+-------+------+
+|      |Instance |Module |Cells |
++------+---------+-------+------+
+|1     |top      |       | 14106|
++------+---------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:02:17 ; elapsed = 00:02:21 . Memory (MB): peak = 1576.891 ; gain = 1072.898
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 1 critical warnings and 3 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:02:17 ; elapsed = 00:02:21 . Memory (MB): peak = 1576.891 ; gain = 1072.898
+Synthesis Optimization Complete : Time (s): cpu = 00:02:17 ; elapsed = 00:02:21 . Memory (MB): peak = 1576.891 ; gain = 1072.898
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.101 . Memory (MB): peak = 1595.871 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 1641 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'layer1_generator' is not ideal for floorplanning, since the cellview 'layer1_generator' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1729.422 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: 607f73f2
+INFO: [Common 17-83] Releasing license: Synthesis
+19 Infos, 4 Warnings, 1 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:02:21 ; elapsed = 00:02:27 . Memory (MB): peak = 1729.422 ; gain = 1233.449
+INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.069 . Memory (MB): peak = 1729.422 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'D:/GANMIND/GANMIND/Willthon/GAN_test/hardware_testing/hardware_testing.runs/synth_1/layer1_generator.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file layer1_generator_utilization_synth.rpt -pb layer1_generator_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sun Nov 30 22:46:29 2025...
