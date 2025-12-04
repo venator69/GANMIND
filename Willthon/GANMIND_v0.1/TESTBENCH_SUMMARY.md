@@ -127,6 +127,18 @@ Follow these steps for **any** Verilog testbench in this project so the correspo
 | `gan_circle_tb` | `iverilog -g2012 -o tb/gan_circle_tb.out tb/gan_circle_tb.v tb/gan_serial_tb.v src/top/gan_serial_top.v ...` | `vvp tb/gan_circle_tb.out` | `vcd/gan_circle_tb.vcd` |
 | `gan_number_two_tb` | `iverilog -g2012 -o tb/gan_number_two_tb.out tb/gan_number_two_tb.v tb/gan_serial_tb.v src/top/gan_serial_top.v ...` | `vvp tb/gan_number_two_tb.out` | `vcd/gan_number_two_tb.vcd` |
 
+### `gan_serial_tb` Quick Run + Waveform
+Fast mode keeps the generator/loader datapath checks intact while forcing cached discriminator scores so the bench finishes in seconds. From the repo root:
+
+```powershell
+cd d:\GANMIND\GANMIND\Willthon\GANMIND_v0.1
+iverilog -g2012 -I src/top -I src/generator -I src/discriminator -I src/interfaces -I src/layers -I src/fifo -o tb/gan_serial_tb.out tb/gan_serial_tb.v src/top/gan_serial_top.v
+vvp tb/gan_serial_tb.out
+gtkwave vcd/gan_serial_tb.vcd
+```
+
+The VCD shows the loader smoke test, generator pipeline checkpoints, and the fast discriminator snapshot confirmation (`Discriminator reference snapshot berhasil masuk (fast mode)`).
+
 ### Layer 1 Test
 ```bash
 cd d:\GANMIND\GANMIND\Willthon\GANMIND_v0.1

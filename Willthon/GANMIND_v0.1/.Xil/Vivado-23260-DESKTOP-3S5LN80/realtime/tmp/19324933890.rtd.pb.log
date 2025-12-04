@@ -1,0 +1,5 @@
+xilinx rtfpga
+rt::do_reinfer_area_combined 0
+DSP Report: Generating DSP next_acc, operation Mode is: C+A*B.
+DSP Report: operator next_acc is absorbed into DSP next_acc.
+DSP Report: operator current_product is absorbed into DSP next_acc.

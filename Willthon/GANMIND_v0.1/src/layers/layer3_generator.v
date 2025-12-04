@@ -1,3 +1,7 @@
+`ifndef HEX_DATA_ROOT
+`define HEX_DATA_ROOT "src/layers/hex_data"
+`endif
+
 module layer3_generator (
     input wire clk,
     input wire rst,
@@ -18,8 +22,8 @@ module layer3_generator (
 
     initial begin
         // Load data hex dari hex_data directory (expanded format)
-        $readmemh("src/layers/hex_data/Generator_Layer3_Weights_All.hex", layer3_gen_weights);
-        $readmemh("src/layers/hex_data/Generator_Layer3_Biases_All.hex", layer3_gen_bias);
+        $readmemh({`HEX_DATA_ROOT,"/Generator_Layer3_Weights_All.hex"}, layer3_gen_weights);
+        $readmemh({`HEX_DATA_ROOT,"/Generator_Layer3_Biases_All.hex"}, layer3_gen_bias);
     end
 
     // ==========================================

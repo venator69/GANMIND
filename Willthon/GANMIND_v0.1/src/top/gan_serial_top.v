@@ -1,6 +1,56 @@
 `timescale 1ns / 1ps
 
 // -----------------------------------------------------------------------------
+// Guarded includes so synthesizing this top in isolation auto-imports all
+// dependent RTL while preventing duplicate definitions when higher-level
+// scripts already read them.
+// -----------------------------------------------------------------------------
+`ifndef GAN_TOP_PIXEL_LOADER_INCLUDED
+`define GAN_TOP_PIXEL_LOADER_INCLUDED
+`include "../interfaces/pixel_serial_loader.v"
+`endif
+
+`ifndef GAN_TOP_FRAME_SAMPLER_INCLUDED
+`define GAN_TOP_FRAME_SAMPLER_INCLUDED
+`include "../interfaces/frame_sampler.v"
+`endif
+
+`ifndef GAN_TOP_VECTOR_EXPANDER_INCLUDED
+`define GAN_TOP_VECTOR_EXPANDER_INCLUDED
+`include "../interfaces/vector_expander.v"
+`endif
+
+`ifndef GAN_TOP_VECTOR_SIGMOID_INCLUDED
+`define GAN_TOP_VECTOR_SIGMOID_INCLUDED
+`include "../interfaces/vector_sigmoid.v"
+`endif
+
+`ifndef GAN_TOP_SIGMOID_APPROX_INCLUDED
+`define GAN_TOP_SIGMOID_APPROX_INCLUDED
+`include "../interfaces/sigmoid_approx.v"
+`endif
+
+`ifndef GAN_TOP_VECTOR_UPSAMPLER_INCLUDED
+`define GAN_TOP_VECTOR_UPSAMPLER_INCLUDED
+`include "../interfaces/vector_upsampler.v"
+`endif
+
+`ifndef GAN_TOP_SEED_LFSR_INCLUDED
+`define GAN_TOP_SEED_LFSR_INCLUDED
+`include "../generator/seed_lfsr_bank.v"
+`endif
+
+`ifndef GAN_TOP_GENERATOR_PIPELINE_INCLUDED
+`define GAN_TOP_GENERATOR_PIPELINE_INCLUDED
+`include "../generator/generator_pipeline.v"
+`endif
+
+`ifndef GAN_TOP_DISCRIMINATOR_PIPELINE_INCLUDED
+`define GAN_TOP_DISCRIMINATOR_PIPELINE_INCLUDED
+`include "../discriminator/discriminator_pipeline.v"
+`endif
+
+// -----------------------------------------------------------------------------
 // gan_serial_top
 // -----------------------------------------------------------------------------
 // Glue logic that connects the existing generator/discriminator RTL to a

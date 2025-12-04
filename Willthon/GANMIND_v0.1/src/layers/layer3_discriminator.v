@@ -1,3 +1,12 @@
+`ifndef HEX_DATA_ROOT
+`define HEX_DATA_ROOT "src/layers/hex_data"
+`endif
+
+`ifndef LAYER3_DISC_PIPELINED_MAC_INCLUDED
+`define LAYER3_DISC_PIPELINED_MAC_INCLUDED
+`include "pipelined_mac.v"
+`endif
+
 module layer3_discriminator (
     input wire clk,
     input wire rst,
@@ -19,8 +28,8 @@ module layer3_discriminator (
 
     initial begin
         // Load data hex
-        $readmemh("src/layers/hex_data/Discriminator_Layer3_Weights_All.hex", w);
-        $readmemh("src/layers/hex_data/Discriminator_Layer3_Biases_All.hex", b);
+        $readmemh({`HEX_DATA_ROOT,"/Discriminator_Layer3_Weights_All.hex"}, w);
+        $readmemh({`HEX_DATA_ROOT,"/Discriminator_Layer3_Biases_All.hex"}, b);
     end
 
     // ==========================================

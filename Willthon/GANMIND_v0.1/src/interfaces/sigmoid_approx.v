@@ -1,5 +1,8 @@
 `timescale 1ns / 1ps
 
+`ifndef SIGMOID_APPROX_V
+`define SIGMOID_APPROX_V
+
 // -----------------------------------------------------------------------------
 // sigmoid_approx
 // -----------------------------------------------------------------------------
@@ -36,3 +39,5 @@ module sigmoid_approx #(
     end
 
 endmodule
+
+`endif // SIGMOID_APPROX_V

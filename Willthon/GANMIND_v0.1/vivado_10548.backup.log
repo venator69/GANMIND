@@ -1,0 +1,409 @@
+#-----------------------------------------------------------
+# Vivado v2025.1 (64-bit)
+# SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Thu Dec  4 15:08:16 2025
+# Process ID         : 10548
+# Current directory  : D:/GANMIND/GANMIND/Willthon/GANMIND_v0.1
+# Command line       : vivado.exe -mode batch -source scripts/run_generator_pipeline.tcl
+# Log file           : D:/GANMIND/GANMIND/Willthon/GANMIND_v0.1/vivado.log
+# Journal file       : D:/GANMIND/GANMIND/Willthon/GANMIND_v0.1\vivado.jou
+# Running On         : DESKTOP-3S5LN80
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26100
+# Processor Detail   : Intel(R) Core(TM) i7-9750H CPU @ 2.60GHz
+# CPU Frequency      : 2592 MHz
+# CPU Physical cores : 6
+# CPU Logical cores  : 12
+# Host memory        : 17095 MB
+# Swap memory        : 20401 MB
+# Total Virtual      : 37496 MB
+# Available Virtual  : 21689 MB
+#-----------------------------------------------------------
+source scripts/run_generator_pipeline.tcl
+# set script_dir [file normalize [file dirname [info script]]]
+# set proj_root  [file normalize [file join $script_dir ".."]]
+# file mkdir [file join $proj_root "build"]
+# if {$argc >= 1} {
+#     set part [lindex $argv 0]
+# } elseif {[info exists ::env(VIVADO_PART)]} {
+#     set part $::env(VIVADO_PART)
+# } else {
+#     set part "xc7z007sclg400-2"
+# }
+# set top_module "generator_pipeline"
+# set src_list {
+#     src/fifo/sync_fifo.v
+#     src/generator/generator_pipeline.v
+#     src/layers/pipelined_mac.v
+#     src/layers/layer1_generator.v
+#     src/layers/layer2_generator.v
+#     src/layers/layer3_generator.v
+# }
+# proc read_required_verilog {proj_root src_list} {
+#     foreach rel_path $src_list {
+#         set abs_path [file normalize [file join $proj_root $rel_path]]
+#         if {![file exists $abs_path]} {
+#             puts stderr "ERROR: Missing source $abs_path"
+#             exit 1
+#         }
+#         puts "\[INFO] Reading $abs_path"
+#         read_verilog $abs_path
+#     }
+# }
+# puts "\[INFO] Project root      : $proj_root"
+[INFO] Project root      : D:/GANMIND/GANMIND/Willthon/GANMIND_v0.1
+# puts "\[INFO] Top module        : $top_module"
+[INFO] Top module        : generator_pipeline
+# puts "\[INFO] Target part       : $part"
+[INFO] Target part       : xc7z007sclg400-2
+# read_required_verilog $proj_root $src_list
+[INFO] Reading D:/GANMIND/GANMIND/Willthon/GANMIND_v0.1/src/fifo/sync_fifo.v
+read_verilog: Time (s): cpu = 00:00:11 ; elapsed = 00:00:10 . Memory (MB): peak = 491.109 ; gain = 209.422
+[INFO] Reading D:/GANMIND/GANMIND/Willthon/GANMIND_v0.1/src/generator/generator_pipeline.v
+[INFO] Reading D:/GANMIND/GANMIND/Willthon/GANMIND_v0.1/src/layers/pipelined_mac.v
+[INFO] Reading D:/GANMIND/GANMIND/Willthon/GANMIND_v0.1/src/layers/layer1_generator.v
+[INFO] Reading D:/GANMIND/GANMIND/Willthon/GANMIND_v0.1/src/layers/layer2_generator.v
+[INFO] Reading D:/GANMIND/GANMIND/Willthon/GANMIND_v0.1/src/layers/layer3_generator.v
+# synth_design -top $top_module -part $part
+Command: synth_design -top generator_pipeline -part xc7z007sclg400-2
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z007s'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z007s'
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 9952
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 996.785 ; gain = 500.691
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'generator_pipeline' [D:/GANMIND/GANMIND/Willthon/GANMIND_v0.1/src/generator/generator_pipeline.v:10]
+INFO: [Synth 8-6157] synthesizing module 'sync_fifo' [D:/GANMIND/GANMIND/Willthon/GANMIND_v0.1/src/fifo/sync_fifo.v:6]
+	Parameter DATA_WIDTH bound to: 16 - type: integer 
+	Parameter DEPTH bound to: 64 - type: integer 
+	Parameter ADDR_WIDTH bound to: 6 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'sync_fifo' (0#1) [D:/GANMIND/GANMIND/Willthon/GANMIND_v0.1/src/fifo/sync_fifo.v:6]
+INFO: [Synth 8-6157] synthesizing module 'sync_fifo__parameterized0' [D:/GANMIND/GANMIND/Willthon/GANMIND_v0.1/src/fifo/sync_fifo.v:6]
+	Parameter DATA_WIDTH bound to: 16 - type: integer 
+	Parameter DEPTH bound to: 128 - type: integer 
+	Parameter ADDR_WIDTH bound to: 7 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'sync_fifo__parameterized0' (0#1) [D:/GANMIND/GANMIND/Willthon/GANMIND_v0.1/src/fifo/sync_fifo.v:6]
+INFO: [Synth 8-6157] synthesizing module 'layer1_generator' [D:/GANMIND/GANMIND/Willthon/GANMIND_v0.1/src/layers/layer1_generator.v:1]
+INFO: [Synth 8-3876] $readmem data file 'src/layers/hex_data/layer1_gen_weights.hex' is read successfully [D:/GANMIND/GANMIND/Willthon/GANMIND_v0.1/src/layers/layer1_generator.v:21]
+INFO: [Synth 8-3876] $readmem data file 'src/layers/hex_data/layer1_gen_bias.hex' is read successfully [D:/GANMIND/GANMIND/Willthon/GANMIND_v0.1/src/layers/layer1_generator.v:22]
+INFO: [Synth 8-6155] done synthesizing module 'layer1_generator' (0#1) [D:/GANMIND/GANMIND/Willthon/GANMIND_v0.1/src/layers/layer1_generator.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer2_generator' [D:/GANMIND/GANMIND/Willthon/GANMIND_v0.1/src/layers/layer2_generator.v:1]
+INFO: [Synth 8-3876] $readmem data file 'src/layers/hex_data/Generator_Layer2_Weights_All.hex' is read successfully [D:/GANMIND/GANMIND/Willthon/GANMIND_v0.1/src/layers/layer2_generator.v:21]
+INFO: [Synth 8-3876] $readmem data file 'src/layers/hex_data/Generator_Layer2_Biases_All.hex' is read successfully [D:/GANMIND/GANMIND/Willthon/GANMIND_v0.1/src/layers/layer2_generator.v:22]
+INFO: [Synth 8-6155] done synthesizing module 'layer2_generator' (0#1) [D:/GANMIND/GANMIND/Willthon/GANMIND_v0.1/src/layers/layer2_generator.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer3_generator' [D:/GANMIND/GANMIND/Willthon/GANMIND_v0.1/src/layers/layer3_generator.v:1]
+INFO: [Synth 8-3876] $readmem data file 'src/layers/hex_data/Generator_Layer3_Weights_All.hex' is read successfully [D:/GANMIND/GANMIND/Willthon/GANMIND_v0.1/src/layers/layer3_generator.v:21]
+INFO: [Synth 8-3876] $readmem data file 'src/layers/hex_data/Generator_Layer3_Biases_All.hex' is read successfully [D:/GANMIND/GANMIND/Willthon/GANMIND_v0.1/src/layers/layer3_generator.v:22]
+INFO: [Synth 8-6155] done synthesizing module 'layer3_generator' (0#1) [D:/GANMIND/GANMIND/Willthon/GANMIND_v0.1/src/layers/layer3_generator.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'generator_pipeline' (0#1) [D:/GANMIND/GANMIND/Willthon/GANMIND_v0.1/src/generator/generator_pipeline.v:10]
+WARNING: [Synth 8-7137] Register mem_reg in module sync_fifo has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code 
+WARNING: [Synth 8-4767] Trying to implement RAM 'mem_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+	1: RAM is sensitive to asynchronous reset signal. this RTL style is not supported. 
+RAM "mem_reg" dissolved into registers
+WARNING: [Synth 8-7137] Register mem_reg in module sync_fifo__parameterized0 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code 
+WARNING: [Synth 8-4767] Trying to implement RAM 'mem_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+	1: RAM is sensitive to asynchronous reset signal. this RTL style is not supported. 
+RAM "mem_reg" dissolved into registers
+WARNING: [Synth 8-6014] Unused sequential element bias_shifted_reg was removed.  [D:/GANMIND/GANMIND/Willthon/GANMIND_v0.1/src/layers/layer1_generator.v:58]
+WARNING: [Synth 8-7137] Register flat_output_flat_reg in module layer1_generator has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND_v0.1/src/layers/layer1_generator.v:76]
+WARNING: [Synth 8-6014] Unused sequential element bias_shifted_reg was removed.  [D:/GANMIND/GANMIND/Willthon/GANMIND_v0.1/src/layers/layer2_generator.v:49]
+WARNING: [Synth 8-7137] Register flat_output_flat_reg in module layer2_generator has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND_v0.1/src/layers/layer2_generator.v:67]
+WARNING: [Synth 8-6014] Unused sequential element bias_shifted_reg was removed.  [D:/GANMIND/GANMIND/Willthon/GANMIND_v0.1/src/layers/layer3_generator.v:49]
+WARNING: [Synth 8-7137] Register flat_output_flat_reg in module layer3_generator has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND_v0.1/src/layers/layer3_generator.v:67]
+WARNING: [Synth 8-7137] Register feature_fifo_wr_data_reg in module generator_pipeline has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND_v0.1/src/generator/generator_pipeline.v:106]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1253.453 ; gain = 757.359
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1253.453 ; gain = 757.359
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z007sclg400-2
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z007sclg400-2
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1253.453 ; gain = 757.359
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'generator_pipeline'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                          0000001 |                              000
+                    LOAD |                          0000010 |                              001
+                      L1 |                          0000100 |                              010
+                      L2 |                          0001000 |                              011
+                      L3 |                          0010000 |                              100
+                  OUTPUT |                          0100000 |                              101
+                     FIN |                          1000000 |                              110
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'generator_pipeline'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:05 ; elapsed = 00:01:05 . Memory (MB): peak = 1534.734 ; gain = 1038.641
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   33 Bit       Adders := 1     
+	   2 Input    9 Bit       Adders := 6     
+	   2 Input    8 Bit       Adders := 5     
+	   2 Input    7 Bit       Adders := 6     
+	   2 Input    6 Bit       Adders := 2     
++---Registers : 
+	             4096 Bit    Registers := 2     
+	             2048 Bit    Registers := 1     
+	             1024 Bit    Registers := 1     
+	               32 Bit    Registers := 3     
+	               16 Bit    Registers := 195   
+	                9 Bit    Registers := 6     
+	                8 Bit    Registers := 3     
+	                7 Bit    Registers := 4     
+	                6 Bit    Registers := 2     
+	                1 Bit    Registers := 19    
++---Muxes : 
+	   2 Input 4096 Bit        Muxes := 8     
+	   2 Input 2048 Bit        Muxes := 4     
+	   2 Input 1024 Bit        Muxes := 3     
+	   7 Input 1024 Bit        Muxes := 1     
+	   2 Input   32 Bit        Muxes := 9     
+	 129 Input   16 Bit        Muxes := 1     
+	   2 Input    9 Bit        Muxes := 8     
+	   2 Input    8 Bit        Muxes := 2     
+	   7 Input    8 Bit        Muxes := 1     
+	   2 Input    7 Bit        Muxes := 2     
+	   7 Input    7 Bit        Muxes := 1     
+	   3 Input    2 Bit        Muxes := 2     
+	   2 Input    1 Bit        Muxes := 97    
+	   7 Input    1 Bit        Muxes := 10    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 66 (col length:40)
+BRAMs: 100 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+DSP Report: Generating DSP next_acc, operation Mode is: C+A*B.
+DSP Report: operator next_acc is absorbed into DSP next_acc.
+DSP Report: operator current_product is absorbed into DSP next_acc.
+DSP Report: Generating DSP next_acc, operation Mode is: C+A*B.
+DSP Report: operator next_acc is absorbed into DSP next_acc.
+DSP Report: operator current_product is absorbed into DSP next_acc.
+DSP Report: Generating DSP next_acc, operation Mode is: C+A*B.
+DSP Report: operator next_acc is absorbed into DSP next_acc.
+DSP Report: operator current_product is absorbed into DSP next_acc.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:12:37 ; elapsed = 00:13:31 . Memory (MB): peak = 1544.844 ; gain = 1048.750
+---------------------------------------------------------------------------------
+ Sort Area is layer2_generator__GB0 next_acc_0 : 0 0 : 1156 1156 : Used 1 time 0
+ Sort Area is layer1_generator__GB0 next_acc_0 : 0 0 : 1156 1156 : Used 1 time 0
+ Sort Area is layer3_generator next_acc_0 : 0 0 : 1156 1156 : Used 1 time 0
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+ROM: Preliminary Mapping Report
++-----------------+--------------------+---------------+----------------+
+|Module Name      | RTL Object         | Depth x Width | Implemented As | 
++-----------------+--------------------+---------------+----------------+
+|layer1_generator | layer1_gen_bias    | 512x10        | LUT            | 
+|layer1_generator | layer1_gen_weights | 16384x10      | LUT            | 
+|layer2_generator | layer2_gen_bias    | 512x9         | LUT            | 
+|layer2_generator | layer2_gen_weights | 65536x10      | LUT            | 
+|layer3_generator | layer3_gen_weights | 32768x10      | LUT            | 
++-----------------+--------------------+---------------+----------------+
+
+
+DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
++-----------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name      | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++-----------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|layer1_generator | C+A*B       | 16     | 10     | 32     | -      | 32     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|layer2_generator | C+A*B       | 16     | 10     | 32     | -      | 32     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|layer3_generator | C+A*B       | 16     | 10     | 32     | -      | 32     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
++-----------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:12:47 ; elapsed = 00:13:42 . Memory (MB): peak = 1561.238 ; gain = 1065.145
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-3886] merging instance 'u_l3/neuron_idx_reg_rep[2]' (FDCE) to 'u_l3/neuron_idx_reg[2]'
+INFO: [Synth 8-3886] merging instance 'u_l3/neuron_idx_reg_rep[1]' (FDCE) to 'u_l3/neuron_idx_reg[1]'
+INFO: [Synth 8-3886] merging instance 'u_l3/neuron_idx_reg_rep[0]' (FDCE) to 'u_l3/neuron_idx_reg[0]'
+INFO: [Synth 8-3886] merging instance 'u_l3/neuron_idx_reg_rep[3]' (FDCE) to 'u_l3/neuron_idx_reg[3]'
+INFO: [Synth 8-3886] merging instance 'u_l3/neuron_idx_reg_rep[4]' (FDCE) to 'u_l3/neuron_idx_reg[4]'
+INFO: [Synth 8-3886] merging instance 'u_l3/neuron_idx_reg_rep[5]' (FDCE) to 'u_l3/neuron_idx_reg[5]'
+INFO: [Synth 8-3886] merging instance 'u_l3/neuron_idx_reg_rep[6]' (FDCE) to 'u_l3/neuron_idx_reg[6]'
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [D:/GANMIND/GANMIND/Willthon/GANMIND_v0.1/src/layers/layer3_generator.v:41]
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:13:01 ; elapsed = 00:14:18 . Memory (MB): peak = 1561.238 ; gain = 1065.145
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:13:19 ; elapsed = 00:14:37 . Memory (MB): peak = 1712.426 ; gain = 1216.332
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:13:19 ; elapsed = 00:14:37 . Memory (MB): peak = 1712.426 ; gain = 1216.332
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:13:21 ; elapsed = 00:14:39 . Memory (MB): peak = 1712.426 ; gain = 1216.332
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:13:21 ; elapsed = 00:14:39 . Memory (MB): peak = 1712.426 ; gain = 1216.332
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:13:22 ; elapsed = 00:14:40 . Memory (MB): peak = 1712.426 ; gain = 1216.332
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:13:22 ; elapsed = 00:14:40 . Memory (MB): peak = 1712.426 ; gain = 1216.332
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+DSP Final Report (the ' indicates corresponding REG is set)
++-----------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name      | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++-----------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|layer1_generator | C+A*B       | 30     | 18     | 48     | -      | 32     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|layer2_generator | C+A*B       | 30     | 18     | 48     | -      | 32     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|layer3_generator | C+A*B       | 30     | 18     | 48     | -      | 32     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
++-----------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+--------+------+
+|      |Cell    |Count |
++------+--------+------+
+|1     |BUFG    |     1|
+|2     |CARRY4  |    16|
+|3     |DSP48E1 |     3|
+|4     |LUT1    |    14|
+|5     |LUT2    |   202|
+|6     |LUT3    |   118|
+|7     |LUT4    |   202|
+|8     |LUT5    |   777|
+|9     |LUT6    | 19071|
+|10    |MUXF7   |  8992|
+|11    |MUXF8   |  1886|
+|12    |FDCE    |  1464|
+|13    |FDPE    |     3|
+|14    |FDRE    | 13328|
+|15    |IBUF    |    21|
+|16    |OBUF    |    36|
++------+--------+------+
+
+Report Instance Areas: 
++------+-----------------+--------------------------+------+
+|      |Instance         |Module                    |Cells |
++------+-----------------+--------------------------+------+
+|1     |top              |                          | 46134|
+|2     |  u_feature_fifo |sync_fifo__parameterized0 |  3238|
+|3     |  u_l1           |layer1_generator          | 10957|
+|4     |  u_l2           |layer2_generator          | 24252|
+|5     |  u_l3           |layer3_generator          |  4781|
+|6     |  u_seed_fifo    |sync_fifo                 |  1744|
++------+-----------------+--------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:13:22 ; elapsed = 00:14:41 . Memory (MB): peak = 1712.426 ; gain = 1216.332
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 11 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:13:22 ; elapsed = 00:14:41 . Memory (MB): peak = 1712.426 ; gain = 1216.332
+Synthesis Optimization Complete : Time (s): cpu = 00:13:22 ; elapsed = 00:14:41 . Memory (MB): peak = 1712.426 ; gain = 1216.332
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.677 . Memory (MB): peak = 1739.555 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 10897 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.067 . Memory (MB): peak = 1890.789 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: 3fe3070
+INFO: [Common 17-83] Releasing license: Synthesis
+40 Infos, 11 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:14:01 ; elapsed = 00:15:24 . Memory (MB): peak = 1890.789 ; gain = 1399.680
+# set build_dir [file join $proj_root build]
+# write_checkpoint   -force [file join $build_dir generator_pipeline_synth.dcp]
+Write ShapeDB Complete: Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.426 . Memory (MB): peak = 1890.789 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'D:/GANMIND/GANMIND/Willthon/GANMIND_v0.1/build/generator_pipeline_synth.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1890.789 ; gain = 0.000
+# report_timing_summary -file [file join $build_dir generator_pipeline_timing.rpt]
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+report_timing_summary: Time (s): cpu = 00:00:41 ; elapsed = 00:00:35 . Memory (MB): peak = 2090.910 ; gain = 200.121
+# report_utilization -file [file join $build_dir generator_pipeline_util.rpt]
+# puts "\[INFO] Synthesis complete. Reports written to $build_dir"
+[INFO] Synthesis complete. Reports written to D:/GANMIND/GANMIND/Willthon/GANMIND_v0.1/build
+# quit -force
+expected integer but got "-force"
+    while executing
+"quit -force"
+    (file "scripts/run_generator_pipeline.tcl" line 57)
+INFO: [Common 17-206] Exiting Vivado at Thu Dec  4 15:24:42 2025...

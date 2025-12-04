@@ -1,6 +1,31 @@
 `timescale 1ns / 1ps
 
 // -----------------------------------------------------------------------------
+// Guarded local includes so synthesizing this file in isolation automatically
+// pulls in its dependencies without creating duplicate-definition conflicts
+// when higher levels already provide them.
+// -----------------------------------------------------------------------------
+`ifndef DISCRIMINATOR_PIPELINE_SYNC_FIFO_INCLUDED
+`define DISCRIMINATOR_PIPELINE_SYNC_FIFO_INCLUDED
+`include "../fifo/sync_fifo.v"
+`endif
+
+`ifndef DISCRIMINATOR_PIPELINE_LAYER1_INCLUDED
+`define DISCRIMINATOR_PIPELINE_LAYER1_INCLUDED
+`include "../layers/layer1_discriminator.v"
+`endif
+
+`ifndef DISCRIMINATOR_PIPELINE_LAYER2_INCLUDED
+`define DISCRIMINATOR_PIPELINE_LAYER2_INCLUDED
+`include "../layers/layer2_discriminator.v"
+`endif
+
+`ifndef DISCRIMINATOR_PIPELINE_LAYER3_INCLUDED
+`define DISCRIMINATOR_PIPELINE_LAYER3_INCLUDED
+`include "../layers/layer3_discriminator.v"
+`endif
+
+// -----------------------------------------------------------------------------
 // discriminator_pipeline
 // -----------------------------------------------------------------------------
 // Sequential controller for discriminator layer stack. The block captures the

@@ -1,6 +1,15 @@
 `timescale 1ns / 1ps
 
 // -----------------------------------------------------------------------------
+// Guarded include to pull in sigmoid_approx when this module is synthesized in
+// isolation while remaining compatible with higher-level builds.
+// -----------------------------------------------------------------------------
+`ifndef VECTOR_SIGMOID_SIGMOID_APPROX_INCLUDED
+`define VECTOR_SIGMOID_SIGMOID_APPROX_INCLUDED
+`include "sigmoid_approx.v"
+`endif
+
+// -----------------------------------------------------------------------------
 // vector_sigmoid
 // -----------------------------------------------------------------------------
 // Applies the sigmoid approximation element-wise to a flattened vector using a

@@ -1,3 +1,7 @@
+`ifndef HEX_DATA_ROOT
+`define HEX_DATA_ROOT "src/layers/hex_data"
+`endif
+
 module layer1_generator (
     input wire clk,
     input wire rst,
@@ -18,8 +22,8 @@ module layer1_generator (
 
     initial begin
         // Load data hex dari Python
-        $readmemh("src/layers/hex_data/layer1_gen_weights.hex", layer1_gen_weights);
-        $readmemh("src/layers/hex_data/layer1_gen_bias.hex", layer1_gen_bias);
+        $readmemh({`HEX_DATA_ROOT,"/layer1_gen_weights.hex"}, layer1_gen_weights);
+        $readmemh({`HEX_DATA_ROOT,"/layer1_gen_bias.hex"}, layer1_gen_bias);
     end
 
     // ==========================================

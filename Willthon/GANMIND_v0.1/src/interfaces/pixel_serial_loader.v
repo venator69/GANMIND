@@ -1,6 +1,15 @@
 `timescale 1ns / 1ps
 
 // -----------------------------------------------------------------------------
+// Local include so standalone synthesis of this block automatically picks up
+// the shared FIFO implementation. Guard avoids double inclusion upstream.
+// -----------------------------------------------------------------------------
+`ifndef PIXEL_SERIAL_LOADER_SYNC_FIFO_INCLUDED
+`define PIXEL_SERIAL_LOADER_SYNC_FIFO_INCLUDED
+`include "../fifo/sync_fifo.v"
+`endif
+
+// -----------------------------------------------------------------------------
 // pixel_serial_loader
 // -----------------------------------------------------------------------------
 //  * Accepts serialized binary pixels (1 bit) coming from an external source.

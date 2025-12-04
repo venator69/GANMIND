@@ -1,6 +1,31 @@
 `timescale 1ns / 1ps
 
 // -----------------------------------------------------------------------------
+// Local includes so standalone synthesis picks up prerequisite modules when the
+// file is compiled in isolation. Each include is wrapped with a guard so it can
+// coexist with higher-level builds that already import the same RTL.
+// -----------------------------------------------------------------------------
+`ifndef GENERATOR_PIPELINE_SYNC_FIFO_INCLUDED
+`define GENERATOR_PIPELINE_SYNC_FIFO_INCLUDED
+`include "../fifo/sync_fifo.v"
+`endif
+
+`ifndef GENERATOR_PIPELINE_LAYER1_INCLUDED
+`define GENERATOR_PIPELINE_LAYER1_INCLUDED
+`include "../layers/layer1_generator.v"
+`endif
+
+`ifndef GENERATOR_PIPELINE_LAYER2_INCLUDED
+`define GENERATOR_PIPELINE_LAYER2_INCLUDED
+`include "../layers/layer2_generator.v"
+`endif
+
+`ifndef GENERATOR_PIPELINE_LAYER3_INCLUDED
+`define GENERATOR_PIPELINE_LAYER3_INCLUDED
+`include "../layers/layer3_generator.v"
+`endif
+
+// -----------------------------------------------------------------------------
 // generator_pipeline
 // -----------------------------------------------------------------------------
 // Chained controller that pulses the previously verified generator layers in

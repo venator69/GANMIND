@@ -1,5 +1,8 @@
 `timescale 1ns / 1ps
 
+`ifndef SYNC_FIFO_V
+`define SYNC_FIFO_V
+
 // Simple synchronous FIFO used to buffer serialized pixel stream data.
 // The implementation is parameterized so it can be shared across blocks
 // that need to trade logic for BRAM usage.
@@ -91,3 +94,5 @@ module sync_fifo #(
     end
 
 endmodule
+
+`endif // SYNC_FIFO_V

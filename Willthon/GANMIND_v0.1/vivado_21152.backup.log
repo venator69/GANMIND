@@ -1,0 +1,61 @@
+#-----------------------------------------------------------
+# Vivado v2025.1 (64-bit)
+# SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Thu Dec  4 15:07:09 2025
+# Process ID         : 21152
+# Current directory  : D:/GANMIND/GANMIND/Willthon/GANMIND_v0.1
+# Command line       : vivado.exe -mode batch -source scripts/run_generator_pipeline.tcl
+# Log file           : D:/GANMIND/GANMIND/Willthon/GANMIND_v0.1/vivado.log
+# Journal file       : D:/GANMIND/GANMIND/Willthon/GANMIND_v0.1\vivado.jou
+# Running On         : DESKTOP-3S5LN80
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26100
+# Processor Detail   : Intel(R) Core(TM) i7-9750H CPU @ 2.60GHz
+# CPU Frequency      : 2592 MHz
+# CPU Physical cores : 6
+# CPU Logical cores  : 12
+# Host memory        : 17095 MB
+# Swap memory        : 20401 MB
+# Total Virtual      : 37496 MB
+# Available Virtual  : 21608 MB
+#-----------------------------------------------------------
+source scripts/run_generator_pipeline.tcl
+# set script_dir [file normalize [file dirname [info script]]]
+# set proj_root  [file normalize [file join $script_dir ".."]]
+# file mkdir [file join $proj_root "build"]
+# if {$argc >= 1} {
+#     set part [lindex $argv 0]
+# } elseif {[info exists ::env(VIVADO_PART)]} {
+#     set part $::env(VIVADO_PART)
+# } else {
+#     set part "xc7z007sclg400-2"
+# }
+# set top_module "generator_pipeline"
+# set src_list {
+#     src/fifo/sync_fifo.v
+#     src/generator/generator_pipeline.v
+#     src/layers/pipelined_mac.v
+#     src/layers/layer1_generator.v
+#     src/layers/layer2_generator.v
+#     src/layers/layer3_generator.v
+# }
+# proc read_required_verilog {proj_root src_list} {
+#     foreach rel_path $src_list {
+#         set abs_path [file normalize [file join $proj_root $rel_path]]
+#         if {![file exists $abs_path]} {
+#             puts stderr "ERROR: Missing source $abs_path"
+#             exit 1
+#         }
+#         puts "[INFO] Reading $abs_path"
+#         read_verilog $abs_path
+#     }
+# }
+invalid command name "INFO"
+    while executing
+"INFO"
+    invoked from within
+"puts "[INFO] Project root      : $proj_root""
+    (file "scripts/run_generator_pipeline.tcl" line 42)
+INFO: [Common 17-206] Exiting Vivado at Thu Dec  4 15:07:16 2025...

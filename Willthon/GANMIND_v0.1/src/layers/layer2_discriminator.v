@@ -1,3 +1,7 @@
+`ifndef HEX_DATA_ROOT
+`define HEX_DATA_ROOT "src/layers/hex_data"
+`endif
+
 module layer2_discriminator (
     input wire clk,
     input wire rst,
@@ -18,8 +22,8 @@ module layer2_discriminator (
 
     initial begin
         // Load data hex dari hex_data directory (expanded format)
-        $readmemh("src/layers/hex_data/Discriminator_Layer2_Weights_All.hex", layer2_disc_weights);
-        $readmemh("src/layers/hex_data/Discriminator_Layer2_Biases_All.hex", layer2_disc_bias);
+        $readmemh({`HEX_DATA_ROOT,"/Discriminator_Layer2_Weights_All.hex"}, layer2_disc_weights);
+        $readmemh({`HEX_DATA_ROOT,"/Discriminator_Layer2_Biases_All.hex"}, layer2_disc_bias);
     end
 
     // ==========================================

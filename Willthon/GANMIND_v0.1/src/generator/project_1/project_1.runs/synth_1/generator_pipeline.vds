@@ -1,0 +1,608 @@
+#-----------------------------------------------------------
+# Vivado v2025.1 (64-bit)
+# SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Thu Dec  4 19:52:34 2025
+# Process ID         : 9664
+# Current directory  : D:/GANMIND/GANMIND/Willthon/GANMIND_v0.1/src/generator/project_1/project_1.runs/synth_1
+# Command line       : vivado.exe -log generator_pipeline.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source generator_pipeline.tcl
+# Log file           : D:/GANMIND/GANMIND/Willthon/GANMIND_v0.1/src/generator/project_1/project_1.runs/synth_1/generator_pipeline.vds
+# Journal file       : D:/GANMIND/GANMIND/Willthon/GANMIND_v0.1/src/generator/project_1/project_1.runs/synth_1\vivado.jou
+# Running On         : DESKTOP-3S5LN80
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26100
+# Processor Detail   : Intel(R) Core(TM) i7-9750H CPU @ 2.60GHz
+# CPU Frequency      : 2592 MHz
+# CPU Physical cores : 6
+# CPU Logical cores  : 12
+# Host memory        : 17095 MB
+# Swap memory        : 20401 MB
+# Total Virtual      : 37496 MB
+# Available Virtual  : 14059 MB
+#-----------------------------------------------------------
+source generator_pipeline.tcl -notrace
+create_project: Time (s): cpu = 00:00:13 ; elapsed = 00:00:10 . Memory (MB): peak = 493.543 ; gain = 213.969
+Command: read_checkpoint -auto_incremental -incremental D:/GANMIND/GANMIND/Willthon/GANMIND_v0.1/src/generator/project_1/project_1.srcs/utils_1/imports/synth_1/generator_pipeline.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from D:/GANMIND/GANMIND/Willthon/GANMIND_v0.1/src/generator/project_1/project_1.srcs/utils_1/imports/synth_1/generator_pipeline.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+Command: synth_design -top generator_pipeline -part xc7z007sclg400-2
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z007s'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z007s'
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 2964
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 999.461 ; gain = 495.441
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'generator_pipeline' [D:/GANMIND/GANMIND/Willthon/GANMIND_v0.1/src/generator/generator_pipeline.v:35]
+INFO: [Synth 8-6157] synthesizing module 'sync_fifo' [D:/GANMIND/GANMIND/Willthon/GANMIND_v0.1/src/fifo/sync_fifo.v:9]
+	Parameter DATA_WIDTH bound to: 16 - type: integer 
+	Parameter DEPTH bound to: 64 - type: integer 
+	Parameter ADDR_WIDTH bound to: 6 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'sync_fifo' (0#1) [D:/GANMIND/GANMIND/Willthon/GANMIND_v0.1/src/fifo/sync_fifo.v:9]
+INFO: [Synth 8-6157] synthesizing module 'sync_fifo__parameterized0' [D:/GANMIND/GANMIND/Willthon/GANMIND_v0.1/src/fifo/sync_fifo.v:9]
+	Parameter DATA_WIDTH bound to: 16 - type: integer 
+	Parameter DEPTH bound to: 128 - type: integer 
+	Parameter ADDR_WIDTH bound to: 7 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'sync_fifo__parameterized0' (0#1) [D:/GANMIND/GANMIND/Willthon/GANMIND_v0.1/src/fifo/sync_fifo.v:9]
+INFO: [Synth 8-6157] synthesizing module 'layer1_generator' [D:/GANMIND/GANMIND/Willthon/GANMIND_v0.1/src/layers/layer1_generator.v:5]
+CRITICAL WARNING: [Synth 8-4445] could not open $readmem data file 'src/layers/hex_data/layer1_gen_weights.hex'; please make sure the file is added to project and has read permission, ignoring [D:/GANMIND/GANMIND/Willthon/GANMIND_v0.1/src/layers/layer1_generator.v:25]
+CRITICAL WARNING: [Synth 8-4445] could not open $readmem data file 'src/layers/hex_data/layer1_gen_bias.hex'; please make sure the file is added to project and has read permission, ignoring [D:/GANMIND/GANMIND/Willthon/GANMIND_v0.1/src/layers/layer1_generator.v:26]
+INFO: [Synth 8-6155] done synthesizing module 'layer1_generator' (0#1) [D:/GANMIND/GANMIND/Willthon/GANMIND_v0.1/src/layers/layer1_generator.v:5]
+INFO: [Synth 8-6157] synthesizing module 'layer2_generator' [D:/GANMIND/GANMIND/Willthon/GANMIND_v0.1/src/layers/layer2_generator.v:5]
+CRITICAL WARNING: [Synth 8-4445] could not open $readmem data file 'src/layers/hex_data/Generator_Layer2_Weights_All.hex'; please make sure the file is added to project and has read permission, ignoring [D:/GANMIND/GANMIND/Willthon/GANMIND_v0.1/src/layers/layer2_generator.v:25]
+CRITICAL WARNING: [Synth 8-4445] could not open $readmem data file 'src/layers/hex_data/Generator_Layer2_Biases_All.hex'; please make sure the file is added to project and has read permission, ignoring [D:/GANMIND/GANMIND/Willthon/GANMIND_v0.1/src/layers/layer2_generator.v:26]
+INFO: [Synth 8-6155] done synthesizing module 'layer2_generator' (0#1) [D:/GANMIND/GANMIND/Willthon/GANMIND_v0.1/src/layers/layer2_generator.v:5]
+INFO: [Synth 8-6157] synthesizing module 'layer3_generator' [D:/GANMIND/GANMIND/Willthon/GANMIND_v0.1/src/layers/layer3_generator.v:5]
+CRITICAL WARNING: [Synth 8-4445] could not open $readmem data file 'src/layers/hex_data/Generator_Layer3_Weights_All.hex'; please make sure the file is added to project and has read permission, ignoring [D:/GANMIND/GANMIND/Willthon/GANMIND_v0.1/src/layers/layer3_generator.v:25]
+CRITICAL WARNING: [Synth 8-4445] could not open $readmem data file 'src/layers/hex_data/Generator_Layer3_Biases_All.hex'; please make sure the file is added to project and has read permission, ignoring [D:/GANMIND/GANMIND/Willthon/GANMIND_v0.1/src/layers/layer3_generator.v:26]
+INFO: [Synth 8-6155] done synthesizing module 'layer3_generator' (0#1) [D:/GANMIND/GANMIND/Willthon/GANMIND_v0.1/src/layers/layer3_generator.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'generator_pipeline' (0#1) [D:/GANMIND/GANMIND/Willthon/GANMIND_v0.1/src/generator/generator_pipeline.v:35]
+WARNING: [Synth 8-7137] Register mem_reg in module sync_fifo has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code 
+WARNING: [Synth 8-4767] Trying to implement RAM 'mem_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+	1: RAM is sensitive to asynchronous reset signal. this RTL style is not supported. 
+RAM "mem_reg" dissolved into registers
+WARNING: [Synth 8-7137] Register mem_reg in module sync_fifo__parameterized0 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code 
+WARNING: [Synth 8-4767] Trying to implement RAM 'mem_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+	1: RAM is sensitive to asynchronous reset signal. this RTL style is not supported. 
+RAM "mem_reg" dissolved into registers
+WARNING: [Synth 8-6014] Unused sequential element bias_shifted_reg was removed.  [D:/GANMIND/GANMIND/Willthon/GANMIND_v0.1/src/layers/layer1_generator.v:62]
+WARNING: [Synth 8-7137] Register flat_output_flat_reg in module layer1_generator has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND_v0.1/src/layers/layer1_generator.v:80]
+WARNING: [Synth 8-3848] Net layer1_gen_bias in module/entity layer1_generator does not have driver. [D:/GANMIND/GANMIND/Willthon/GANMIND_v0.1/src/layers/layer1_generator.v:21]
+WARNING: [Synth 8-3848] Net layer1_gen_weights in module/entity layer1_generator does not have driver. [D:/GANMIND/GANMIND/Willthon/GANMIND_v0.1/src/layers/layer1_generator.v:20]
+WARNING: [Synth 8-6014] Unused sequential element bias_shifted_reg was removed.  [D:/GANMIND/GANMIND/Willthon/GANMIND_v0.1/src/layers/layer2_generator.v:53]
+WARNING: [Synth 8-7137] Register flat_output_flat_reg in module layer2_generator has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND_v0.1/src/layers/layer2_generator.v:71]
+WARNING: [Synth 8-3848] Net layer2_gen_bias in module/entity layer2_generator does not have driver. [D:/GANMIND/GANMIND/Willthon/GANMIND_v0.1/src/layers/layer2_generator.v:21]
+WARNING: [Synth 8-3848] Net layer2_gen_weights in module/entity layer2_generator does not have driver. [D:/GANMIND/GANMIND/Willthon/GANMIND_v0.1/src/layers/layer2_generator.v:20]
+WARNING: [Synth 8-6014] Unused sequential element bias_shifted_reg was removed.  [D:/GANMIND/GANMIND/Willthon/GANMIND_v0.1/src/layers/layer3_generator.v:53]
+WARNING: [Synth 8-7137] Register flat_output_flat_reg in module layer3_generator has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND_v0.1/src/layers/layer3_generator.v:71]
+WARNING: [Synth 8-3848] Net layer3_gen_bias in module/entity layer3_generator does not have driver. [D:/GANMIND/GANMIND/Willthon/GANMIND_v0.1/src/layers/layer3_generator.v:21]
+WARNING: [Synth 8-3848] Net layer3_gen_weights in module/entity layer3_generator does not have driver. [D:/GANMIND/GANMIND/Willthon/GANMIND_v0.1/src/layers/layer3_generator.v:20]
+WARNING: [Synth 8-7137] Register feature_fifo_wr_data_reg in module generator_pipeline has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND_v0.1/src/generator/generator_pipeline.v:131]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1207.305 ; gain = 703.285
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1207.305 ; gain = 703.285
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z007sclg400-2
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z007sclg400-2
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1207.305 ; gain = 703.285
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'generator_pipeline'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                          0000001 |                              000
+                    LOAD |                          0000010 |                              001
+                      L1 |                          0000100 |                              010
+                      L2 |                          0001000 |                              011
+                      L3 |                          0010000 |                              100
+                  OUTPUT |                          0100000 |                              101
+                     FIN |                          1000000 |                              110
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'generator_pipeline'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 1271.012 ; gain = 766.992
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   33 Bit       Adders := 1     
+	   2 Input   32 Bit       Adders := 3     
+	   2 Input    9 Bit       Adders := 4     
+	   2 Input    8 Bit       Adders := 4     
+	   2 Input    7 Bit       Adders := 6     
+	   2 Input    6 Bit       Adders := 2     
++---Registers : 
+	             4096 Bit    Registers := 2     
+	             2048 Bit    Registers := 1     
+	             1024 Bit    Registers := 1     
+	               32 Bit    Registers := 3     
+	               16 Bit    Registers := 195   
+	                9 Bit    Registers := 4     
+	                8 Bit    Registers := 3     
+	                7 Bit    Registers := 4     
+	                6 Bit    Registers := 2     
+	                1 Bit    Registers := 19    
++---Muxes : 
+	   2 Input 4096 Bit        Muxes := 8     
+	   2 Input 2048 Bit        Muxes := 4     
+	   2 Input 1024 Bit        Muxes := 3     
+	   7 Input 1024 Bit        Muxes := 1     
+	   2 Input   32 Bit        Muxes := 9     
+	   2 Input    9 Bit        Muxes := 6     
+	   2 Input    8 Bit        Muxes := 1     
+	   7 Input    8 Bit        Muxes := 1     
+	   2 Input    7 Bit        Muxes := 2     
+	   7 Input    7 Bit        Muxes := 1     
+	   3 Input    2 Bit        Muxes := 2     
+	   2 Input    1 Bit        Muxes := 97    
+	   7 Input    1 Bit        Muxes := 10    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 66 (col length:40)
+BRAMs: 100 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[0]' (FDE) to 'flat_output_flat_reg[1]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[1]' (FDE) to 'flat_output_flat_reg[2]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[2]' (FDE) to 'flat_output_flat_reg[3]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[3]' (FDE) to 'flat_output_flat_reg[4]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[4]' (FDE) to 'flat_output_flat_reg[5]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[5]' (FDE) to 'flat_output_flat_reg[6]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[6]' (FDE) to 'flat_output_flat_reg[7]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[7]' (FDE) to 'flat_output_flat_reg[8]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[8]' (FDE) to 'flat_output_flat_reg[9]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[9]' (FDE) to 'flat_output_flat_reg[10]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[10]' (FDE) to 'flat_output_flat_reg[11]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[11]' (FDE) to 'flat_output_flat_reg[12]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[12]' (FDE) to 'flat_output_flat_reg[13]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[13]' (FDE) to 'flat_output_flat_reg[14]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[14]' (FDE) to 'flat_output_flat_reg[15]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[15] )
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[16]' (FDE) to 'flat_output_flat_reg[17]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[17]' (FDE) to 'flat_output_flat_reg[18]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[18]' (FDE) to 'flat_output_flat_reg[19]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[19]' (FDE) to 'flat_output_flat_reg[20]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[20]' (FDE) to 'flat_output_flat_reg[21]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[21]' (FDE) to 'flat_output_flat_reg[22]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[22]' (FDE) to 'flat_output_flat_reg[23]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[23]' (FDE) to 'flat_output_flat_reg[24]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[24]' (FDE) to 'flat_output_flat_reg[25]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[25]' (FDE) to 'flat_output_flat_reg[26]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[26]' (FDE) to 'flat_output_flat_reg[27]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[27]' (FDE) to 'flat_output_flat_reg[28]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[28]' (FDE) to 'flat_output_flat_reg[29]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[29]' (FDE) to 'flat_output_flat_reg[30]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[30]' (FDE) to 'flat_output_flat_reg[31]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[31] )
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[32]' (FDE) to 'flat_output_flat_reg[33]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[33]' (FDE) to 'flat_output_flat_reg[34]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[34]' (FDE) to 'flat_output_flat_reg[35]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[35]' (FDE) to 'flat_output_flat_reg[36]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[36]' (FDE) to 'flat_output_flat_reg[37]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[37]' (FDE) to 'flat_output_flat_reg[38]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[38]' (FDE) to 'flat_output_flat_reg[39]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[39]' (FDE) to 'flat_output_flat_reg[40]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[40]' (FDE) to 'flat_output_flat_reg[41]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[41]' (FDE) to 'flat_output_flat_reg[42]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[42]' (FDE) to 'flat_output_flat_reg[43]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[43]' (FDE) to 'flat_output_flat_reg[44]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[44]' (FDE) to 'flat_output_flat_reg[45]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[45]' (FDE) to 'flat_output_flat_reg[46]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[46]' (FDE) to 'flat_output_flat_reg[47]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[47] )
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[48]' (FDE) to 'flat_output_flat_reg[49]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[49]' (FDE) to 'flat_output_flat_reg[50]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[50]' (FDE) to 'flat_output_flat_reg[51]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[51]' (FDE) to 'flat_output_flat_reg[52]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[52]' (FDE) to 'flat_output_flat_reg[53]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[53]' (FDE) to 'flat_output_flat_reg[54]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[54]' (FDE) to 'flat_output_flat_reg[55]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[55]' (FDE) to 'flat_output_flat_reg[56]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[56]' (FDE) to 'flat_output_flat_reg[57]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[57]' (FDE) to 'flat_output_flat_reg[58]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[58]' (FDE) to 'flat_output_flat_reg[59]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[59]' (FDE) to 'flat_output_flat_reg[60]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[60]' (FDE) to 'flat_output_flat_reg[61]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[61]' (FDE) to 'flat_output_flat_reg[62]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[62]' (FDE) to 'flat_output_flat_reg[63]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[63] )
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[64]' (FDE) to 'flat_output_flat_reg[65]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[65]' (FDE) to 'flat_output_flat_reg[66]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[66]' (FDE) to 'flat_output_flat_reg[67]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[67]' (FDE) to 'flat_output_flat_reg[68]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[68]' (FDE) to 'flat_output_flat_reg[69]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[69]' (FDE) to 'flat_output_flat_reg[70]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[70]' (FDE) to 'flat_output_flat_reg[71]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[71]' (FDE) to 'flat_output_flat_reg[72]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[72]' (FDE) to 'flat_output_flat_reg[73]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[73]' (FDE) to 'flat_output_flat_reg[74]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[74]' (FDE) to 'flat_output_flat_reg[75]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[75]' (FDE) to 'flat_output_flat_reg[76]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[76]' (FDE) to 'flat_output_flat_reg[77]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[77]' (FDE) to 'flat_output_flat_reg[78]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[78]' (FDE) to 'flat_output_flat_reg[79]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[79] )
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[80]' (FDE) to 'flat_output_flat_reg[81]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[81]' (FDE) to 'flat_output_flat_reg[82]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[82]' (FDE) to 'flat_output_flat_reg[83]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[83]' (FDE) to 'flat_output_flat_reg[84]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[84]' (FDE) to 'flat_output_flat_reg[85]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[85]' (FDE) to 'flat_output_flat_reg[86]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[86]' (FDE) to 'flat_output_flat_reg[87]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[87]' (FDE) to 'flat_output_flat_reg[88]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[88]' (FDE) to 'flat_output_flat_reg[89]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[89]' (FDE) to 'flat_output_flat_reg[90]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[90]' (FDE) to 'flat_output_flat_reg[91]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[91]' (FDE) to 'flat_output_flat_reg[92]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[92]' (FDE) to 'flat_output_flat_reg[93]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[93]' (FDE) to 'flat_output_flat_reg[94]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[94]' (FDE) to 'flat_output_flat_reg[95]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[95] )
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[96]' (FDE) to 'flat_output_flat_reg[97]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[97]' (FDE) to 'flat_output_flat_reg[98]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[98]' (FDE) to 'flat_output_flat_reg[99]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[99]' (FDE) to 'flat_output_flat_reg[100]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[100]' (FDE) to 'flat_output_flat_reg[101]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[101]' (FDE) to 'flat_output_flat_reg[102]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[102]' (FDE) to 'flat_output_flat_reg[103]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[103]' (FDE) to 'flat_output_flat_reg[104]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[104]' (FDE) to 'flat_output_flat_reg[105]'
+INFO: [Synth 8-3886] merging instance 'flat_output_flat_reg[105]' (FDE) to 'flat_output_flat_reg[106]'
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[111] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[127] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[143] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[159] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[175] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[191] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[207] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[223] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[239] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[255] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[271] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[287] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[303] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[319] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[335] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[351] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[367] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[383] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[399] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[415] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[431] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[447] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[463] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[479] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[495] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[511] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[527] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[543] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[559] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[575] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[591] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[607] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[623] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[639] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[655] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[671] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[687] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[703] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[719] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[735] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[751] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[767] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[783] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[799] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[815] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[831] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[847] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[863] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[879] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[895] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[911] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[927] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[943] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[959] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[975] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[991] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[1007] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[1023] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[1039] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[1055] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[1071] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[1087] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[1103] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[1119] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[1135] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[1151] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[1167] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[1183] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[1199] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[1215] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[1231] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[1247] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[1263] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[1279] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[1295] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[1311] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[1327] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[1343] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[1359] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[1375] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[1391] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[1407] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[1423] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[1439] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[1455] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[1471] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[1487] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[1503] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[1519] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[1535] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[1551] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[1567] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[1583] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[1599] )
+INFO: [Common 17-14] Message 'Synth 8-3333' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Common 17-14] Message 'Synth 8-3333' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+WARNING: [Synth 8-7129] Port flat_input_flat[4095] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4094] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4093] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4092] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4091] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4090] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4089] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4088] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4087] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4086] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4085] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4084] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4083] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4082] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4081] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4080] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4079] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4078] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4077] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4076] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4075] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4074] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4073] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4072] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4071] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4070] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4069] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4068] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4067] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4066] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4065] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4064] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4063] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4062] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4061] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4060] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4059] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4058] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4057] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4056] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4055] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4054] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4053] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4052] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4051] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4050] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4049] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4048] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4047] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4046] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4045] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4044] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4043] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4042] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4041] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4040] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4039] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4038] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4037] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4036] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4035] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4034] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4033] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4032] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4031] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4030] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4029] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4028] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4027] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4026] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4025] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4024] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4023] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4022] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4021] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4020] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4019] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4018] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4017] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4016] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4015] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4014] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4013] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4012] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4011] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4010] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4009] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4008] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4007] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4006] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4005] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4004] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4003] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4002] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4001] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[4000] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[3999] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[3998] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[3997] in module layer3_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flat_input_flat[3996] in module layer3_generator is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Common 17-14] Message 'Synth 8-3333' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:54 ; elapsed = 00:01:21 . Memory (MB): peak = 1410.934 ; gain = 906.914
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:55 ; elapsed = 00:01:22 . Memory (MB): peak = 1414.680 ; gain = 910.660
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:55 ; elapsed = 00:01:22 . Memory (MB): peak = 1414.680 ; gain = 910.660
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:04 ; elapsed = 00:01:32 . Memory (MB): peak = 1589.008 ; gain = 1084.988
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:04 ; elapsed = 00:01:32 . Memory (MB): peak = 1589.008 ; gain = 1084.988
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:04 ; elapsed = 00:01:32 . Memory (MB): peak = 1589.008 ; gain = 1084.988
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:04 ; elapsed = 00:01:32 . Memory (MB): peak = 1589.008 ; gain = 1084.988
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:04 ; elapsed = 00:01:32 . Memory (MB): peak = 1589.008 ; gain = 1084.988
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:04 ; elapsed = 00:01:32 . Memory (MB): peak = 1589.008 ; gain = 1084.988
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |     8|
+|3     |LUT1   |     4|
+|4     |LUT2   |    34|
+|5     |LUT3   |    21|
+|6     |LUT4   |    26|
+|7     |LUT5   |    33|
+|8     |LUT6   |    36|
+|9     |FDCE   |   101|
+|10    |FDPE   |     3|
+|11    |IBUF   |     5|
+|12    |OBUF   |    36|
++------+-------+------+
+
+Report Instance Areas: 
++------+-----------------+--------------------------+------+
+|      |Instance         |Module                    |Cells |
++------+-----------------+--------------------------+------+
+|1     |top              |                          |   308|
+|2     |  u_feature_fifo |sync_fifo__parameterized0 |    39|
+|3     |  u_l1           |layer1_generator          |    44|
+|4     |  u_l2           |layer2_generator          |    47|
+|5     |  u_l3           |layer3_generator          |    46|
+|6     |  u_seed_fifo    |sync_fifo                 |    44|
++------+-----------------+--------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:04 ; elapsed = 00:01:32 . Memory (MB): peak = 1589.008 ; gain = 1084.988
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 6 critical warnings and 118 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:04 ; elapsed = 00:01:41 . Memory (MB): peak = 1589.008 ; gain = 1084.988
+Synthesis Optimization Complete : Time (s): cpu = 00:01:04 ; elapsed = 00:01:41 . Memory (MB): peak = 1589.008 ; gain = 1084.988
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1602.062 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 8 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1716.992 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: cfb8e038
+INFO: [Common 17-83] Releasing license: Synthesis
+238 Infos, 118 Warnings, 6 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:06 ; elapsed = 00:01:45 . Memory (MB): peak = 1716.992 ; gain = 1218.973
+INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1716.992 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'D:/GANMIND/GANMIND/Willthon/GANMIND_v0.1/src/generator/project_1/project_1.runs/synth_1/generator_pipeline.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file generator_pipeline_utilization_synth.rpt -pb generator_pipeline_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu Dec  4 19:54:35 2025...

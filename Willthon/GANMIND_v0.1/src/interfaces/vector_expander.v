@@ -5,39 +5,8 @@
 // -----------------------------------------------------------------------------
 //  * Maps a smaller latent vector produced by the generator to the input width
 //    required by the discriminator without introducing additional math.
-//  * Internally uses compile-time nearest-neighbor replication.
-// -----------------------------------------------------------------------------
-module vector_expander #(
-    parameter integer INPUT_COUNT  = 128,
-    parameter integer OUTPUT_COUNT = 256,
-    parameter integer DATA_WIDTH   = 16
-) (
-    input  wire [DATA_WIDTH*INPUT_COUNT-1:0]  vector_in,
-    output wire [DATA_WIDTH*OUTPUT_COUNT-1:0] vector_out
-);
-
-    genvar idx;
-    generate
-        for (idx = 0; idx < OUTPUT_COUNT; idx = idx + 1) begin : EXPAND
-            localparam integer SRC_INDEX = (idx * INPUT_COUNT) / OUTPUT_COUNT;
-            assign vector_out[(idx+1)*DATA_WIDTH-1 -: DATA_WIDTH] =
-                vector_in[(SRC_INDEX+1)*DATA_WIDTH-1 -: DATA_WIDTH];
-        end
-    endgenerate
-
-endmodule
-
-/*
-`timescale 1ns / 1ps
-
-// -----------------------------------------------------------------------------
-// vector_expander
-// -----------------------------------------------------------------------------
-//  * Maps a smaller latent vector produced by the generator to the input width
-//    required by the discriminator without introducing additional math.
-//  * Now implemented as a sequential shared-hardware mover so it matches the
-//    rest of the start/busy/done pipeline infrastructure and synthesizes well
-//    on modest FPGA targets.
+//  * Sequential shared-hardware mover compatible with the start/busy/done
+//    control plane used across the pipeline.
 // -----------------------------------------------------------------------------
 module vector_expander #(
     parameter integer INPUT_COUNT  = 128,
@@ -118,5 +87,3 @@ module vector_expander #(
     end
 
 endmodule
-
-*/
