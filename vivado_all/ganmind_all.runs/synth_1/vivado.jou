@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2025.1 (64-bit)
+# SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Sat Dec  6 14:32:40 2025
+# Process ID         : 31012
+# Current directory  : D:/GANMIND/GANMIND/vivado_all/ganmind_all.runs/synth_1
+# Command line       : vivado.exe -log gan_serial_axi_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source gan_serial_axi_wrapper.tcl
+# Log file           : D:/GANMIND/GANMIND/vivado_all/ganmind_all.runs/synth_1/gan_serial_axi_wrapper.vds
+# Journal file       : D:/GANMIND/GANMIND/vivado_all/ganmind_all.runs/synth_1\vivado.jou
+# Running On         : DESKTOP-3S5LN80
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26100
+# Processor Detail   : Intel(R) Core(TM) i7-9750H CPU @ 2.60GHz
+# CPU Frequency      : 2592 MHz
+# CPU Physical cores : 6
+# CPU Logical cores  : 12
+# Host memory        : 17095 MB
+# Swap memory        : 20401 MB
+# Total Virtual      : 37496 MB
+# Available Virtual  : 7565 MB
+#-----------------------------------------------------------
+source gan_serial_axi_wrapper.tcl -notrace

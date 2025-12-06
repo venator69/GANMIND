@@ -1,5 +1,8 @@
 `timescale 1ns / 1ps
 
+`ifndef GENERATOR_PIPELINE_V
+`define GENERATOR_PIPELINE_V
+
 // -----------------------------------------------------------------------------
 // Local includes so standalone synthesis picks up prerequisite modules when the
 // file is compiled in isolation. Each include is wrapped with a guard so it can
@@ -262,3 +265,5 @@ module generator_pipeline (
     end
 
 endmodule
+
+`endif // GENERATOR_PIPELINE_V

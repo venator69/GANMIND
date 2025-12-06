@@ -1,5 +1,8 @@
 `timescale 1ns / 1ps
 
+`ifndef VECTOR_SIGMOID_V
+`define VECTOR_SIGMOID_V
+
 // -----------------------------------------------------------------------------
 // Guarded include to pull in sigmoid_approx when this module is synthesized in
 // isolation while remaining compatible with higher-level builds.
@@ -120,3 +123,5 @@ module vector_sigmoid #(
     end
 
 endmodule
+
+`endif // VECTOR_SIGMOID_V

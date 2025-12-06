@@ -1,5 +1,8 @@
 `timescale 1ns / 1ps
 
+`ifndef FRAME_SAMPLER_V
+`define FRAME_SAMPLER_V
+
 // -----------------------------------------------------------------------------
 // frame_sampler
 // -----------------------------------------------------------------------------
@@ -98,3 +101,5 @@ module frame_sampler #(
     end
 
 endmodule
+
+`endif // FRAME_SAMPLER_V

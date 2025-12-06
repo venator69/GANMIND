@@ -1,5 +1,8 @@
 `timescale 1ns / 1ps
 
+`ifndef GAN_SERIAL_TOP_V
+`define GAN_SERIAL_TOP_V
+
 // -----------------------------------------------------------------------------
 // Guarded includes so synthesizing this top in isolation auto-imports all
 // dependent RTL while preventing duplicate definitions when higher-level
@@ -599,3 +602,5 @@ module gan_serial_top (
     end
 
 endmodule
+
+`endif // GAN_SERIAL_TOP_V

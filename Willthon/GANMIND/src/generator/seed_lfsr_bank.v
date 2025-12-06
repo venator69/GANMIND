@@ -1,5 +1,8 @@
 `timescale 1ns / 1ps
 
+`ifndef SEED_LFSR_BANK_V
+`define SEED_LFSR_BANK_V
+
 // -----------------------------------------------------------------------------
 // seed_lfsr_bank
 // -----------------------------------------------------------------------------
@@ -65,3 +68,5 @@ module seed_lfsr_bank #(
     end
 
 endmodule
+
+`endif // SEED_LFSR_BANK_V

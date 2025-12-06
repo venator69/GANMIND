@@ -1,5 +1,8 @@
 `timescale 1ns / 1ps
 
+`ifndef VECTOR_UPSAMPLER_V
+`define VECTOR_UPSAMPLER_V
+
 // -----------------------------------------------------------------------------
 // vector_upsampler
 // -----------------------------------------------------------------------------
@@ -89,3 +92,5 @@ module vector_upsampler #(
     end
 
 endmodule
+
+`endif // VECTOR_UPSAMPLER_V

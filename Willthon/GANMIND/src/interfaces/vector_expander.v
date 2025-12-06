@@ -1,5 +1,8 @@
 `timescale 1ns / 1ps
 
+`ifndef VECTOR_EXPANDER_V
+`define VECTOR_EXPANDER_V
+
 // -----------------------------------------------------------------------------
 // vector_expander
 // -----------------------------------------------------------------------------
@@ -87,3 +90,5 @@ module vector_expander #(
     end
 
 endmodule
+
+`endif // VECTOR_EXPANDER_V

@@ -1,5 +1,8 @@
 `timescale 1ns / 1ps
 
+`ifndef PIXEL_SERIAL_LOADER_V
+`define PIXEL_SERIAL_LOADER_V
+
 // -----------------------------------------------------------------------------
 // Local include so standalone synthesis of this block automatically picks up
 // the shared FIFO implementation. Guard avoids double inclusion upstream.
@@ -169,3 +172,5 @@ module pixel_serial_loader #(
     end
 
 endmodule
+
+`endif // PIXEL_SERIAL_LOADER_V

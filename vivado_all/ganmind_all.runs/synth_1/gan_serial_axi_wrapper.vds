@@ -1,0 +1,1173 @@
+#-----------------------------------------------------------
+# Vivado v2025.1 (64-bit)
+# SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Sat Dec  6 14:32:40 2025
+# Process ID         : 31012
+# Current directory  : D:/GANMIND/GANMIND/vivado_all/ganmind_all.runs/synth_1
+# Command line       : vivado.exe -log gan_serial_axi_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source gan_serial_axi_wrapper.tcl
+# Log file           : D:/GANMIND/GANMIND/vivado_all/ganmind_all.runs/synth_1/gan_serial_axi_wrapper.vds
+# Journal file       : D:/GANMIND/GANMIND/vivado_all/ganmind_all.runs/synth_1\vivado.jou
+# Running On         : DESKTOP-3S5LN80
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26100
+# Processor Detail   : Intel(R) Core(TM) i7-9750H CPU @ 2.60GHz
+# CPU Frequency      : 2592 MHz
+# CPU Physical cores : 6
+# CPU Logical cores  : 12
+# Host memory        : 17095 MB
+# Swap memory        : 20401 MB
+# Total Virtual      : 37496 MB
+# Available Virtual  : 7565 MB
+#-----------------------------------------------------------
+source gan_serial_axi_wrapper.tcl -notrace
+create_project: Time (s): cpu = 00:00:08 ; elapsed = 00:00:06 . Memory (MB): peak = 491.152 ; gain = 209.094
+Command: synth_design -top gan_serial_axi_wrapper -part xc7z020clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 4032
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 999.012 ; gain = 493.051
+---------------------------------------------------------------------------------
+CRITICAL WARNING: [Synth 8-9873] overwriting previous definition of module 'layer1_generator' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/../layers/layer1_generator.v:105]
+INFO: [Synth 8-9937] previous definition of design element 'layer1_generator' is here [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/../layers/layer1_generator.v:105]
+CRITICAL WARNING: [Synth 8-9873] overwriting previous definition of module 'layer2_generator' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/../layers/layer2_generator.v:96]
+INFO: [Synth 8-9937] previous definition of design element 'layer2_generator' is here [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/../layers/layer2_generator.v:96]
+CRITICAL WARNING: [Synth 8-9873] overwriting previous definition of module 'layer3_generator' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/../layers/layer3_generator.v:96]
+INFO: [Synth 8-9937] previous definition of design element 'layer3_generator' is here [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/../layers/layer3_generator.v:96]
+WARNING: [Synth 8-6901] identifier 'gan_done' is used before its declaration [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_axi_wrapper.v:232]
+INFO: [Synth 8-6157] synthesizing module 'gan_serial_axi_wrapper' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_axi_wrapper.v:27]
+INFO: [Synth 8-6157] synthesizing module 'gan_serial_top' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:63]
+INFO: [Synth 8-6157] synthesizing module 'pixel_serial_loader' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/interfaces/pixel_serial_loader.v:26]
+INFO: [Synth 8-6157] synthesizing module 'sync_fifo' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/fifo/sync_fifo.v:9]
+	Parameter DATA_WIDTH bound to: 16 - type: integer 
+	Parameter DEPTH bound to: 1024 - type: integer 
+	Parameter ADDR_WIDTH bound to: 10 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'sync_fifo' (0#1) [D:/GANMIND/GANMIND/Willthon/GANMIND/src/fifo/sync_fifo.v:9]
+INFO: [Synth 8-226] default block is never used [D:/GANMIND/GANMIND/Willthon/GANMIND/src/interfaces/pixel_serial_loader.v:133]
+INFO: [Synth 8-6155] done synthesizing module 'pixel_serial_loader' (0#1) [D:/GANMIND/GANMIND/Willthon/GANMIND/src/interfaces/pixel_serial_loader.v:26]
+INFO: [Synth 8-6157] synthesizing module 'frame_sampler' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/interfaces/frame_sampler.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'frame_sampler' (0#1) [D:/GANMIND/GANMIND/Willthon/GANMIND/src/interfaces/frame_sampler.v:14]
+INFO: [Synth 8-6157] synthesizing module 'seed_lfsr_bank' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/generator/seed_lfsr_bank.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'seed_lfsr_bank' (0#1) [D:/GANMIND/GANMIND/Willthon/GANMIND/src/generator/seed_lfsr_bank.v:13]
+INFO: [Synth 8-6157] synthesizing module 'generator_pipeline' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/generator/generator_pipeline.v:38]
+INFO: [Synth 8-6157] synthesizing module 'sync_fifo__parameterized0' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/fifo/sync_fifo.v:9]
+	Parameter DATA_WIDTH bound to: 16 - type: integer 
+	Parameter DEPTH bound to: 64 - type: integer 
+	Parameter ADDR_WIDTH bound to: 6 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'sync_fifo__parameterized0' (0#1) [D:/GANMIND/GANMIND/Willthon/GANMIND/src/fifo/sync_fifo.v:9]
+INFO: [Synth 8-6157] synthesizing module 'sync_fifo__parameterized1' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/fifo/sync_fifo.v:9]
+	Parameter DATA_WIDTH bound to: 16 - type: integer 
+	Parameter DEPTH bound to: 128 - type: integer 
+	Parameter ADDR_WIDTH bound to: 7 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'sync_fifo__parameterized1' (0#1) [D:/GANMIND/GANMIND/Willthon/GANMIND/src/fifo/sync_fifo.v:9]
+INFO: [Synth 8-6157] synthesizing module 'layer1_generator' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer1_generator.v:5]
+CRITICAL WARNING: [Synth 8-4445] could not open $readmem data file 'src/layers/hex_data/layer1_gen_weights.hex'; please make sure the file is added to project and has read permission, ignoring [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer1_generator.v:25]
+CRITICAL WARNING: [Synth 8-4445] could not open $readmem data file 'src/layers/hex_data/layer1_gen_bias.hex'; please make sure the file is added to project and has read permission, ignoring [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer1_generator.v:26]
+INFO: [Synth 8-6155] done synthesizing module 'layer1_generator' (0#1) [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer1_generator.v:5]
+INFO: [Synth 8-6157] synthesizing module 'layer2_generator' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer2_generator.v:5]
+CRITICAL WARNING: [Synth 8-4445] could not open $readmem data file 'src/layers/hex_data/Generator_Layer2_Weights_All.hex'; please make sure the file is added to project and has read permission, ignoring [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer2_generator.v:25]
+CRITICAL WARNING: [Synth 8-4445] could not open $readmem data file 'src/layers/hex_data/Generator_Layer2_Biases_All.hex'; please make sure the file is added to project and has read permission, ignoring [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer2_generator.v:26]
+INFO: [Synth 8-6155] done synthesizing module 'layer2_generator' (0#1) [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer2_generator.v:5]
+INFO: [Synth 8-6157] synthesizing module 'layer3_generator' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer3_generator.v:5]
+CRITICAL WARNING: [Synth 8-4445] could not open $readmem data file 'src/layers/hex_data/Generator_Layer3_Weights_All.hex'; please make sure the file is added to project and has read permission, ignoring [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer3_generator.v:25]
+CRITICAL WARNING: [Synth 8-4445] could not open $readmem data file 'src/layers/hex_data/Generator_Layer3_Biases_All.hex'; please make sure the file is added to project and has read permission, ignoring [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer3_generator.v:26]
+INFO: [Synth 8-6155] done synthesizing module 'layer3_generator' (0#1) [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer3_generator.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'generator_pipeline' (0#1) [D:/GANMIND/GANMIND/Willthon/GANMIND/src/generator/generator_pipeline.v:38]
+INFO: [Synth 8-6157] synthesizing module 'vector_sigmoid' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/interfaces/vector_sigmoid.v:24]
+INFO: [Synth 8-6157] synthesizing module 'sigmoid_approx' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/interfaces/sigmoid_approx.v:13]
+	Parameter DATA_WIDTH bound to: 16 - type: integer 
+	Parameter Q_FRAC bound to: 8 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'sigmoid_approx' (0#1) [D:/GANMIND/GANMIND/Willthon/GANMIND/src/interfaces/sigmoid_approx.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'vector_sigmoid' (0#1) [D:/GANMIND/GANMIND/Willthon/GANMIND/src/interfaces/vector_sigmoid.v:24]
+INFO: [Synth 8-6157] synthesizing module 'vector_expander' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/interfaces/vector_expander.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'vector_expander' (0#1) [D:/GANMIND/GANMIND/Willthon/GANMIND/src/interfaces/vector_expander.v:14]
+INFO: [Synth 8-6157] synthesizing module 'vector_upsampler' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/interfaces/vector_upsampler.v:16]
+INFO: [Synth 8-6155] done synthesizing module 'vector_upsampler' (0#1) [D:/GANMIND/GANMIND/Willthon/GANMIND/src/interfaces/vector_upsampler.v:16]
+INFO: [Synth 8-6157] synthesizing module 'discriminator_pipeline' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/discriminator/discriminator_pipeline.v:37]
+INFO: [Synth 8-6157] synthesizing module 'sync_fifo__parameterized2' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/fifo/sync_fifo.v:9]
+	Parameter DATA_WIDTH bound to: 16 - type: integer 
+	Parameter DEPTH bound to: 256 - type: integer 
+	Parameter ADDR_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'sync_fifo__parameterized2' (0#1) [D:/GANMIND/GANMIND/Willthon/GANMIND/src/fifo/sync_fifo.v:9]
+INFO: [Synth 8-6157] synthesizing module 'sync_fifo__parameterized3' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/fifo/sync_fifo.v:9]
+	Parameter DATA_WIDTH bound to: 16 - type: integer 
+	Parameter DEPTH bound to: 4 - type: integer 
+	Parameter ADDR_WIDTH bound to: 2 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'sync_fifo__parameterized3' (0#1) [D:/GANMIND/GANMIND/Willthon/GANMIND/src/fifo/sync_fifo.v:9]
+INFO: [Synth 8-6157] synthesizing module 'layer1_discriminator' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer1_discriminator.v:5]
+CRITICAL WARNING: [Synth 8-4445] could not open $readmem data file 'src/layers/hex_data/Discriminator_Layer1_Weights_All.hex'; please make sure the file is added to project and has read permission, ignoring [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer1_discriminator.v:25]
+CRITICAL WARNING: [Synth 8-4445] could not open $readmem data file 'src/layers/hex_data/Discriminator_Layer1_Biases_All.hex'; please make sure the file is added to project and has read permission, ignoring [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer1_discriminator.v:26]
+INFO: [Synth 8-6155] done synthesizing module 'layer1_discriminator' (0#1) [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer1_discriminator.v:5]
+INFO: [Synth 8-6157] synthesizing module 'layer2_discriminator' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer2_discriminator.v:5]
+CRITICAL WARNING: [Synth 8-4445] could not open $readmem data file 'src/layers/hex_data/Discriminator_Layer2_Weights_All.hex'; please make sure the file is added to project and has read permission, ignoring [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer2_discriminator.v:25]
+CRITICAL WARNING: [Synth 8-4445] could not open $readmem data file 'src/layers/hex_data/Discriminator_Layer2_Biases_All.hex'; please make sure the file is added to project and has read permission, ignoring [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer2_discriminator.v:26]
+INFO: [Synth 8-6155] done synthesizing module 'layer2_discriminator' (0#1) [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer2_discriminator.v:5]
+INFO: [Synth 8-6157] synthesizing module 'layer3_discriminator' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer3_discriminator.v:10]
+CRITICAL WARNING: [Synth 8-4445] could not open $readmem data file 'src/layers/hex_data/Discriminator_Layer3_Weights_All.hex'; please make sure the file is added to project and has read permission, ignoring [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer3_discriminator.v:31]
+CRITICAL WARNING: [Synth 8-4445] could not open $readmem data file 'src/layers/hex_data/Discriminator_Layer3_Biases_All.hex'; please make sure the file is added to project and has read permission, ignoring [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer3_discriminator.v:32]
+INFO: [Synth 8-6157] synthesizing module 'pipelined_mac' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'pipelined_mac' (0#1) [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer3_discriminator' (0#1) [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer3_discriminator.v:10]
+INFO: [Synth 8-6155] done synthesizing module 'discriminator_pipeline' (0#1) [D:/GANMIND/GANMIND/Willthon/GANMIND/src/discriminator/discriminator_pipeline.v:37]
+INFO: [Synth 8-226] default block is never used [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:513]
+INFO: [Synth 8-6155] done synthesizing module 'gan_serial_top' (0#1) [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:63]
+INFO: [Synth 8-6155] done synthesizing module 'gan_serial_axi_wrapper' (0#1) [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_axi_wrapper.v:27]
+WARNING: [Synth 8-7137] Register mem_reg in module sync_fifo has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code 
+WARNING: [Synth 8-4767] Trying to implement RAM 'mem_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+	1: RAM is sensitive to asynchronous reset signal. this RTL style is not supported. 
+RAM "mem_reg" dissolved into registers
+WARNING: [Synth 8-6014] Unused sequential element tmp_rem_reg was removed.  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/interfaces/frame_sampler.v:82]
+WARNING: [Synth 8-6014] Unused sequential element tmp_src_reg was removed.  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/interfaces/frame_sampler.v:83]
+WARNING: [Synth 8-7137] Register mem_reg in module sync_fifo__parameterized0 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code 
+WARNING: [Synth 8-4767] Trying to implement RAM 'mem_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+	1: RAM is sensitive to asynchronous reset signal. this RTL style is not supported. 
+RAM "mem_reg" dissolved into registers
+WARNING: [Synth 8-7137] Register mem_reg in module sync_fifo__parameterized1 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code 
+WARNING: [Synth 8-4767] Trying to implement RAM 'mem_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+	1: RAM is sensitive to asynchronous reset signal. this RTL style is not supported. 
+RAM "mem_reg" dissolved into registers
+WARNING: [Synth 8-6014] Unused sequential element bias_shifted_reg was removed.  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer1_generator.v:62]
+WARNING: [Synth 8-7137] Register flat_output_flat_reg in module layer1_generator has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer1_generator.v:80]
+WARNING: [Synth 8-3848] Net layer1_gen_bias in module/entity layer1_generator does not have driver. [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer1_generator.v:21]
+WARNING: [Synth 8-3848] Net layer1_gen_weights in module/entity layer1_generator does not have driver. [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer1_generator.v:20]
+WARNING: [Synth 8-6014] Unused sequential element bias_shifted_reg was removed.  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer2_generator.v:53]
+WARNING: [Synth 8-7137] Register flat_output_flat_reg in module layer2_generator has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer2_generator.v:71]
+WARNING: [Synth 8-3848] Net layer2_gen_bias in module/entity layer2_generator does not have driver. [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer2_generator.v:21]
+WARNING: [Synth 8-3848] Net layer2_gen_weights in module/entity layer2_generator does not have driver. [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer2_generator.v:20]
+WARNING: [Synth 8-6014] Unused sequential element bias_shifted_reg was removed.  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer3_generator.v:53]
+WARNING: [Synth 8-7137] Register flat_output_flat_reg in module layer3_generator has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer3_generator.v:71]
+WARNING: [Synth 8-3848] Net layer3_gen_bias in module/entity layer3_generator does not have driver. [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer3_generator.v:21]
+WARNING: [Synth 8-3848] Net layer3_gen_weights in module/entity layer3_generator does not have driver. [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer3_generator.v:20]
+WARNING: [Synth 8-7137] Register feature_fifo_wr_data_reg in module generator_pipeline has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/generator/generator_pipeline.v:134]
+WARNING: [Synth 8-7137] Register mem_reg in module sync_fifo__parameterized2 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code 
+WARNING: [Synth 8-4767] Trying to implement RAM 'mem_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+	1: RAM is sensitive to asynchronous reset signal. this RTL style is not supported. 
+RAM "mem_reg" dissolved into registers
+WARNING: [Synth 8-7137] Register mem_reg in module sync_fifo__parameterized3 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code 
+WARNING: [Synth 8-4767] Trying to implement RAM 'mem_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+	1: RAM is sensitive to asynchronous reset signal. this RTL style is not supported. 
+RAM "mem_reg" dissolved into registers
+WARNING: [Synth 8-6014] Unused sequential element bias_shifted_reg was removed.  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer1_discriminator.v:56]
+WARNING: [Synth 8-7137] Register flat_output_flat_reg in module layer1_discriminator has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer1_discriminator.v:74]
+WARNING: [Synth 8-3848] Net layer1_disc_bias in module/entity layer1_discriminator does not have driver. [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer1_discriminator.v:21]
+WARNING: [Synth 8-3848] Net layer1_disc_weights in module/entity layer1_discriminator does not have driver. [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer1_discriminator.v:20]
+WARNING: [Synth 8-6014] Unused sequential element bias_shifted_reg was removed.  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer2_discriminator.v:56]
+WARNING: [Synth 8-7137] Register flat_output_flat_reg in module layer2_discriminator has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer2_discriminator.v:74]
+WARNING: [Synth 8-3848] Net layer2_disc_bias in module/entity layer2_discriminator does not have driver. [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer2_discriminator.v:21]
+WARNING: [Synth 8-3848] Net layer2_disc_weights in module/entity layer2_discriminator does not have driver. [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer2_discriminator.v:20]
+WARNING: [Synth 8-7137] Register ra_reg[0] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register ra_reg[1] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register ra_reg[2] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register ra_reg[3] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register ra_reg[4] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register ra_reg[5] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register ra_reg[6] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register ra_reg[7] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register ra_reg[8] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register ra_reg[9] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register ra_reg[10] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register ra_reg[11] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register ra_reg[12] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register ra_reg[13] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register ra_reg[14] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register ra_reg[15] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register ra_reg[16] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register ra_reg[17] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register ra_reg[18] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register ra_reg[19] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register ra_reg[20] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register ra_reg[21] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register ra_reg[22] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register ra_reg[23] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register ra_reg[24] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register ra_reg[25] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register ra_reg[26] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register ra_reg[27] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register ra_reg[28] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register ra_reg[29] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register ra_reg[30] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register ra_reg[31] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register rb_reg[0] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register rb_reg[1] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register rb_reg[2] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register rb_reg[3] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register rb_reg[4] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register rb_reg[5] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register rb_reg[6] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register rb_reg[7] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register rb_reg[8] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register rb_reg[9] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register rb_reg[10] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register rb_reg[11] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register rb_reg[12] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register rb_reg[13] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register rb_reg[14] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register rb_reg[15] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register rb_reg[16] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register rb_reg[17] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register rb_reg[18] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register rb_reg[19] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register rb_reg[20] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register rb_reg[21] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register rb_reg[22] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register rb_reg[23] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register rb_reg[24] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register rb_reg[25] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register rb_reg[26] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register rb_reg[27] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register rb_reg[28] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register rb_reg[29] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register rb_reg[30] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register rb_reg[31] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register p_reg[0] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:95]
+WARNING: [Synth 8-7137] Register p_reg[1] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:95]
+WARNING: [Synth 8-7137] Register p_reg[2] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:95]
+WARNING: [Synth 8-7137] Register p_reg[3] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:95]
+WARNING: [Synth 8-7137] Register p_reg[4] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:95]
+WARNING: [Synth 8-7137] Register p_reg[5] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:95]
+WARNING: [Synth 8-7137] Register p_reg[6] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:95]
+WARNING: [Synth 8-7137] Register p_reg[7] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:95]
+WARNING: [Synth 8-7137] Register p_reg[8] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:95]
+WARNING: [Synth 8-7137] Register p_reg[9] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:95]
+WARNING: [Synth 8-7137] Register p_reg[10] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:95]
+WARNING: [Synth 8-7137] Register p_reg[11] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:95]
+WARNING: [Synth 8-7137] Register p_reg[12] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:95]
+WARNING: [Synth 8-7137] Register p_reg[13] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:95]
+WARNING: [Synth 8-7137] Register p_reg[14] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:95]
+WARNING: [Synth 8-7137] Register p_reg[15] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:95]
+WARNING: [Synth 8-7137] Register p_reg[16] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:95]
+WARNING: [Synth 8-7137] Register p_reg[17] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:95]
+WARNING: [Synth 8-7137] Register p_reg[18] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:95]
+WARNING: [Synth 8-7137] Register p_reg[19] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:95]
+WARNING: [Synth 8-7137] Register p_reg[20] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:95]
+WARNING: [Synth 8-7137] Register p_reg[21] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:95]
+WARNING: [Synth 8-7137] Register p_reg[22] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:95]
+WARNING: [Synth 8-7137] Register p_reg[23] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:95]
+WARNING: [Synth 8-7137] Register p_reg[24] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:95]
+INFO: [Common 17-14] Message 'Synth 8-7137' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+WARNING: [Synth 8-3848] Net w[0] in module/entity layer3_discriminator does not have driver. [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer3_discriminator.v:26]
+WARNING: [Synth 8-3848] Net w[1] in module/entity layer3_discriminator does not have driver. [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer3_discriminator.v:26]
+WARNING: [Synth 8-3848] Net w[2] in module/entity layer3_discriminator does not have driver. [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer3_discriminator.v:26]
+WARNING: [Synth 8-3848] Net w[3] in module/entity layer3_discriminator does not have driver. [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer3_discriminator.v:26]
+WARNING: [Synth 8-3848] Net w[4] in module/entity layer3_discriminator does not have driver. [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer3_discriminator.v:26]
+WARNING: [Synth 8-3848] Net w[5] in module/entity layer3_discriminator does not have driver. [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer3_discriminator.v:26]
+WARNING: [Synth 8-3848] Net w[6] in module/entity layer3_discriminator does not have driver. [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer3_discriminator.v:26]
+WARNING: [Synth 8-3848] Net w[7] in module/entity layer3_discriminator does not have driver. [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer3_discriminator.v:26]
+WARNING: [Synth 8-3848] Net w[8] in module/entity layer3_discriminator does not have driver. [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer3_discriminator.v:26]
+WARNING: [Synth 8-3848] Net w[9] in module/entity layer3_discriminator does not have driver. [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer3_discriminator.v:26]
+WARNING: [Synth 8-3848] Net w[10] in module/entity layer3_discriminator does not have driver. [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer3_discriminator.v:26]
+WARNING: [Synth 8-3848] Net w[11] in module/entity layer3_discriminator does not have driver. [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer3_discriminator.v:26]
+WARNING: [Synth 8-3848] Net w[12] in module/entity layer3_discriminator does not have driver. [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer3_discriminator.v:26]
+WARNING: [Synth 8-3848] Net w[13] in module/entity layer3_discriminator does not have driver. [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer3_discriminator.v:26]
+WARNING: [Synth 8-3848] Net w[14] in module/entity layer3_discriminator does not have driver. [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer3_discriminator.v:26]
+WARNING: [Synth 8-3848] Net w[15] in module/entity layer3_discriminator does not have driver. [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer3_discriminator.v:26]
+WARNING: [Synth 8-3848] Net w[16] in module/entity layer3_discriminator does not have driver. [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer3_discriminator.v:26]
+WARNING: [Synth 8-3848] Net w[17] in module/entity layer3_discriminator does not have driver. [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer3_discriminator.v:26]
+WARNING: [Synth 8-3848] Net w[18] in module/entity layer3_discriminator does not have driver. [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer3_discriminator.v:26]
+WARNING: [Synth 8-3848] Net w[19] in module/entity layer3_discriminator does not have driver. [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer3_discriminator.v:26]
+WARNING: [Synth 8-3848] Net w[20] in module/entity layer3_discriminator does not have driver. [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer3_discriminator.v:26]
+WARNING: [Synth 8-3848] Net w[21] in module/entity layer3_discriminator does not have driver. [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer3_discriminator.v:26]
+WARNING: [Synth 8-3848] Net w[22] in module/entity layer3_discriminator does not have driver. [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer3_discriminator.v:26]
+WARNING: [Synth 8-3848] Net w[23] in module/entity layer3_discriminator does not have driver. [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer3_discriminator.v:26]
+WARNING: [Synth 8-3848] Net w[24] in module/entity layer3_discriminator does not have driver. [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer3_discriminator.v:26]
+WARNING: [Synth 8-3848] Net w[25] in module/entity layer3_discriminator does not have driver. [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer3_discriminator.v:26]
+WARNING: [Synth 8-3848] Net w[26] in module/entity layer3_discriminator does not have driver. [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer3_discriminator.v:26]
+WARNING: [Synth 8-3848] Net w[27] in module/entity layer3_discriminator does not have driver. [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer3_discriminator.v:26]
+WARNING: [Synth 8-3848] Net w[28] in module/entity layer3_discriminator does not have driver. [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer3_discriminator.v:26]
+WARNING: [Synth 8-3848] Net w[29] in module/entity layer3_discriminator does not have driver. [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer3_discriminator.v:26]
+WARNING: [Synth 8-3848] Net w[30] in module/entity layer3_discriminator does not have driver. [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer3_discriminator.v:26]
+WARNING: [Synth 8-3848] Net w[31] in module/entity layer3_discriminator does not have driver. [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer3_discriminator.v:26]
+WARNING: [Synth 8-3848] Net b[0] in module/entity layer3_discriminator does not have driver. [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer3_discriminator.v:27]
+WARNING: [Synth 8-7129] Port s_axi_wdata[31] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wdata[30] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wdata[29] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wdata[28] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wdata[27] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wdata[26] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wdata[25] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wdata[24] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wdata[23] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wdata[22] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wdata[21] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wdata[20] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wdata[19] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wdata[18] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wdata[17] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wdata[16] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wdata[15] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wdata[14] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wdata[13] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wdata[12] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wdata[11] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wdata[10] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wdata[9] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wdata[8] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wdata[7] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wdata[6] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wdata[5] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wdata[4] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wdata[3] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wdata[2] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wdata[1] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wstrb[3] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wstrb[2] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wstrb[1] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_pixel_tdata[15] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_pixel_tdata[14] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_pixel_tdata[13] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_pixel_tdata[12] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_pixel_tdata[11] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_pixel_tdata[10] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_pixel_tdata[9] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_pixel_tdata[8] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_pixel_tdata[7] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_pixel_tdata[6] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_pixel_tdata[5] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_pixel_tdata[4] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_pixel_tdata[3] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_pixel_tdata[2] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_pixel_tdata[1] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_pixel_tlast in module gan_serial_axi_wrapper is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1382.477 ; gain = 876.516
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1382.477 ; gain = 876.516
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg400-1
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1382.477 ; gain = 876.516
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'pixel_serial_loader'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'generator_pipeline'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'discriminator_pipeline'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'gan_serial_top'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 COLLECT |                               00 |                               00
+                LOAD_REQ |                               01 |                               01
+                LOAD_CAP |                               10 |                               10
+                   READY |                               11 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'pixel_serial_loader'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                          0000001 |                              000
+                    LOAD |                          0000010 |                              001
+                      L1 |                          0000100 |                              010
+                      L2 |                          0001000 |                              011
+                      L3 |                          0010000 |                              100
+                  OUTPUT |                          0100000 |                              101
+                     FIN |                          1000000 |                              110
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'generator_pipeline'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                          0000001 |                              000
+                    LOAD |                          0000010 |                              001
+                      L1 |                          0000100 |                              010
+                      L2 |                          0001000 |                              011
+                      L3 |                          0010000 |                              100
+                  OUTPUT |                          0100000 |                              101
+                     FIN |                          1000000 |                              110
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'discriminator_pipeline'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  S_IDLE |                              000 |                              000
+                  S_SEED |                              001 |                              001
+                   S_GEN |                              010 |                              010
+             S_FAKE_LOAD |                              011 |                              011
+             S_DISC_FAKE |                              100 |                              100
+             S_REAL_LOAD |                              101 |                              101
+             S_DISC_REAL |                              110 |                              110
+                  S_DONE |                              111 |                              111
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'gan_serial_top'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:47 ; elapsed = 00:00:51 . Memory (MB): peak = 1864.418 ; gain = 1358.457
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   33 Bit       Adders := 8     
+	   2 Input   32 Bit       Adders := 38    
+	   3 Input   32 Bit       Adders := 1     
+	   2 Input   18 Bit       Adders := 1     
+	   2 Input   16 Bit       Adders := 2     
+	   2 Input   11 Bit       Adders := 2     
+	   2 Input   10 Bit       Adders := 5     
+	   2 Input    9 Bit       Adders := 9     
+	   2 Input    8 Bit       Adders := 13    
+	   2 Input    7 Bit       Adders := 8     
+	   2 Input    6 Bit       Adders := 3     
+	   2 Input    5 Bit       Adders := 1     
+	   2 Input    3 Bit       Adders := 2     
+	   2 Input    2 Bit       Adders := 2     
++---XORs : 
+	   4 Input      1 Bit         XORs := 1     
++---Registers : 
+	            12544 Bit    Registers := 4     
+	             4096 Bit    Registers := 5     
+	             2048 Bit    Registers := 4     
+	             1024 Bit    Registers := 2     
+	              512 Bit    Registers := 1     
+	               32 Bit    Registers := 71    
+	               16 Bit    Registers := 1555  
+	               11 Bit    Registers := 1     
+	               10 Bit    Registers := 4     
+	                9 Bit    Registers := 8     
+	                8 Bit    Registers := 11    
+	                7 Bit    Registers := 6     
+	                6 Bit    Registers := 5     
+	                5 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 4     
+	                1 Bit    Registers := 111   
++---Muxes : 
+	   2 Input 12544 Bit        Muxes := 7     
+	   4 Input 12544 Bit        Muxes := 1     
+	   2 Input 4096 Bit        Muxes := 19    
+	   7 Input 4096 Bit        Muxes := 1     
+	   2 Input 2048 Bit        Muxes := 14    
+	   2 Input 1024 Bit        Muxes := 7     
+	   7 Input 1024 Bit        Muxes := 1     
+	   2 Input  512 Bit        Muxes := 4     
+	   2 Input   32 Bit        Muxes := 20    
+	   6 Input   32 Bit        Muxes := 1     
+	   2 Input   16 Bit        Muxes := 36    
+	   4 Input   16 Bit        Muxes := 1     
+	   5 Input   16 Bit        Muxes := 1     
+	   2 Input   10 Bit        Muxes := 2     
+	   2 Input    9 Bit        Muxes := 10    
+	   7 Input    9 Bit        Muxes := 1     
+	   2 Input    8 Bit        Muxes := 9     
+	   7 Input    8 Bit        Muxes := 1     
+	   2 Input    7 Bit        Muxes := 4     
+	   7 Input    7 Bit        Muxes := 1     
+	   2 Input    6 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 1     
+	   3 Input    3 Bit        Muxes := 3     
+	   8 Input    3 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 2     
+	   3 Input    2 Bit        Muxes := 4     
+	   4 Input    2 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 4     
+	   2 Input    1 Bit        Muxes := 184   
+	   4 Input    1 Bit        Muxes := 6     
+	   7 Input    1 Bit        Muxes := 20    
+	   8 Input    1 Bit        Muxes := 18    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7129] Port s_axi_wdata[31] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wdata[30] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wdata[29] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wdata[28] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wdata[27] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wdata[26] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wdata[25] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wdata[24] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wdata[23] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wdata[22] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wdata[21] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wdata[20] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wdata[19] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wdata[18] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wdata[17] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wdata[16] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wdata[15] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wdata[14] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wdata[13] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wdata[12] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wdata[11] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wdata[10] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wdata[9] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wdata[8] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wdata[7] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wdata[6] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wdata[5] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wdata[4] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wdata[3] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wdata[2] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wdata[1] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wstrb[3] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wstrb[2] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wstrb[1] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_pixel_tdata[15] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_pixel_tdata[14] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_pixel_tdata[13] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_pixel_tdata[12] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_pixel_tdata[11] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_pixel_tdata[10] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_pixel_tdata[9] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_pixel_tdata[8] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_pixel_tdata[7] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_pixel_tdata[6] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_pixel_tdata[5] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_pixel_tdata[4] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_pixel_tdata[3] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_pixel_tdata[2] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_pixel_tdata[1] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_pixel_tlast in module gan_serial_axi_wrapper is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+WARNING: [Synth 8-3917] design frame_sampler__GB12 has port P[3] driven by constant 0
+WARNING: [Synth 8-3917] design frame_sampler__GB12 has port P[2] driven by constant 0
+WARNING: [Synth 8-3917] design frame_sampler__GB12 has port P[1] driven by constant 0
+WARNING: [Synth 8-3917] design frame_sampler__GB12 has port P[0] driven by constant 0
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[47] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[63] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[79] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[95] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[111] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[127] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[143] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[159] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[175] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[191] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[207] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[223] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[239] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[255] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[271] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[287] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[303] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[319] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[335] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[351] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[367] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[383] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[399] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[415] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[431] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[447] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[463] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[479] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[495] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[511] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[527] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[543] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[559] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[575] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[591] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[607] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[623] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[639] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[655] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[671] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[687] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[703] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[719] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[735] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[751] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[767] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[783] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[799] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[815] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[831] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[847] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[863] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[879] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[895] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[911] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[927] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[943] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[959] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[975] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[991] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[1007] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[1023] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[1039] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[1055] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[1071] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\flat_output_flat_reg[1087] )
+INFO: [Common 17-14] Message 'Synth 8-3333' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[2032]' (FDE) to 'u_l3/flat_output_flat_reg[2033]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[2016]' (FDE) to 'u_l3/flat_output_flat_reg[2017]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[2000]' (FDE) to 'u_l3/flat_output_flat_reg[2001]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[1984]' (FDE) to 'u_l3/flat_output_flat_reg[1985]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[1968]' (FDE) to 'u_l3/flat_output_flat_reg[1969]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[1952]' (FDE) to 'u_l3/flat_output_flat_reg[1953]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[1936]' (FDE) to 'u_l3/flat_output_flat_reg[1937]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[1920]' (FDE) to 'u_l3/flat_output_flat_reg[1921]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[1904]' (FDE) to 'u_l3/flat_output_flat_reg[1905]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[1888]' (FDE) to 'u_l3/flat_output_flat_reg[1889]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[1872]' (FDE) to 'u_l3/flat_output_flat_reg[1873]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[1856]' (FDE) to 'u_l3/flat_output_flat_reg[1857]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[1840]' (FDE) to 'u_l3/flat_output_flat_reg[1841]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[1824]' (FDE) to 'u_l3/flat_output_flat_reg[1825]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[1808]' (FDE) to 'u_l3/flat_output_flat_reg[1809]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[1792]' (FDE) to 'u_l3/flat_output_flat_reg[1793]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[1776]' (FDE) to 'u_l3/flat_output_flat_reg[1777]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[1760]' (FDE) to 'u_l3/flat_output_flat_reg[1761]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[1744]' (FDE) to 'u_l3/flat_output_flat_reg[1745]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[1728]' (FDE) to 'u_l3/flat_output_flat_reg[1729]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[1712]' (FDE) to 'u_l3/flat_output_flat_reg[1713]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[1696]' (FDE) to 'u_l3/flat_output_flat_reg[1697]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[1680]' (FDE) to 'u_l3/flat_output_flat_reg[1681]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[1664]' (FDE) to 'u_l3/flat_output_flat_reg[1665]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[1648]' (FDE) to 'u_l3/flat_output_flat_reg[1649]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[1632]' (FDE) to 'u_l3/flat_output_flat_reg[1633]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[1616]' (FDE) to 'u_l3/flat_output_flat_reg[1617]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[1600]' (FDE) to 'u_l3/flat_output_flat_reg[1601]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[1584]' (FDE) to 'u_l3/flat_output_flat_reg[1585]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[1568]' (FDE) to 'u_l3/flat_output_flat_reg[1569]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[1552]' (FDE) to 'u_l3/flat_output_flat_reg[1553]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[1536]' (FDE) to 'u_l3/flat_output_flat_reg[1537]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[1520]' (FDE) to 'u_l3/flat_output_flat_reg[1521]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[1504]' (FDE) to 'u_l3/flat_output_flat_reg[1505]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[1488]' (FDE) to 'u_l3/flat_output_flat_reg[1489]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[1472]' (FDE) to 'u_l3/flat_output_flat_reg[1473]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[1456]' (FDE) to 'u_l3/flat_output_flat_reg[1457]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[1440]' (FDE) to 'u_l3/flat_output_flat_reg[1441]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[1424]' (FDE) to 'u_l3/flat_output_flat_reg[1425]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[1408]' (FDE) to 'u_l3/flat_output_flat_reg[1409]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[1392]' (FDE) to 'u_l3/flat_output_flat_reg[1393]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[1376]' (FDE) to 'u_l3/flat_output_flat_reg[1377]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[1360]' (FDE) to 'u_l3/flat_output_flat_reg[1361]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[1344]' (FDE) to 'u_l3/flat_output_flat_reg[1345]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[1328]' (FDE) to 'u_l3/flat_output_flat_reg[1329]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[1312]' (FDE) to 'u_l3/flat_output_flat_reg[1313]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[1296]' (FDE) to 'u_l3/flat_output_flat_reg[1297]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[1280]' (FDE) to 'u_l3/flat_output_flat_reg[1281]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[1264]' (FDE) to 'u_l3/flat_output_flat_reg[1265]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[1248]' (FDE) to 'u_l3/flat_output_flat_reg[1249]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[1232]' (FDE) to 'u_l3/flat_output_flat_reg[1233]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[1216]' (FDE) to 'u_l3/flat_output_flat_reg[1217]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[1200]' (FDE) to 'u_l3/flat_output_flat_reg[1201]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[1184]' (FDE) to 'u_l3/flat_output_flat_reg[1185]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[1168]' (FDE) to 'u_l3/flat_output_flat_reg[1169]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[1152]' (FDE) to 'u_l3/flat_output_flat_reg[1153]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[1136]' (FDE) to 'u_l3/flat_output_flat_reg[1137]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[1120]' (FDE) to 'u_l3/flat_output_flat_reg[1121]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[1104]' (FDE) to 'u_l3/flat_output_flat_reg[1105]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[1088]' (FDE) to 'u_l3/flat_output_flat_reg[1089]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[1072]' (FDE) to 'u_l3/flat_output_flat_reg[1073]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[1056]' (FDE) to 'u_l3/flat_output_flat_reg[1057]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[1040]' (FDE) to 'u_l3/flat_output_flat_reg[1041]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[1024]' (FDE) to 'u_l3/flat_output_flat_reg[1025]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[1008]' (FDE) to 'u_l3/flat_output_flat_reg[1009]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[992]' (FDE) to 'u_l3/flat_output_flat_reg[993]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[976]' (FDE) to 'u_l3/flat_output_flat_reg[977]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[960]' (FDE) to 'u_l3/flat_output_flat_reg[961]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[944]' (FDE) to 'u_l3/flat_output_flat_reg[945]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[928]' (FDE) to 'u_l3/flat_output_flat_reg[929]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[912]' (FDE) to 'u_l3/flat_output_flat_reg[913]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[896]' (FDE) to 'u_l3/flat_output_flat_reg[897]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[880]' (FDE) to 'u_l3/flat_output_flat_reg[881]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[864]' (FDE) to 'u_l3/flat_output_flat_reg[865]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[848]' (FDE) to 'u_l3/flat_output_flat_reg[849]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[832]' (FDE) to 'u_l3/flat_output_flat_reg[833]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[816]' (FDE) to 'u_l3/flat_output_flat_reg[817]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[800]' (FDE) to 'u_l3/flat_output_flat_reg[801]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[784]' (FDE) to 'u_l3/flat_output_flat_reg[785]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[768]' (FDE) to 'u_l3/flat_output_flat_reg[769]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[752]' (FDE) to 'u_l3/flat_output_flat_reg[753]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[736]' (FDE) to 'u_l3/flat_output_flat_reg[737]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[720]' (FDE) to 'u_l3/flat_output_flat_reg[721]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[704]' (FDE) to 'u_l3/flat_output_flat_reg[705]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[688]' (FDE) to 'u_l3/flat_output_flat_reg[689]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[672]' (FDE) to 'u_l3/flat_output_flat_reg[673]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[656]' (FDE) to 'u_l3/flat_output_flat_reg[657]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[640]' (FDE) to 'u_l3/flat_output_flat_reg[641]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[624]' (FDE) to 'u_l3/flat_output_flat_reg[625]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[608]' (FDE) to 'u_l3/flat_output_flat_reg[609]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[592]' (FDE) to 'u_l3/flat_output_flat_reg[593]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[576]' (FDE) to 'u_l3/flat_output_flat_reg[577]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[560]' (FDE) to 'u_l3/flat_output_flat_reg[561]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[544]' (FDE) to 'u_l3/flat_output_flat_reg[545]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[528]' (FDE) to 'u_l3/flat_output_flat_reg[529]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[512]' (FDE) to 'u_l3/flat_output_flat_reg[513]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[496]' (FDE) to 'u_l3/flat_output_flat_reg[497]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[480]' (FDE) to 'u_l3/flat_output_flat_reg[481]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[464]' (FDE) to 'u_l3/flat_output_flat_reg[465]'
+INFO: [Synth 8-3886] merging instance 'u_l3/flat_output_flat_reg[448]' (FDE) to 'u_l3/flat_output_flat_reg[449]'
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_l3/\flat_output_flat_reg[2047] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_l3/\flat_output_flat_reg[2031] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_l3/\flat_output_flat_reg[2015] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_l3/\flat_output_flat_reg[1999] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_l3/\flat_output_flat_reg[1983] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_l3/\flat_output_flat_reg[1967] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_l3/\flat_output_flat_reg[1951] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_l3/\flat_output_flat_reg[1935] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_l3/\flat_output_flat_reg[1919] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_l3/\flat_output_flat_reg[1903] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_l3/\flat_output_flat_reg[1887] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_l3/\flat_output_flat_reg[1871] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_l3/\flat_output_flat_reg[1855] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_l3/\flat_output_flat_reg[1839] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_l3/\flat_output_flat_reg[1823] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_l3/\flat_output_flat_reg[1807] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_l3/\flat_output_flat_reg[1791] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_l3/\flat_output_flat_reg[1775] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_l3/\flat_output_flat_reg[1759] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_l3/\flat_output_flat_reg[1743] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_l3/\flat_output_flat_reg[1727] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_l3/\flat_output_flat_reg[1711] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_l3/\flat_output_flat_reg[1695] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_l3/\flat_output_flat_reg[1679] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_l3/\flat_output_flat_reg[1663] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_l3/\flat_output_flat_reg[1647] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_l3/\flat_output_flat_reg[1631] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_l3/\flat_output_flat_reg[1615] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_l3/\flat_output_flat_reg[1599] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_l3/\flat_output_flat_reg[1583] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_l3/\flat_output_flat_reg[1567] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_l3/\flat_output_flat_reg[1551] )
+INFO: [Common 17-14] Message 'Synth 8-3333' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Common 17-14] Message 'Synth 8-3333' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+WARNING: [Synth 8-3917] design vector_upsampler__GB2 has port P[3] driven by constant 0
+WARNING: [Synth 8-3917] design vector_upsampler__GB2 has port P[2] driven by constant 0
+WARNING: [Synth 8-3917] design vector_upsampler__GB2 has port P[1] driven by constant 0
+WARNING: [Synth 8-3917] design vector_upsampler__GB2 has port P[0] driven by constant 0
+WARNING: [Synth 8-3917] design discriminator_pipeline__GB0 has port P[3] driven by constant 0
+WARNING: [Synth 8-3917] design discriminator_pipeline__GB0 has port P[2] driven by constant 0
+WARNING: [Synth 8-3917] design discriminator_pipeline__GB0 has port P[1] driven by constant 0
+WARNING: [Synth 8-3917] design discriminator_pipeline__GB0 has port P[0] driven by constant 0
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+WARNING: [Synth 8-3917] design gan_serial_top__GCB2 has port P[3] driven by constant 0
+WARNING: [Synth 8-3917] design gan_serial_top__GCB2 has port P[2] driven by constant 0
+WARNING: [Synth 8-3917] design gan_serial_top__GCB2 has port P[1] driven by constant 0
+WARNING: [Synth 8-3917] design gan_serial_top__GCB2 has port P[0] driven by constant 0
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'disc_real_is_real_reg/Q' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:475]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:475]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:475]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'disc_fake_is_real_reg/Q' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:474]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:474]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:474]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'disc_fake_score_reg[15]/Q' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:472]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:472]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:472]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'disc_fake_score_reg[14]/Q' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:472]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:472]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:472]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'disc_fake_score_reg[13]/Q' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:472]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:472]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:472]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'disc_fake_score_reg[12]/Q' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:472]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:472]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:472]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'disc_fake_score_reg[11]/Q' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:472]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:472]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:472]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'disc_fake_score_reg[10]/Q' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:472]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:472]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:472]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'disc_fake_score_reg[9]/Q' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:472]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:472]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:472]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'disc_fake_score_reg[8]/Q' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:472]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:472]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:472]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'disc_fake_score_reg[7]/Q' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:472]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:472]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:472]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'disc_fake_score_reg[6]/Q' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:472]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:472]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:472]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'disc_fake_score_reg[5]/Q' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:472]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:472]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:472]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'disc_fake_score_reg[4]/Q' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:472]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:472]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:472]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'disc_fake_score_reg[3]/Q' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:472]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:472]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:472]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'disc_fake_score_reg[2]/Q' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:472]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:472]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:472]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'disc_fake_score_reg[1]/Q' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:472]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:472]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:472]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'disc_fake_score_reg[0]/Q' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:472]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:472]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:472]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'disc_real_score_reg[15]/Q' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:473]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:473]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:473]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'disc_real_score_reg[14]/Q' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:473]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:473]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:473]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'disc_real_score_reg[13]/Q' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:473]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:473]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:473]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'disc_real_score_reg[12]/Q' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:473]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:473]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:473]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'disc_real_score_reg[11]/Q' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:473]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:473]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:473]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'disc_real_score_reg[10]/Q' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:473]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:473]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:473]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'disc_real_score_reg[9]/Q' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:473]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:473]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:473]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'disc_real_score_reg[8]/Q' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:473]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:473]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:473]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'disc_real_score_reg[7]/Q' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:473]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:473]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:473]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'disc_real_score_reg[6]/Q' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:473]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:473]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:473]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'disc_real_score_reg[5]/Q' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:473]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:473]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:473]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'disc_real_score_reg[4]/Q' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:473]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:473]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:473]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'disc_real_score_reg[3]/Q' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:473]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:473]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:473]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'disc_real_score_reg[2]/Q' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:473]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:473]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:473]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'disc_real_score_reg[1]/Q' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:473]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:473]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:473]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'disc_real_score_reg[0]/Q' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:473]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:473]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:473]
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:04:32 ; elapsed = 00:04:59 . Memory (MB): peak = 1947.867 ; gain = 1441.906
+---------------------------------------------------------------------------------
+ Sort Area is discriminator_pipeline__GB2 p_0_out_0 : 0 0 : 1937 1937 : Used 1 time 0
+ Sort Area is discriminator_pipeline__GB2 p_0_out_10 : 0 0 : 1937 1937 : Used 1 time 0
+ Sort Area is discriminator_pipeline__GB2 p_0_out_11 : 0 0 : 1937 1937 : Used 1 time 0
+ Sort Area is discriminator_pipeline__GB2 p_0_out_12 : 0 0 : 1937 1937 : Used 1 time 0
+ Sort Area is discriminator_pipeline__GB2 p_0_out_13 : 0 0 : 1937 1937 : Used 1 time 0
+ Sort Area is discriminator_pipeline__GB2 p_0_out_14 : 0 0 : 1937 1937 : Used 1 time 0
+ Sort Area is discriminator_pipeline__GB2 p_0_out_15 : 0 0 : 1937 1937 : Used 1 time 0
+ Sort Area is discriminator_pipeline__GB2 p_0_out_16 : 0 0 : 1937 1937 : Used 1 time 0
+ Sort Area is discriminator_pipeline__GB2 p_0_out_17 : 0 0 : 1937 1937 : Used 1 time 0
+ Sort Area is discriminator_pipeline__GB2 p_0_out_18 : 0 0 : 1937 1937 : Used 1 time 0
+ Sort Area is discriminator_pipeline__GB2 p_0_out_19 : 0 0 : 1937 1937 : Used 1 time 0
+ Sort Area is discriminator_pipeline__GB2 p_0_out_1a : 0 0 : 1937 1937 : Used 1 time 0
+ Sort Area is discriminator_pipeline__GB2 p_0_out_1b : 0 0 : 1937 1937 : Used 1 time 0
+ Sort Area is discriminator_pipeline__GB2 p_0_out_1c : 0 0 : 1937 1937 : Used 1 time 0
+ Sort Area is discriminator_pipeline__GB2 p_0_out_1d : 0 0 : 1937 1937 : Used 1 time 0
+ Sort Area is discriminator_pipeline__GB2 p_0_out_1e : 0 0 : 1937 1937 : Used 1 time 0
+ Sort Area is discriminator_pipeline__GB2 p_0_out_1f : 0 0 : 1937 1937 : Used 1 time 0
+ Sort Area is discriminator_pipeline__GB2 p_0_out_2 : 0 0 : 1937 1937 : Used 1 time 0
+ Sort Area is discriminator_pipeline__GB2 p_0_out_20 : 0 0 : 1937 1937 : Used 1 time 0
+ Sort Area is discriminator_pipeline__GB2 p_0_out_3 : 0 0 : 1937 1937 : Used 1 time 0
+ Sort Area is discriminator_pipeline__GB2 p_0_out_4 : 0 0 : 1937 1937 : Used 1 time 0
+ Sort Area is discriminator_pipeline__GB2 p_0_out_5 : 0 0 : 1937 1937 : Used 1 time 0
+ Sort Area is discriminator_pipeline__GB2 p_0_out_6 : 0 0 : 1937 1937 : Used 1 time 0
+ Sort Area is discriminator_pipeline__GB2 p_0_out_7 : 0 0 : 1937 1937 : Used 1 time 0
+ Sort Area is discriminator_pipeline__GB2 p_0_out_8 : 0 0 : 1937 1937 : Used 1 time 0
+ Sort Area is discriminator_pipeline__GB2 p_0_out_9 : 0 0 : 1937 1937 : Used 1 time 0
+ Sort Area is discriminator_pipeline__GB2 p_0_out_a : 0 0 : 1937 1937 : Used 1 time 0
+ Sort Area is discriminator_pipeline__GB2 p_0_out_b : 0 0 : 1937 1937 : Used 1 time 0
+ Sort Area is discriminator_pipeline__GB2 p_0_out_c : 0 0 : 1937 1937 : Used 1 time 0
+ Sort Area is discriminator_pipeline__GB2 p_0_out_d : 0 0 : 1937 1937 : Used 1 time 0
+ Sort Area is discriminator_pipeline__GB2 p_0_out_e : 0 0 : 1937 1937 : Used 1 time 0
+ Sort Area is discriminator_pipeline__GB2 p_0_out_f : 0 0 : 1937 1937 : Used 1 time 0
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+ROM: Preliminary Mapping Report
++-----------------+---------------+---------------+----------------+
+|Module Name      | RTL Object    | Depth x Width | Implemented As | 
++-----------------+---------------+---------------+----------------+
+|vector_expander  | src_index_lut | 256x7         | LUT            | 
+|vector_upsampler | src_index_lut | 1024x7        | LUT            | 
++-----------------+---------------+---------------+----------------+
+
+
+DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
++--------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name   | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++--------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|pipelined_mac | A*B         | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|pipelined_mac | A*B         | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|pipelined_mac | A*B         | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|pipelined_mac | A*B         | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|pipelined_mac | A*B         | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|pipelined_mac | A*B         | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|pipelined_mac | A*B         | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|pipelined_mac | A*B         | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|pipelined_mac | A*B         | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|pipelined_mac | A*B         | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|pipelined_mac | A*B         | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|pipelined_mac | A*B         | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|pipelined_mac | A*B         | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|pipelined_mac | A*B         | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|pipelined_mac | A*B         | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|pipelined_mac | A*B         | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|pipelined_mac | A*B         | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|pipelined_mac | A*B         | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|pipelined_mac | A*B         | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|pipelined_mac | A*B         | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|pipelined_mac | A*B         | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|pipelined_mac | A*B         | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|pipelined_mac | A*B         | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|pipelined_mac | A*B         | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|pipelined_mac | A*B         | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|pipelined_mac | A*B         | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|pipelined_mac | A*B         | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|pipelined_mac | A*B         | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|pipelined_mac | A*B         | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|pipelined_mac | A*B         | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|pipelined_mac | A*B         | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|pipelined_mac | A*B         | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++--------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:05:28 ; elapsed = 00:05:59 . Memory (MB): peak = 1979.504 ; gain = 1473.543
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:05:38 ; elapsed = 00:06:10 . Memory (MB): peak = 1986.652 ; gain = 1480.691
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:05:50 ; elapsed = 00:06:23 . Memory (MB): peak = 2047.945 ; gain = 1541.984
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:05:50 ; elapsed = 00:06:23 . Memory (MB): peak = 2047.945 ; gain = 1541.984
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:05:52 ; elapsed = 00:06:25 . Memory (MB): peak = 2047.945 ; gain = 1541.984
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:05:52 ; elapsed = 00:06:26 . Memory (MB): peak = 2047.945 ; gain = 1541.984
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:06:01 ; elapsed = 00:06:34 . Memory (MB): peak = 2047.945 ; gain = 1541.984
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:06:01 ; elapsed = 00:06:34 . Memory (MB): peak = 2047.945 ; gain = 1541.984
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |    54|
+|3     |LUT1   |    37|
+|4     |LUT2   |  1992|
+|5     |LUT3   |   260|
+|6     |LUT4   |  5099|
+|7     |LUT5   |   972|
+|8     |LUT6   |  9292|
+|9     |MUXF7  |  1027|
+|10    |MUXF8  |   490|
+|11    |FDCE   | 16633|
+|12    |FDPE   |     7|
+|13    |FDRE   |  7476|
+|14    |IBUF   |    19|
+|15    |OBUF   |    60|
++------+-------+------+
+
+Report Instance Areas: 
++------+-----------------------+--------------------------+------+
+|      |Instance               |Module                    |Cells |
++------+-----------------------+--------------------------+------+
+|1     |top                    |                          | 43419|
+|2     |  u_gan_serial_top     |gan_serial_top            | 32337|
+|3     |    u_discriminator    |discriminator_pipeline    |   207|
+|4     |      u_l1             |layer1_discriminator      |    45|
+|5     |      u_l2             |layer2_discriminator      |    38|
+|6     |      u_l3             |layer3_discriminator      |     9|
+|7     |        mac_unit       |pipelined_mac             |     8|
+|8     |      u_sample_fifo    |sync_fifo__parameterized2 |    57|
+|9     |      u_score_fifo     |sync_fifo__parameterized3 |    20|
+|10    |    u_frame_sampler    |frame_sampler             |    87|
+|11    |    u_generator        |generator_pipeline        |   281|
+|12    |      u_feature_fifo   |sync_fifo__parameterized1 |    51|
+|13    |      u_l1             |layer1_generator          |    43|
+|14    |      u_l2             |layer2_generator          |    47|
+|15    |      u_l3             |layer3_generator          |    46|
+|16    |      u_seed_fifo      |sync_fifo__parameterized0 |    46|
+|17    |    u_loader           |pixel_serial_loader       |   177|
+|18    |      u_pixel_fifo     |sync_fifo                 |    61|
+|19    |    u_seed_bank        |seed_lfsr_bank            |    28|
+|20    |    u_vector_expander  |vector_expander           |    28|
+|21    |    u_vector_sigmoid   |vector_sigmoid            |  1518|
+|22    |    u_vector_upsampler |vector_upsampler          | 22532|
++------+-----------------------+--------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:06:01 ; elapsed = 00:06:35 . Memory (MB): peak = 2047.945 ; gain = 1541.984
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 117 critical warnings and 509 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:06:01 ; elapsed = 00:06:35 . Memory (MB): peak = 2047.945 ; gain = 1541.984
+Synthesis Optimization Complete : Time (s): cpu = 00:06:01 ; elapsed = 00:06:35 . Memory (MB): peak = 2047.945 ; gain = 1541.984
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.467 . Memory (MB): peak = 2077.438 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 1571 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 2235.297 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: 6b116f79
+INFO: [Common 17-83] Releasing license: Synthesis
+281 Infos, 272 Warnings, 117 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:06:09 ; elapsed = 00:06:45 . Memory (MB): peak = 2235.297 ; gain = 1744.145
+INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.053 . Memory (MB): peak = 2235.297 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'D:/GANMIND/GANMIND/vivado_all/ganmind_all.runs/synth_1/gan_serial_axi_wrapper.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2235.297 ; gain = 0.000
+INFO: [Vivado 12-24828] Executing command : report_utilization -file gan_serial_axi_wrapper_utilization_synth.rpt -pb gan_serial_axi_wrapper_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sat Dec  6 14:39:45 2025...

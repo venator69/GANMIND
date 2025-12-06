@@ -1,5 +1,8 @@
 `timescale 1ns / 1ps
 
+`ifndef DISCRIMINATOR_PIPELINE_V
+`define DISCRIMINATOR_PIPELINE_V
+
 // -----------------------------------------------------------------------------
 // Guarded local includes so synthesizing this file in isolation automatically
 // pulls in its dependencies without creating duplicate-definition conflicts
@@ -255,3 +258,5 @@ module discriminator_pipeline (
     end
 
 endmodule
+
+`endif // DISCRIMINATOR_PIPELINE_V
