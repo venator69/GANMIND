@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
-| Date         : Sat Dec  6 14:40:53 2025
+| Date         : Tue Dec  9 19:54:36 2025
 | Host         : DESKTOP-3S5LN80 running 64-bit major release  (build 9200)
 | Command      : report_drc -file gan_serial_axi_wrapper_drc_opted.rpt -pb gan_serial_axi_wrapper_drc_opted.pb -rpx gan_serial_axi_wrapper_drc_opted.rpx
 | Design       : gan_serial_axi_wrapper
@@ -24,33 +24,439 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max checks: <unlimited>
-             Checks found: 3
-+--------+------------------+----------------------------+--------+
-| Rule   | Severity         | Description                | Checks |
-+--------+------------------+----------------------------+--------+
-| NSTD-1 | Critical Warning | Unspecified I/O Standard   | 1      |
-| UCIO-1 | Critical Warning | Unconstrained Logical Port | 1      |
-| ZPS7-1 | Warning          | PS7 block required         | 1      |
-+--------+------------------+----------------------------+--------+
+             Checks found: 83
++-----------+------------------+-----------------------------------+--------+
+| Rule      | Severity         | Description                       | Checks |
++-----------+------------------+-----------------------------------+--------+
+| REQP-1962 | Error            | Cascade RAMB36E1 ADDR15 pin check | 16     |
+| UTLZ-1    | Error            | Resource utilization              | 1      |
+| NSTD-1    | Critical Warning | Unspecified I/O Standard          | 1      |
+| UCIO-1    | Critical Warning | Unconstrained Logical Port        | 1      |
+| CHECK-3   | Warning          | Report rule limit reached         | 1      |
+| DPOP-1    | Warning          | PREG Output pipelining            | 5      |
+| DPOP-2    | Warning          | MREG Output pipelining            | 37     |
+| REQP-1840 | Warning          | RAMB18 async control check        | 20     |
+| ZPS7-1    | Warning          | PS7 block required                | 1      |
++-----------+------------------+-----------------------------------+--------+
 
 2. REPORT DETAILS
 -----------------
+REQP-1962#1 Error
+Cascade RAMB36E1 ADDR15 pin check  
+The RAMB36E1 cell u_gan_serial_top/u_generator/u_l2/weight_addr_reg_rep_1_0 is cascaded with another RAMB36E1 u_gan_serial_top/u_generator/u_l2/weight_addr_reg_rep_0_0, however the u_gan_serial_top/u_generator/u_l2/weight_addr_reg_rep_1_0/ADDRARDADDR[15] pin is not connected to the same signal or same type of tie-off as the u_gan_serial_top/u_generator/u_l2/weight_addr_reg_rep_0_0/ADDRARDADDR[15] pin of the other RAMB.
+Related violations: <none>
+
+REQP-1962#2 Error
+Cascade RAMB36E1 ADDR15 pin check  
+The RAMB36E1 cell u_gan_serial_top/u_generator/u_l2/weight_addr_reg_rep_1_1 is cascaded with another RAMB36E1 u_gan_serial_top/u_generator/u_l2/weight_addr_reg_rep_0_1, however the u_gan_serial_top/u_generator/u_l2/weight_addr_reg_rep_1_1/ADDRARDADDR[15] pin is not connected to the same signal or same type of tie-off as the u_gan_serial_top/u_generator/u_l2/weight_addr_reg_rep_0_1/ADDRARDADDR[15] pin of the other RAMB.
+Related violations: <none>
+
+REQP-1962#3 Error
+Cascade RAMB36E1 ADDR15 pin check  
+The RAMB36E1 cell u_gan_serial_top/u_generator/u_l2/weight_addr_reg_rep_1_10 is cascaded with another RAMB36E1 u_gan_serial_top/u_generator/u_l2/weight_addr_reg_rep_0_10, however the u_gan_serial_top/u_generator/u_l2/weight_addr_reg_rep_1_10/ADDRARDADDR[15] pin is not connected to the same signal or same type of tie-off as the u_gan_serial_top/u_generator/u_l2/weight_addr_reg_rep_0_10/ADDRARDADDR[15] pin of the other RAMB.
+Related violations: <none>
+
+REQP-1962#4 Error
+Cascade RAMB36E1 ADDR15 pin check  
+The RAMB36E1 cell u_gan_serial_top/u_generator/u_l2/weight_addr_reg_rep_1_11 is cascaded with another RAMB36E1 u_gan_serial_top/u_generator/u_l2/weight_addr_reg_rep_0_11, however the u_gan_serial_top/u_generator/u_l2/weight_addr_reg_rep_1_11/ADDRARDADDR[15] pin is not connected to the same signal or same type of tie-off as the u_gan_serial_top/u_generator/u_l2/weight_addr_reg_rep_0_11/ADDRARDADDR[15] pin of the other RAMB.
+Related violations: <none>
+
+REQP-1962#5 Error
+Cascade RAMB36E1 ADDR15 pin check  
+The RAMB36E1 cell u_gan_serial_top/u_generator/u_l2/weight_addr_reg_rep_1_12 is cascaded with another RAMB36E1 u_gan_serial_top/u_generator/u_l2/weight_addr_reg_rep_0_12, however the u_gan_serial_top/u_generator/u_l2/weight_addr_reg_rep_1_12/ADDRARDADDR[15] pin is not connected to the same signal or same type of tie-off as the u_gan_serial_top/u_generator/u_l2/weight_addr_reg_rep_0_12/ADDRARDADDR[15] pin of the other RAMB.
+Related violations: <none>
+
+REQP-1962#6 Error
+Cascade RAMB36E1 ADDR15 pin check  
+The RAMB36E1 cell u_gan_serial_top/u_generator/u_l2/weight_addr_reg_rep_1_13 is cascaded with another RAMB36E1 u_gan_serial_top/u_generator/u_l2/weight_addr_reg_rep_0_13, however the u_gan_serial_top/u_generator/u_l2/weight_addr_reg_rep_1_13/ADDRARDADDR[15] pin is not connected to the same signal or same type of tie-off as the u_gan_serial_top/u_generator/u_l2/weight_addr_reg_rep_0_13/ADDRARDADDR[15] pin of the other RAMB.
+Related violations: <none>
+
+REQP-1962#7 Error
+Cascade RAMB36E1 ADDR15 pin check  
+The RAMB36E1 cell u_gan_serial_top/u_generator/u_l2/weight_addr_reg_rep_1_14 is cascaded with another RAMB36E1 u_gan_serial_top/u_generator/u_l2/weight_addr_reg_rep_0_14, however the u_gan_serial_top/u_generator/u_l2/weight_addr_reg_rep_1_14/ADDRARDADDR[15] pin is not connected to the same signal or same type of tie-off as the u_gan_serial_top/u_generator/u_l2/weight_addr_reg_rep_0_14/ADDRARDADDR[15] pin of the other RAMB.
+Related violations: <none>
+
+REQP-1962#8 Error
+Cascade RAMB36E1 ADDR15 pin check  
+The RAMB36E1 cell u_gan_serial_top/u_generator/u_l2/weight_addr_reg_rep_1_15 is cascaded with another RAMB36E1 u_gan_serial_top/u_generator/u_l2/weight_addr_reg_rep_0_15, however the u_gan_serial_top/u_generator/u_l2/weight_addr_reg_rep_1_15/ADDRARDADDR[15] pin is not connected to the same signal or same type of tie-off as the u_gan_serial_top/u_generator/u_l2/weight_addr_reg_rep_0_15/ADDRARDADDR[15] pin of the other RAMB.
+Related violations: <none>
+
+REQP-1962#9 Error
+Cascade RAMB36E1 ADDR15 pin check  
+The RAMB36E1 cell u_gan_serial_top/u_generator/u_l2/weight_addr_reg_rep_1_2 is cascaded with another RAMB36E1 u_gan_serial_top/u_generator/u_l2/weight_addr_reg_rep_0_2, however the u_gan_serial_top/u_generator/u_l2/weight_addr_reg_rep_1_2/ADDRARDADDR[15] pin is not connected to the same signal or same type of tie-off as the u_gan_serial_top/u_generator/u_l2/weight_addr_reg_rep_0_2/ADDRARDADDR[15] pin of the other RAMB.
+Related violations: <none>
+
+REQP-1962#10 Error
+Cascade RAMB36E1 ADDR15 pin check  
+The RAMB36E1 cell u_gan_serial_top/u_generator/u_l2/weight_addr_reg_rep_1_3 is cascaded with another RAMB36E1 u_gan_serial_top/u_generator/u_l2/weight_addr_reg_rep_0_3, however the u_gan_serial_top/u_generator/u_l2/weight_addr_reg_rep_1_3/ADDRARDADDR[15] pin is not connected to the same signal or same type of tie-off as the u_gan_serial_top/u_generator/u_l2/weight_addr_reg_rep_0_3/ADDRARDADDR[15] pin of the other RAMB.
+Related violations: <none>
+
+REQP-1962#11 Error
+Cascade RAMB36E1 ADDR15 pin check  
+The RAMB36E1 cell u_gan_serial_top/u_generator/u_l2/weight_addr_reg_rep_1_4 is cascaded with another RAMB36E1 u_gan_serial_top/u_generator/u_l2/weight_addr_reg_rep_0_4, however the u_gan_serial_top/u_generator/u_l2/weight_addr_reg_rep_1_4/ADDRARDADDR[15] pin is not connected to the same signal or same type of tie-off as the u_gan_serial_top/u_generator/u_l2/weight_addr_reg_rep_0_4/ADDRARDADDR[15] pin of the other RAMB.
+Related violations: <none>
+
+REQP-1962#12 Error
+Cascade RAMB36E1 ADDR15 pin check  
+The RAMB36E1 cell u_gan_serial_top/u_generator/u_l2/weight_addr_reg_rep_1_5 is cascaded with another RAMB36E1 u_gan_serial_top/u_generator/u_l2/weight_addr_reg_rep_0_5, however the u_gan_serial_top/u_generator/u_l2/weight_addr_reg_rep_1_5/ADDRARDADDR[15] pin is not connected to the same signal or same type of tie-off as the u_gan_serial_top/u_generator/u_l2/weight_addr_reg_rep_0_5/ADDRARDADDR[15] pin of the other RAMB.
+Related violations: <none>
+
+REQP-1962#13 Error
+Cascade RAMB36E1 ADDR15 pin check  
+The RAMB36E1 cell u_gan_serial_top/u_generator/u_l2/weight_addr_reg_rep_1_6 is cascaded with another RAMB36E1 u_gan_serial_top/u_generator/u_l2/weight_addr_reg_rep_0_6, however the u_gan_serial_top/u_generator/u_l2/weight_addr_reg_rep_1_6/ADDRARDADDR[15] pin is not connected to the same signal or same type of tie-off as the u_gan_serial_top/u_generator/u_l2/weight_addr_reg_rep_0_6/ADDRARDADDR[15] pin of the other RAMB.
+Related violations: <none>
+
+REQP-1962#14 Error
+Cascade RAMB36E1 ADDR15 pin check  
+The RAMB36E1 cell u_gan_serial_top/u_generator/u_l2/weight_addr_reg_rep_1_7 is cascaded with another RAMB36E1 u_gan_serial_top/u_generator/u_l2/weight_addr_reg_rep_0_7, however the u_gan_serial_top/u_generator/u_l2/weight_addr_reg_rep_1_7/ADDRARDADDR[15] pin is not connected to the same signal or same type of tie-off as the u_gan_serial_top/u_generator/u_l2/weight_addr_reg_rep_0_7/ADDRARDADDR[15] pin of the other RAMB.
+Related violations: <none>
+
+REQP-1962#15 Error
+Cascade RAMB36E1 ADDR15 pin check  
+The RAMB36E1 cell u_gan_serial_top/u_generator/u_l2/weight_addr_reg_rep_1_8 is cascaded with another RAMB36E1 u_gan_serial_top/u_generator/u_l2/weight_addr_reg_rep_0_8, however the u_gan_serial_top/u_generator/u_l2/weight_addr_reg_rep_1_8/ADDRARDADDR[15] pin is not connected to the same signal or same type of tie-off as the u_gan_serial_top/u_generator/u_l2/weight_addr_reg_rep_0_8/ADDRARDADDR[15] pin of the other RAMB.
+Related violations: <none>
+
+REQP-1962#16 Error
+Cascade RAMB36E1 ADDR15 pin check  
+The RAMB36E1 cell u_gan_serial_top/u_generator/u_l2/weight_addr_reg_rep_1_9 is cascaded with another RAMB36E1 u_gan_serial_top/u_generator/u_l2/weight_addr_reg_rep_0_9, however the u_gan_serial_top/u_generator/u_l2/weight_addr_reg_rep_1_9/ADDRARDADDR[15] pin is not connected to the same signal or same type of tie-off as the u_gan_serial_top/u_generator/u_l2/weight_addr_reg_rep_0_9/ADDRARDADDR[15] pin of the other RAMB.
+Related violations: <none>
+
+UTLZ-1#1 Error
+Resource utilization  - PBlock:ROOT
+LUT as Logic over-utilized in Top Level Design (This design requires more LUT as Logic cells than are available in the target device. This design requires 74336 of such cell types but only 53200 compatible sites are available in the target device. Please analyze your synthesis results and constraints to ensure the design is mapped to Xilinx primitives as expected. If so, please consider targeting a larger device. Please set tcl parameter "drc.disableLUTOverUtilError" to 1 to change this error to warning.)ROOT
+Related violations: <none>
+
 NSTD-1#1 Critical Warning
 Unspecified I/O Standard  
-79 out of 79 logical ports use I/O standard (IOSTANDARD) value 'DEFAULT', instead of a user assigned specific value. This may cause I/O contention or incompatibility with the board power or connectivity affecting performance, signal integrity or in extreme cases cause damage to the device or the components to which it is connected. To correct this violation, specify all I/O standards. This design will fail to generate a bitstream unless all logical ports have a user specified I/O standard value defined. To allow bitstream creation with unspecified I/O standard values (not recommended), use this command: set_property SEVERITY {Warning} [get_drc_checks NSTD-1].  NOTE: When using the Vivado Runs infrastructure (e.g. launch_runs Tcl command), add this command to a .tcl file and add that file as a pre-hook for write_bitstream step for the implementation run. Problem ports: axi_aclk, m_axis_frame_tdata[15:0], s_axi_araddr[2], s_axi_araddr[3],
+96 out of 96 logical ports use I/O standard (IOSTANDARD) value 'DEFAULT', instead of a user assigned specific value. This may cause I/O contention or incompatibility with the board power or connectivity affecting performance, signal integrity or in extreme cases cause damage to the device or the components to which it is connected. To correct this violation, specify all I/O standards. This design will fail to generate a bitstream unless all logical ports have a user specified I/O standard value defined. To allow bitstream creation with unspecified I/O standard values (not recommended), use this command: set_property SEVERITY {Warning} [get_drc_checks NSTD-1].  NOTE: When using the Vivado Runs infrastructure (e.g. launch_runs Tcl command), add this command to a .tcl file and add that file as a pre-hook for write_bitstream step for the implementation run. Problem ports: m_axis_frame_tdata[15:0], s_axi_araddr[2], s_axi_araddr[3],
 s_axi_araddr[4], s_axi_araddr[5], s_axi_awaddr[2], s_axi_awaddr[3],
 s_axi_awaddr[4], s_axi_awaddr[5], s_axi_bresp[1:0], s_axi_rdata[31:0],
-s_axi_rresp[1:0], s_axi_wdata[0], s_axi_wstrb[0]
- (the first 15 of 31 listed).
+s_axi_rresp[1:0], s_axi_wdata[0], s_axi_wstrb[0], s_axis_pixel_tdata[15:0]
+ (the first 15 of 33 listed).
 Related violations: <none>
 
 UCIO-1#1 Critical Warning
 Unconstrained Logical Port  
-79 out of 79 logical ports have no user assigned specific location constraint (LOC). This may cause I/O contention or incompatibility with the board power or connectivity affecting performance, signal integrity or in extreme cases cause damage to the device or the components to which it is connected. To correct this violation, specify all pin locations. This design will fail to generate a bitstream unless all logical ports have a user specified site LOC constraint defined.  To allow bitstream creation with unspecified pin locations (not recommended), use this command: set_property SEVERITY {Warning} [get_drc_checks UCIO-1].  NOTE: When using the Vivado Runs infrastructure (e.g. launch_runs Tcl command), add this command to a .tcl file and add that file as a pre-hook for write_bitstream step for the implementation run.  Problem ports: axi_aclk, m_axis_frame_tdata[15:0], s_axi_araddr[2], s_axi_araddr[3],
+96 out of 96 logical ports have no user assigned specific location constraint (LOC). This may cause I/O contention or incompatibility with the board power or connectivity affecting performance, signal integrity or in extreme cases cause damage to the device or the components to which it is connected. To correct this violation, specify all pin locations. This design will fail to generate a bitstream unless all logical ports have a user specified site LOC constraint defined.  To allow bitstream creation with unspecified pin locations (not recommended), use this command: set_property SEVERITY {Warning} [get_drc_checks UCIO-1].  NOTE: When using the Vivado Runs infrastructure (e.g. launch_runs Tcl command), add this command to a .tcl file and add that file as a pre-hook for write_bitstream step for the implementation run.  Problem ports: m_axis_frame_tdata[15:0], s_axi_araddr[2], s_axi_araddr[3],
 s_axi_araddr[4], s_axi_araddr[5], s_axi_awaddr[2], s_axi_awaddr[3],
 s_axi_awaddr[4], s_axi_awaddr[5], s_axi_bresp[1:0], s_axi_rdata[31:0],
-s_axi_rresp[1:0], s_axi_wdata[0], s_axi_wstrb[0]
- (the first 15 of 31 listed).
+s_axi_rresp[1:0], s_axi_wdata[0], s_axi_wstrb[0], s_axis_pixel_tdata[15:0]
+ (the first 15 of 33 listed).
+Related violations: <none>
+
+CHECK-3#1 Warning
+Report rule limit reached  
+REQP-1840 rule limit reached: 20 violations have been found.
+Related violations: <none>
+
+DPOP-1#1 Warning
+PREG Output pipelining  
+DSP u_gan_serial_top/u_discriminator/u_l1/accumulator0 output u_gan_serial_top/u_discriminator/u_l1/accumulator0/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#2 Warning
+PREG Output pipelining  
+DSP u_gan_serial_top/u_discriminator/u_l2/accumulator0 output u_gan_serial_top/u_discriminator/u_l2/accumulator0/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#3 Warning
+PREG Output pipelining  
+DSP u_gan_serial_top/u_generator/u_l1/accumulator0 output u_gan_serial_top/u_generator/u_l1/accumulator0/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#4 Warning
+PREG Output pipelining  
+DSP u_gan_serial_top/u_generator/u_l2/accumulator0 output u_gan_serial_top/u_generator/u_l2/accumulator0/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#5 Warning
+PREG Output pipelining  
+DSP u_gan_serial_top/u_generator/u_l3/accumulator0 output u_gan_serial_top/u_generator/u_l3/accumulator0/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-2#1 Warning
+MREG Output pipelining  
+DSP u_gan_serial_top/u_discriminator/p_0_out multiplier stage u_gan_serial_top/u_discriminator/p_0_out/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#2 Warning
+MREG Output pipelining  
+DSP u_gan_serial_top/u_discriminator/p_0_out__0 multiplier stage u_gan_serial_top/u_discriminator/p_0_out__0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#3 Warning
+MREG Output pipelining  
+DSP u_gan_serial_top/u_discriminator/p_0_out__1 multiplier stage u_gan_serial_top/u_discriminator/p_0_out__1/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#4 Warning
+MREG Output pipelining  
+DSP u_gan_serial_top/u_discriminator/p_0_out__10 multiplier stage u_gan_serial_top/u_discriminator/p_0_out__10/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#5 Warning
+MREG Output pipelining  
+DSP u_gan_serial_top/u_discriminator/p_0_out__11 multiplier stage u_gan_serial_top/u_discriminator/p_0_out__11/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#6 Warning
+MREG Output pipelining  
+DSP u_gan_serial_top/u_discriminator/p_0_out__12 multiplier stage u_gan_serial_top/u_discriminator/p_0_out__12/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#7 Warning
+MREG Output pipelining  
+DSP u_gan_serial_top/u_discriminator/p_0_out__13 multiplier stage u_gan_serial_top/u_discriminator/p_0_out__13/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#8 Warning
+MREG Output pipelining  
+DSP u_gan_serial_top/u_discriminator/p_0_out__14 multiplier stage u_gan_serial_top/u_discriminator/p_0_out__14/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#9 Warning
+MREG Output pipelining  
+DSP u_gan_serial_top/u_discriminator/p_0_out__15 multiplier stage u_gan_serial_top/u_discriminator/p_0_out__15/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#10 Warning
+MREG Output pipelining  
+DSP u_gan_serial_top/u_discriminator/p_0_out__16 multiplier stage u_gan_serial_top/u_discriminator/p_0_out__16/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#11 Warning
+MREG Output pipelining  
+DSP u_gan_serial_top/u_discriminator/p_0_out__17 multiplier stage u_gan_serial_top/u_discriminator/p_0_out__17/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#12 Warning
+MREG Output pipelining  
+DSP u_gan_serial_top/u_discriminator/p_0_out__18 multiplier stage u_gan_serial_top/u_discriminator/p_0_out__18/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#13 Warning
+MREG Output pipelining  
+DSP u_gan_serial_top/u_discriminator/p_0_out__19 multiplier stage u_gan_serial_top/u_discriminator/p_0_out__19/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#14 Warning
+MREG Output pipelining  
+DSP u_gan_serial_top/u_discriminator/p_0_out__2 multiplier stage u_gan_serial_top/u_discriminator/p_0_out__2/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#15 Warning
+MREG Output pipelining  
+DSP u_gan_serial_top/u_discriminator/p_0_out__20 multiplier stage u_gan_serial_top/u_discriminator/p_0_out__20/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#16 Warning
+MREG Output pipelining  
+DSP u_gan_serial_top/u_discriminator/p_0_out__21 multiplier stage u_gan_serial_top/u_discriminator/p_0_out__21/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#17 Warning
+MREG Output pipelining  
+DSP u_gan_serial_top/u_discriminator/p_0_out__22 multiplier stage u_gan_serial_top/u_discriminator/p_0_out__22/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#18 Warning
+MREG Output pipelining  
+DSP u_gan_serial_top/u_discriminator/p_0_out__23 multiplier stage u_gan_serial_top/u_discriminator/p_0_out__23/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#19 Warning
+MREG Output pipelining  
+DSP u_gan_serial_top/u_discriminator/p_0_out__24 multiplier stage u_gan_serial_top/u_discriminator/p_0_out__24/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#20 Warning
+MREG Output pipelining  
+DSP u_gan_serial_top/u_discriminator/p_0_out__25 multiplier stage u_gan_serial_top/u_discriminator/p_0_out__25/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#21 Warning
+MREG Output pipelining  
+DSP u_gan_serial_top/u_discriminator/p_0_out__26 multiplier stage u_gan_serial_top/u_discriminator/p_0_out__26/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#22 Warning
+MREG Output pipelining  
+DSP u_gan_serial_top/u_discriminator/p_0_out__27 multiplier stage u_gan_serial_top/u_discriminator/p_0_out__27/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#23 Warning
+MREG Output pipelining  
+DSP u_gan_serial_top/u_discriminator/p_0_out__28 multiplier stage u_gan_serial_top/u_discriminator/p_0_out__28/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#24 Warning
+MREG Output pipelining  
+DSP u_gan_serial_top/u_discriminator/p_0_out__29 multiplier stage u_gan_serial_top/u_discriminator/p_0_out__29/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#25 Warning
+MREG Output pipelining  
+DSP u_gan_serial_top/u_discriminator/p_0_out__3 multiplier stage u_gan_serial_top/u_discriminator/p_0_out__3/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#26 Warning
+MREG Output pipelining  
+DSP u_gan_serial_top/u_discriminator/p_0_out__30 multiplier stage u_gan_serial_top/u_discriminator/p_0_out__30/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#27 Warning
+MREG Output pipelining  
+DSP u_gan_serial_top/u_discriminator/p_0_out__4 multiplier stage u_gan_serial_top/u_discriminator/p_0_out__4/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#28 Warning
+MREG Output pipelining  
+DSP u_gan_serial_top/u_discriminator/p_0_out__5 multiplier stage u_gan_serial_top/u_discriminator/p_0_out__5/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#29 Warning
+MREG Output pipelining  
+DSP u_gan_serial_top/u_discriminator/p_0_out__6 multiplier stage u_gan_serial_top/u_discriminator/p_0_out__6/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#30 Warning
+MREG Output pipelining  
+DSP u_gan_serial_top/u_discriminator/p_0_out__7 multiplier stage u_gan_serial_top/u_discriminator/p_0_out__7/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#31 Warning
+MREG Output pipelining  
+DSP u_gan_serial_top/u_discriminator/p_0_out__8 multiplier stage u_gan_serial_top/u_discriminator/p_0_out__8/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#32 Warning
+MREG Output pipelining  
+DSP u_gan_serial_top/u_discriminator/p_0_out__9 multiplier stage u_gan_serial_top/u_discriminator/p_0_out__9/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#33 Warning
+MREG Output pipelining  
+DSP u_gan_serial_top/u_discriminator/u_l1/accumulator0 multiplier stage u_gan_serial_top/u_discriminator/u_l1/accumulator0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#34 Warning
+MREG Output pipelining  
+DSP u_gan_serial_top/u_discriminator/u_l2/accumulator0 multiplier stage u_gan_serial_top/u_discriminator/u_l2/accumulator0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#35 Warning
+MREG Output pipelining  
+DSP u_gan_serial_top/u_generator/u_l1/accumulator0 multiplier stage u_gan_serial_top/u_generator/u_l1/accumulator0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#36 Warning
+MREG Output pipelining  
+DSP u_gan_serial_top/u_generator/u_l2/accumulator0 multiplier stage u_gan_serial_top/u_generator/u_l2/accumulator0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#37 Warning
+MREG Output pipelining  
+DSP u_gan_serial_top/u_generator/u_l3/accumulator0 multiplier stage u_gan_serial_top/u_generator/u_l3/accumulator0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+REQP-1840#1 Warning
+RAMB18 async control check  
+The RAMB18E1 u_gan_serial_top/u_vector_upsampler/out_idx_reg_rep has an input control pin u_gan_serial_top/u_vector_upsampler/out_idx_reg_rep/ADDRARDADDR[10] (net: u_gan_serial_top/u_vector_upsampler/out_idx_reg_rep_i_5_n_0) which is driven by a register (u_gan_serial_top/upsampler_start_pulse_reg_C) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#2 Warning
+RAMB18 async control check  
+The RAMB18E1 u_gan_serial_top/u_vector_upsampler/out_idx_reg_rep has an input control pin u_gan_serial_top/u_vector_upsampler/out_idx_reg_rep/ADDRARDADDR[10] (net: u_gan_serial_top/u_vector_upsampler/out_idx_reg_rep_i_5_n_0) which is driven by a register (u_gan_serial_top/upsampler_start_pulse_reg_P) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#3 Warning
+RAMB18 async control check  
+The RAMB18E1 u_gan_serial_top/u_vector_upsampler/out_idx_reg_rep has an input control pin u_gan_serial_top/u_vector_upsampler/out_idx_reg_rep/ADDRARDADDR[11] (net: u_gan_serial_top/u_vector_upsampler/out_idx_reg_rep_i_4_n_0) which is driven by a register (u_gan_serial_top/upsampler_start_pulse_reg_C) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#4 Warning
+RAMB18 async control check  
+The RAMB18E1 u_gan_serial_top/u_vector_upsampler/out_idx_reg_rep has an input control pin u_gan_serial_top/u_vector_upsampler/out_idx_reg_rep/ADDRARDADDR[11] (net: u_gan_serial_top/u_vector_upsampler/out_idx_reg_rep_i_4_n_0) which is driven by a register (u_gan_serial_top/upsampler_start_pulse_reg_P) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#5 Warning
+RAMB18 async control check  
+The RAMB18E1 u_gan_serial_top/u_vector_upsampler/out_idx_reg_rep has an input control pin u_gan_serial_top/u_vector_upsampler/out_idx_reg_rep/ADDRARDADDR[12] (net: u_gan_serial_top/u_vector_upsampler/out_idx_reg_rep_i_3_n_0) which is driven by a register (u_gan_serial_top/upsampler_start_pulse_reg_C) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#6 Warning
+RAMB18 async control check  
+The RAMB18E1 u_gan_serial_top/u_vector_upsampler/out_idx_reg_rep has an input control pin u_gan_serial_top/u_vector_upsampler/out_idx_reg_rep/ADDRARDADDR[12] (net: u_gan_serial_top/u_vector_upsampler/out_idx_reg_rep_i_3_n_0) which is driven by a register (u_gan_serial_top/upsampler_start_pulse_reg_P) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#7 Warning
+RAMB18 async control check  
+The RAMB18E1 u_gan_serial_top/u_vector_upsampler/out_idx_reg_rep has an input control pin u_gan_serial_top/u_vector_upsampler/out_idx_reg_rep/ADDRARDADDR[13] (net: u_gan_serial_top/u_vector_upsampler/out_idx_reg_rep_i_2_n_0) which is driven by a register (u_gan_serial_top/upsampler_start_pulse_reg_C) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#8 Warning
+RAMB18 async control check  
+The RAMB18E1 u_gan_serial_top/u_vector_upsampler/out_idx_reg_rep has an input control pin u_gan_serial_top/u_vector_upsampler/out_idx_reg_rep/ADDRARDADDR[13] (net: u_gan_serial_top/u_vector_upsampler/out_idx_reg_rep_i_2_n_0) which is driven by a register (u_gan_serial_top/upsampler_start_pulse_reg_P) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#9 Warning
+RAMB18 async control check  
+The RAMB18E1 u_gan_serial_top/u_vector_upsampler/out_idx_reg_rep has an input control pin u_gan_serial_top/u_vector_upsampler/out_idx_reg_rep/ADDRARDADDR[4] (net: u_gan_serial_top/u_vector_upsampler/out_idx_reg_rep_i_11_n_0) which is driven by a register (u_gan_serial_top/upsampler_start_pulse_reg_C) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#10 Warning
+RAMB18 async control check  
+The RAMB18E1 u_gan_serial_top/u_vector_upsampler/out_idx_reg_rep has an input control pin u_gan_serial_top/u_vector_upsampler/out_idx_reg_rep/ADDRARDADDR[4] (net: u_gan_serial_top/u_vector_upsampler/out_idx_reg_rep_i_11_n_0) which is driven by a register (u_gan_serial_top/upsampler_start_pulse_reg_P) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#11 Warning
+RAMB18 async control check  
+The RAMB18E1 u_gan_serial_top/u_vector_upsampler/out_idx_reg_rep has an input control pin u_gan_serial_top/u_vector_upsampler/out_idx_reg_rep/ADDRARDADDR[5] (net: u_gan_serial_top/u_vector_upsampler/out_idx_reg_rep_i_10_n_0) which is driven by a register (u_gan_serial_top/upsampler_start_pulse_reg_C) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#12 Warning
+RAMB18 async control check  
+The RAMB18E1 u_gan_serial_top/u_vector_upsampler/out_idx_reg_rep has an input control pin u_gan_serial_top/u_vector_upsampler/out_idx_reg_rep/ADDRARDADDR[5] (net: u_gan_serial_top/u_vector_upsampler/out_idx_reg_rep_i_10_n_0) which is driven by a register (u_gan_serial_top/upsampler_start_pulse_reg_P) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#13 Warning
+RAMB18 async control check  
+The RAMB18E1 u_gan_serial_top/u_vector_upsampler/out_idx_reg_rep has an input control pin u_gan_serial_top/u_vector_upsampler/out_idx_reg_rep/ADDRARDADDR[6] (net: u_gan_serial_top/u_vector_upsampler/out_idx_reg_rep_i_9_n_0) which is driven by a register (u_gan_serial_top/upsampler_start_pulse_reg_C) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#14 Warning
+RAMB18 async control check  
+The RAMB18E1 u_gan_serial_top/u_vector_upsampler/out_idx_reg_rep has an input control pin u_gan_serial_top/u_vector_upsampler/out_idx_reg_rep/ADDRARDADDR[6] (net: u_gan_serial_top/u_vector_upsampler/out_idx_reg_rep_i_9_n_0) which is driven by a register (u_gan_serial_top/upsampler_start_pulse_reg_P) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#15 Warning
+RAMB18 async control check  
+The RAMB18E1 u_gan_serial_top/u_vector_upsampler/out_idx_reg_rep has an input control pin u_gan_serial_top/u_vector_upsampler/out_idx_reg_rep/ADDRARDADDR[7] (net: u_gan_serial_top/u_vector_upsampler/out_idx_reg_rep_i_8_n_0) which is driven by a register (u_gan_serial_top/upsampler_start_pulse_reg_C) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#16 Warning
+RAMB18 async control check  
+The RAMB18E1 u_gan_serial_top/u_vector_upsampler/out_idx_reg_rep has an input control pin u_gan_serial_top/u_vector_upsampler/out_idx_reg_rep/ADDRARDADDR[7] (net: u_gan_serial_top/u_vector_upsampler/out_idx_reg_rep_i_8_n_0) which is driven by a register (u_gan_serial_top/upsampler_start_pulse_reg_P) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#17 Warning
+RAMB18 async control check  
+The RAMB18E1 u_gan_serial_top/u_vector_upsampler/out_idx_reg_rep has an input control pin u_gan_serial_top/u_vector_upsampler/out_idx_reg_rep/ADDRARDADDR[8] (net: u_gan_serial_top/u_vector_upsampler/out_idx_reg_rep_i_7_n_0) which is driven by a register (u_gan_serial_top/upsampler_start_pulse_reg_C) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#18 Warning
+RAMB18 async control check  
+The RAMB18E1 u_gan_serial_top/u_vector_upsampler/out_idx_reg_rep has an input control pin u_gan_serial_top/u_vector_upsampler/out_idx_reg_rep/ADDRARDADDR[8] (net: u_gan_serial_top/u_vector_upsampler/out_idx_reg_rep_i_7_n_0) which is driven by a register (u_gan_serial_top/upsampler_start_pulse_reg_P) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#19 Warning
+RAMB18 async control check  
+The RAMB18E1 u_gan_serial_top/u_vector_upsampler/out_idx_reg_rep has an input control pin u_gan_serial_top/u_vector_upsampler/out_idx_reg_rep/ADDRARDADDR[9] (net: u_gan_serial_top/u_vector_upsampler/out_idx_reg_rep_i_6_n_0) which is driven by a register (u_gan_serial_top/upsampler_start_pulse_reg_C) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#20 Warning
+RAMB18 async control check  
+The RAMB18E1 u_gan_serial_top/u_vector_upsampler/out_idx_reg_rep has an input control pin u_gan_serial_top/u_vector_upsampler/out_idx_reg_rep/ADDRARDADDR[9] (net: u_gan_serial_top/u_vector_upsampler/out_idx_reg_rep_i_6_n_0) which is driven by a register (u_gan_serial_top/upsampler_start_pulse_reg_P) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 ZPS7-1#1 Warning

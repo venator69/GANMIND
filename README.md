@@ -8,6 +8,20 @@ I Made Medika Surya / 13222021
 
 William Anthony     / 13223048
 
+## CARA RUN VIA TCL SCRIPT
+
+1. Buka "Vivado Tcl Shell" (atau jalankan `settings64.bat`) supaya perintah `vivado` tersedia.
+2. Dari root repo jalankan:
+
+```
+cd D:/GANMIND/GANMIND
+vivado -mode batch -source vivado_all/setup_project_sources.tcl
+vivado -mode batch -source vivado_all/analyze_timing.tcl
+```
+
+`setup_project_sources.tcl` akan memastikan `pipelined_mac.v` dan seluruh file berat/ bias `.hex` sudah terdaftar di project serta menyamakan `HEX_DATA_ROOT`. Setelah itu `analyze_timing.tcl` bisa langsung re-run synth/impl dan membuat report timing.
+
+
 ## PYNQ/Vivado Integration Notes
 
 - Use `src/top/gan_serial_axi_wrapper.v` as the exported top for Vivado. It wraps `gan_serial_top` with:

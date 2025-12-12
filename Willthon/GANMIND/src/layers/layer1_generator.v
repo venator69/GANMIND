@@ -1,5 +1,8 @@
+`ifndef LAYER1_GENERATOR_V
+`define LAYER1_GENERATOR_V
+
 `ifndef HEX_DATA_ROOT
-`define HEX_DATA_ROOT "src/layers/hex_data"
+`define HEX_DATA_ROOT "D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/hex_data"
 `endif
 
 module layer1_generator (
@@ -17,8 +20,23 @@ module layer1_generator (
     // Memory untuk Parameter (Weights & Biases)
     // ==========================================
     // Total weights: 256 neuron * 64 input = 16384
-    reg signed [15:0] layer1_gen_weights [0:16383]; 
-    reg signed [15:0] layer1_gen_bias  [0:255];
+    (* rom_style = "block" *) reg signed [15:0] layer1_gen_weights [0:16383]; 
+    (* rom_style = "block" *) reg signed [15:0] layer1_gen_bias  [0:255];
+
+    localparam integer TOTAL_NEURONS = 256;
+    localparam integer TOTAL_INPUTS  = 64;
+    localparam integer LAST_NEURON   = TOTAL_NEURONS - 1;
+    localparam integer LAST_INPUT    = TOTAL_INPUTS - 1;
+    localparam integer WEIGHT_ADDR_WIDTH = 14; // 2^14 = 16384
+
+    localparam MAC_PHASE_ISSUE = 1'b0;
+    localparam MAC_PHASE_ACCUM = 1'b1;
+
+    reg [WEIGHT_ADDR_WIDTH-1:0] weight_addr;
+    reg                         mac_phase;
+    reg signed [15:0]           input_sample_reg;
+    reg signed [15:0]           weight_data;
+    reg signed [31:0]           mac_result;
 
     initial begin
         // Load data hex dari Python
@@ -36,16 +54,14 @@ module layer1_generator (
     reg [6:0] input_idx;   // 0..63
     reg busy;
     reg signed [31:0] accumulator;
-    reg signed [31:0] bias_shifted;
 
-    // Combinational wires for current input and product
-    wire signed [15:0] current_input;
-    wire signed [31:0] current_product;
-    wire signed [31:0] next_acc;
-
-    assign current_input = $signed(flat_input_flat[(input_idx+1)*16-1 -: 16]);
-    assign current_product = $signed(current_input) * $signed(layer1_gen_weights[neuron_idx*64 + input_idx]);
-    assign next_acc = accumulator + current_product;
+    always @(posedge clk) begin
+        if (rst) begin
+            weight_data <= 16'sd0;
+        end else begin
+            weight_data <= layer1_gen_weights[weight_addr];
+        end
+    end
 
     // Sequential MAC pipeline: one MAC operation per clock cycle
     // Protocol: assert `start` for one cycle to begin. Module then:
@@ -54,52 +70,64 @@ module layer1_generator (
     // - Writes output and advances to next neuron
     // - Repeats for all 256 neurons
     // When neuron_idx wraps past 255, asserts `done`.
-    always @(posedge clk or posedge rst) begin
+    always @(posedge clk) begin
         if (rst) begin
-            neuron_idx <= 9'd0;
-            input_idx <= 7'd0;
-            accumulator <= 32'sd0;
-            bias_shifted <= 32'sd0;
-            busy <= 1'b0;
-            done <= 1'b0;
+            neuron_idx        <= 9'd0;
+            input_idx         <= 7'd0;
+            accumulator       <= 32'sd0;
+            busy              <= 1'b0;
+            done              <= 1'b0;
+            flat_output_flat  <= {16*256{1'b0}};
+            weight_addr       <= {WEIGHT_ADDR_WIDTH{1'b0}};
+            mac_phase         <= MAC_PHASE_ISSUE;
+            input_sample_reg  <= 16'sd0;
         end else begin
-            if (start && !busy) begin
-                // Start a new computation: begin with neuron 0, input 0, load bias
-                neuron_idx <= 9'd0;
-                input_idx <= 7'd0;
-                bias_shifted <= $signed(layer1_gen_bias[0]) <<< 8;
-                accumulator <= $signed(layer1_gen_bias[0]) <<< 8;
-                busy <= 1'b1;
-                done <= 1'b0;
-            end else if (busy) begin
-                // Perform one MAC: accumulator += input[input_idx] * weight[neuron_idx*64 + input_idx]
-                accumulator <= next_acc;
+            done <= 1'b0;
 
-                if (input_idx == 7'd63) begin
-                    // Finished all 64 inputs for this neuron; write output and advance neuron
-                    flat_output_flat[(neuron_idx+1)*16-1 -: 16] <= next_acc[23:8]; // scale Q16.16 -> Q8.8
-                    
-                    if (neuron_idx == 9'd255) begin
-                        // All 256 neurons done
-                        busy <= 1'b0;
-                        done <= 1'b1;
-                    end else begin
-                        // Advance to next neuron
-                        neuron_idx <= neuron_idx + 1'b1;
-                        bias_shifted <= $signed(layer1_gen_bias[neuron_idx + 1]) <<< 8;
-                        accumulator <= $signed(layer1_gen_bias[neuron_idx + 1]) <<< 8;
-                        input_idx <= 7'd0;
+            if (start && !busy) begin
+                neuron_idx       <= 9'd0;
+                input_idx        <= 7'd0;
+                accumulator      <= $signed(layer1_gen_bias[0]) <<< 8;
+                busy             <= 1'b1;
+                mac_phase        <= MAC_PHASE_ISSUE;
+                weight_addr      <= {WEIGHT_ADDR_WIDTH{1'b0}};
+            end else if (busy) begin
+                case (mac_phase)
+                    MAC_PHASE_ISSUE: begin
+                        input_sample_reg <= flat_input_flat[(input_idx+1)*16-1 -: 16];
+                        mac_phase        <= MAC_PHASE_ACCUM;
                     end
-                end else begin
-                    // Continue with next input for same neuron
-                    input_idx <= input_idx + 1'b1;
-                end
+
+                    MAC_PHASE_ACCUM: begin
+                        mac_result = accumulator + $signed(input_sample_reg) * $signed(weight_data);
+                        mac_phase  <= MAC_PHASE_ISSUE;
+
+                        if (input_idx == LAST_INPUT) begin
+                            flat_output_flat[(neuron_idx+1)*16-1 -: 16] <= mac_result[23:8];
+
+                            if (neuron_idx == LAST_NEURON) begin
+                                busy <= 1'b0;
+                                done <= 1'b1;
+                            end else begin
+                                neuron_idx  <= neuron_idx + 1'b1;
+                                input_idx   <= 7'd0;
+                                accumulator <= $signed(layer1_gen_bias[neuron_idx + 1]) <<< 8;
+                            end
+                        end else begin
+                            input_idx   <= input_idx + 1'b1;
+                            accumulator <= mac_result;
+                        end
+
+                        if (!(input_idx == LAST_INPUT && neuron_idx == LAST_NEURON))
+                            weight_addr <= weight_addr + 1'b1;
+                    end
+                endcase
             end else begin
-                // idle: clear done after one cycle so user can pulse start again
-                if (done)
-                    done <= 1'b0;
+                mac_phase <= MAC_PHASE_ISSUE;
             end
         end
     end
 
 endmodule
+
+`endif // LAYER1_GENERATOR_V

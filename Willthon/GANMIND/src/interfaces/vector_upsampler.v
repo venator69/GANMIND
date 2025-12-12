@@ -58,7 +58,7 @@ module vector_upsampler #(
     reg processing;
     reg [DATA_WIDTH*INPUT_COUNT-1:0] input_buffer;
 
-    always @(posedge clk or posedge rst) begin
+    always @(posedge clk) begin
         if (rst) begin
             vector_out   <= {DATA_WIDTH*OUTPUT_COUNT{1'b0}};
             busy         <= 1'b0;

@@ -1,0 +1,71 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
+| Date         : Mon Dec  8 15:03:38 2025
+| Host         : DESKTOP-3S5LN80 running 64-bit major release  (build 9200)
+| Command      : report_qor_suggestions -name ganmind_qor -file D:/GANMIND/GANMIND/vivado_all/reports/20251208_150326Z_period10.00/qor_suggestions.rpt
+| Design       : gan_serial_axi_wrapper
+| Device       : xc7z020
+| Design State : Routed
+| ML Models    : v2021.2.0
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Report QoR Suggestions
+
+Table of Contents
+-----------------
+1. QoR Suggestions Report Summary
+2. ML Strategies
+3. QoR Suggestions - Timing
+
+1. QoR Suggestions Report Summary
+---------------------------------
+
++-----------------+---------------+-----------+--------------+----------------+-----------+-------------+----------------------+------------------------------------------------------------------------------------------+-------------+
+|       Name      |       Id      |   Status  | Generated At | Applicable For | Automatic |    Scope    | Incremental Friendly |                                        Description                                       |    Source   |
++-----------------+---------------+-----------+--------------+----------------+-----------+-------------+----------------------+------------------------------------------------------------------------------------------+-------------+
+| RQS_TIMING-3-1  | RQS_TIMING-3  | Generated | route_design | place_design   | Yes       | GLOBALSCOPE | No                   | Critical nets with loads placed far apart. Apply FORCE_MAX_FANOUT to the critical nets   | Current Run |
+|                 |               |           |              |                |           |             |                      | after synthesis to replicate drivers and improve timing.                                 |             |
+| RQS_TIMING-59-1 | RQS_TIMING-59 | Generated | route_design | place_design   | Yes       | GLOBALSCOPE | No                   | Replicate the nets driven by LUTs in setup critical paths can improve timing             | Current Run |
++-----------------+---------------+-----------+--------------+----------------+-----------+-------------+----------------------+------------------------------------------------------------------------------------------+-------------+
+* By default the number of failing paths is limited to 100. Use the -max_paths options to override.
+
+
+2. ML Strategies
+----------------
+
++---+----+---------+---------+
+| # | Id | Command | Options |
++---+----+---------+---------+
+
+
+3. QoR Suggestions - Timing
+---------------------------
+
++-----------------+-------------+--------------+--------+--------+--------+--------+--------+----------------+-------+--------+--------------+-------------------+----------------------------------------------------------+-------------------------------------------------------------+
+|       Name      | No of Paths | Logic Levels | Routes |  Slack |  Req.  |  Skew  | Fanout | Datapath Delay | Cell% | Route% | Source Clock | Destination Clock |                        Startpoint                        |                           Endpoint                          |
++-----------------+-------------+--------------+--------+--------+--------+--------+--------+----------------+-------+--------+--------------+-------------------+----------------------------------------------------------+-------------------------------------------------------------+
+| RQS_TIMING-3-1  | 2           | 1            | 1      | -2.750 | 10.000 | -5.198 | 4      | 5.016          | 62.70 | 37.30  | axi_clk      | axi_clk           | axi_rvalid_int_reg/C                                     | s_axi_rvalid                                                |
+|                 | 2           | 1            | 1      | -2.442 | 10.000 | -5.198 | 2      | 4.708          | 67.30 | 32.70  | axi_clk      | axi_clk           | axi_bvalid_int_reg/C                                     | s_axi_bvalid                                                |
+|                 | 90          | 10           | 8      | -1.306 | 10.000 | -0.113 | 37     | 11.127         | 21.10 | 78.90  | axi_clk      | axi_clk           | u_gan_serial_top/u_vector_upsampler/out_idx_reg_rep[0]/C | u_gan_serial_top/u_vector_upsampler/vector_out_reg[9927]/D  |
+|                 | 28          | 10           | 9      | -1.182 | 10.000 | -0.113 | 154    | 10.989         | 19.40 | 80.60  | axi_clk      | axi_clk           | u_gan_serial_top/u_vector_upsampler/out_idx_reg_rep[6]/C | u_gan_serial_top/u_vector_upsampler/vector_out_reg[3832]/D  |
+| RQS_TIMING-59-1 | 17          | 10           | 8      | -1.023 | 10.000 | -0.125 | -      | 10.796         | 21.80 | 78.20  | axi_clk      | axi_clk           | u_gan_serial_top/u_vector_upsampler/out_idx_reg_rep[0]/C | u_gan_serial_top/u_vector_upsampler/vector_out_reg[10727]/D |
+|                 | 17          | 10           | 8      | -0.904 | 10.000 | -0.114 | -      | 10.688         | 22.00 | 78.00  | axi_clk      | axi_clk           | u_gan_serial_top/u_vector_upsampler/out_idx_reg_rep[0]/C | u_gan_serial_top/u_vector_upsampler/vector_out_reg[9335]/D  |
+|                 | 17          | 10           | 9      | -1.030 | 10.000 | -0.113 | -      | 10.837         | 19.70 | 80.30  | axi_clk      | axi_clk           | u_gan_serial_top/u_vector_upsampler/out_idx_reg_rep[6]/C | u_gan_serial_top/u_vector_upsampler/vector_out_reg[11384]/D |
+|                 | 17          | 10           | 9      | -0.877 | 10.000 | -0.111 | -      | 10.650         | 20.00 | 80.00  | axi_clk      | axi_clk           | u_gan_serial_top/u_vector_upsampler/out_idx_reg_rep[6]/C | u_gan_serial_top/u_vector_upsampler/vector_out_reg[1608]/D  |
+|                 | 17          | 10           | 8      | -0.897 | 10.000 | -0.117 | -      | 10.677         | 22.00 | 78.00  | axi_clk      | axi_clk           | u_gan_serial_top/u_vector_upsampler/out_idx_reg_rep[0]/C | u_gan_serial_top/u_vector_upsampler/vector_out_reg[11895]/D |
+|                 | 17          | 10           | 8      | -0.950 | 10.000 | -0.113 | -      | 10.734         | 21.90 | 78.10  | axi_clk      | axi_clk           | u_gan_serial_top/u_vector_upsampler/out_idx_reg_rep[0]/C | u_gan_serial_top/u_vector_upsampler/vector_out_reg[3799]/D  |
+|                 | 17          | 10           | 9      | -0.874 | 10.000 | -0.112 | -      | 10.646         | 20.00 | 80.00  | axi_clk      | axi_clk           | u_gan_serial_top/u_vector_upsampler/out_idx_reg_rep[6]/C | u_gan_serial_top/u_vector_upsampler/vector_out_reg[9960]/D  |
+|                 | 17          | 10           | 9      | -0.875 | 10.000 | -0.114 | -      | 10.659         | 20.00 | 80.00  | axi_clk      | axi_clk           | u_gan_serial_top/u_vector_upsampler/out_idx_reg_rep[6]/C | u_gan_serial_top/u_vector_upsampler/vector_out_reg[1656]/D  |
+|                 | 17          | 10           | 8      | -0.885 | 10.000 | -0.124 | -      | 10.695         | 22.00 | 78.00  | axi_clk      | axi_clk           | u_gan_serial_top/u_vector_upsampler/out_idx_reg_rep[0]/C | u_gan_serial_top/u_vector_upsampler/vector_out_reg[3527]/D  |
+|                 | 17          | 10           | 8      | -0.875 | 10.000 | -0.051 | -      | 10.721         | 21.90 | 78.10  | axi_clk      | axi_clk           | u_gan_serial_top/u_vector_upsampler/out_idx_reg_rep[0]/C | u_gan_serial_top/u_vector_upsampler/vector_out_reg[9303]/D  |
+|                 | 17          | 10           | 8      | -0.886 | 10.000 | -0.119 | -      | 10.700         | 22.00 | 78.00  | axi_clk      | axi_clk           | u_gan_serial_top/u_vector_upsampler/out_idx_reg_rep[0]/C | u_gan_serial_top/u_vector_upsampler/vector_out_reg[935]/D   |
+|                 | 17          | 10           | 8      | -0.877 | 10.000 | -0.124 | -      | 10.651         | 22.10 | 77.90  | axi_clk      | axi_clk           | u_gan_serial_top/u_vector_upsampler/out_idx_reg_rep[0]/C | u_gan_serial_top/u_vector_upsampler/vector_out_reg[3383]/D  |
+|                 | 17          | 10           | 9      | -0.874 | 10.000 | -0.112 | -      | 10.646         | 20.00 | 80.00  | axi_clk      | axi_clk           | u_gan_serial_top/u_vector_upsampler/out_idx_reg_rep[6]/C | u_gan_serial_top/u_vector_upsampler/vector_out_reg[9960]/D  |
+|                 | 17          | 10           | 8      | -0.875 | 10.000 | -0.051 | -      | 10.721         | 21.90 | 78.10  | axi_clk      | axi_clk           | u_gan_serial_top/u_vector_upsampler/out_idx_reg_rep[0]/C | u_gan_serial_top/u_vector_upsampler/vector_out_reg[9303]/D  |
+|                 | 17          | 10           | 8      | -0.914 | 10.000 | -0.115 | -      | 10.697         | 22.00 | 78.00  | axi_clk      | axi_clk           | u_gan_serial_top/u_vector_upsampler/out_idx_reg_rep[0]/C | u_gan_serial_top/u_vector_upsampler/vector_out_reg[7751]/D  |
+|                 | 17          | 10           | 8      | -0.952 | 10.000 | -0.069 | -      | 10.588         | 22.50 | 77.50  | axi_clk      | axi_clk           | u_gan_serial_top/u_vector_upsampler/out_idx_reg_rep[0]/C | u_gan_serial_top/u_vector_upsampler/vector_out_reg[4519]/D  |
+|                 | 17          | 10           | 9      | -0.907 | 10.000 | -0.112 | -      | 10.728         | 19.90 | 80.10  | axi_clk      | axi_clk           | u_gan_serial_top/u_vector_upsampler/out_idx_reg_rep[6]/C | u_gan_serial_top/u_vector_upsampler/vector_out_reg[1144]/D  |
++-----------------+-------------+--------------+--------+--------+--------+--------+--------+----------------+-------+--------+--------------+-------------------+----------------------------------------------------------+-------------------------------------------------------------+
+
+

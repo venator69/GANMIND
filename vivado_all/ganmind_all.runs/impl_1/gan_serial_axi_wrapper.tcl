@@ -104,9 +104,9 @@ start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
-  set_param chipscope.maxJobs 1
+  set_param chipscope.maxJobs 3
   set_param general.usePosixSpawnForFork 1
-  set_param runs.launchOptions { -jobs 1  }
+  set_param runs.launchOptions { -jobs 4  }
 OPTRACE "create in-memory project" START { }
   create_project -in_memory -part xc7z020clg400-1
   set_property design_mode GateLvl [current_fileset]
@@ -121,6 +121,7 @@ OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
   add_files -quiet D:/GANMIND/GANMIND/vivado_all/ganmind_all.runs/synth_1/gan_serial_axi_wrapper.dcp
 OPTRACE "read constraints: implementation" START { }
+  read_xdc D:/GANMIND/GANMIND/vivado_all/gan_mind.xdc
 OPTRACE "read constraints: implementation" END { }
 OPTRACE "read constraints: implementation_pre" START { }
 OPTRACE "read constraints: implementation_pre" END { }

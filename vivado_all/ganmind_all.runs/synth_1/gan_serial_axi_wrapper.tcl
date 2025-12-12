@@ -77,6 +77,7 @@ set_property include_dirs {
   D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers
   D:/GANMIND/GANMIND/Willthon/GANMIND/src/fifo
 } [current_fileset]
+set_property verilog_define HEX_DATA_ROOT=\"D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/hex_data\" [current_fileset]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib {
@@ -94,6 +95,10 @@ read_verilog -library xil_defaultlib {
   D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer3_generator.v
   D:/GANMIND/GANMIND/Willthon/GANMIND/src/discriminator/discriminator_pipeline.v
   D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v
+  D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer1_discriminator.v
+  D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer2_discriminator.v
+  D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer3_discriminator.v
+  D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v
   D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_axi_wrapper.v
 }
 OPTRACE "Adding files" END { }
@@ -105,7 +110,12 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
+read_xdc D:/GANMIND/GANMIND/vivado_all/gan_mind.xdc
+set_property used_in_implementation false [get_files D:/GANMIND/GANMIND/vivado_all/gan_mind.xdc]
+
 set_param ips.enableIPCacheLiteLoad 1
+
+read_checkpoint -auto_incremental -incremental D:/GANMIND/GANMIND/vivado_all/ganmind_all.srcs/utils_1/imports/synth_1/gan_serial_axi_wrapper.dcp
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }

@@ -419,6 +419,10 @@ module gan_serial_top (
             disc_score_fetch_active <= 1'b0;
             disc_result_is_real     <= 1'b0;
             pending_disc_flag       <= 1'b0;
+            disc_fake_score         <= 16'sd0;
+            disc_real_score         <= 16'sd0;
+            disc_fake_is_real       <= 1'b0;
+            disc_real_is_real       <= 1'b0;
         end else begin
             disc_score_rd_en <= 1'b0;
 
@@ -469,10 +473,6 @@ module gan_serial_top (
             gen_start_pulse        <= 1'b0;
             disc_start_pulse       <= 1'b0;
             disc_run_is_real       <= 1'b0;
-            disc_fake_score        <= 16'sd0;
-            disc_real_score        <= 16'sd0;
-            disc_fake_is_real      <= 1'b0;
-            disc_real_is_real      <= 1'b0;
             generated_frame_flat   <= {16*784{1'b0}};
             generated_frame_valid  <= 1'b0;
             busy                   <= 1'b0;
@@ -483,10 +483,6 @@ module gan_serial_top (
             frame_sample_start_pulse  <= 1'b0;
             real_stream_start_sent    <= 1'b0;
             upsampler_start_pulse     <= 1'b0;
-            expander_start_pulse      <= 1'b0;
-            expander_job_launched     <= 1'b0;
-            upsampler_job_launched    <= 1'b0;
-        end else begin
             // Default deassertions
             frame_consume_pulse      <= 1'b0;
             seed_start_pulse         <= 1'b0;

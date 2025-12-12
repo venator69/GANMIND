@@ -1,5 +1,8 @@
+`ifndef LAYER2_DISCRIMINATOR_V
+`define LAYER2_DISCRIMINATOR_V
+
 `ifndef HEX_DATA_ROOT
-`define HEX_DATA_ROOT "src/layers/hex_data"
+`define HEX_DATA_ROOT "D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/hex_data"
 `endif
 
 module layer2_discriminator (
@@ -17,8 +20,23 @@ module layer2_discriminator (
     // Memory untuk Parameter (Weights & Biases)
     // ==========================================
     // Total weights: 32 neuron * 128 input = 4096
-    reg signed [15:0] layer2_disc_weights [0:4095]; 
-    reg signed [15:0] layer2_disc_bias  [0:31];
+    (* rom_style = "block" *) reg signed [15:0] layer2_disc_weights [0:4095]; 
+    (* rom_style = "block" *) reg signed [15:0] layer2_disc_bias  [0:31];
+
+    localparam integer TOTAL_NEURONS = 32;
+    localparam integer TOTAL_INPUTS  = 128;
+    localparam integer LAST_NEURON   = TOTAL_NEURONS - 1;
+    localparam integer LAST_INPUT    = TOTAL_INPUTS - 1;
+    localparam integer WEIGHT_ADDR_WIDTH = 12; // 2^12 = 4096
+
+    localparam MAC_PHASE_ISSUE = 1'b0;
+    localparam MAC_PHASE_ACCUM = 1'b1;
+
+    reg [WEIGHT_ADDR_WIDTH-1:0] weight_addr;
+    reg                         mac_phase;
+    reg signed [15:0]           input_sample_reg;
+    reg signed [15:0]           weight_data;
+    reg signed [31:0]           mac_result;
 
     initial begin
         // Load data hex dari hex_data directory (expanded format)
@@ -36,64 +54,74 @@ module layer2_discriminator (
     reg [7:0] input_idx;    // 0..127
     reg busy;
     reg signed [31:0] accumulator;
-    reg signed [31:0] bias_shifted;
 
-    // Combinational wires for current input and product
-    wire signed [15:0] current_input;
-    wire signed [31:0] current_product;
-    wire signed [31:0] next_acc;
-
-    assign current_input = $signed(flat_input_flat[(input_idx+1)*16-1 -: 16]);
-    assign current_product = $signed(current_input) * $signed(layer2_disc_weights[neuron_idx*128 + input_idx]);
-    assign next_acc = accumulator + current_product;
-
-    // Sequential MAC pipeline: one MAC operation per clock cycle
-    always @(posedge clk or posedge rst) begin
+    always @(posedge clk) begin
         if (rst) begin
-            neuron_idx <= 6'd0;
-            input_idx <= 8'd0;
-            accumulator <= 32'sd0;
-            bias_shifted <= 32'sd0;
-            busy <= 1'b0;
-            done <= 1'b0;
+            weight_data <= 16'sd0;
         end else begin
-            if (start && !busy) begin
-                // Start a new computation: begin with neuron 0, input 0, load bias
-                neuron_idx <= 6'd0;
-                input_idx <= 8'd0;
-                bias_shifted <= $signed(layer2_disc_bias[0]) <<< 8;
-                accumulator <= $signed(layer2_disc_bias[0]) <<< 8;
-                busy <= 1'b1;
-                done <= 1'b0;
-            end else if (busy) begin
-                // Perform one MAC: accumulator += input[input_idx] * weight[neuron_idx*128 + input_idx]
-                accumulator <= next_acc;
+            weight_data <= layer2_disc_weights[weight_addr];
+        end
+    end
 
-                if (input_idx == 8'd127) begin
-                    // Finished all 128 inputs for this neuron; write output and advance neuron
-                    flat_output_flat[(neuron_idx+1)*16-1 -: 16] <= next_acc[23:8]; // scale Q16.16 -> Q8.8
-                    
-                    if (neuron_idx == 6'd31) begin
-                        // All 32 neurons done
-                        busy <= 1'b0;
-                        done <= 1'b1;
-                    end else begin
-                        // Advance to next neuron
-                        neuron_idx <= neuron_idx + 1'b1;
-                        bias_shifted <= $signed(layer2_disc_bias[neuron_idx + 1]) <<< 8;
-                        accumulator <= $signed(layer2_disc_bias[neuron_idx + 1]) <<< 8;
-                        input_idx <= 8'd0;
+    // Sequential MAC pipeline: one MAC operation per clock cycle (accounting for BRAM read latency)
+    always @(posedge clk) begin
+        if (rst) begin
+            neuron_idx       <= 6'd0;
+            input_idx        <= 8'd0;
+            accumulator      <= 32'sd0;
+            busy             <= 1'b0;
+            done             <= 1'b0;
+            flat_output_flat <= {16*32{1'b0}};
+            weight_addr      <= {WEIGHT_ADDR_WIDTH{1'b0}};
+            mac_phase        <= MAC_PHASE_ISSUE;
+            input_sample_reg <= 16'sd0;
+        end else begin
+            done <= 1'b0;
+
+            if (start && !busy) begin
+                neuron_idx  <= 6'd0;
+                input_idx   <= 8'd0;
+                accumulator <= $signed(layer2_disc_bias[0]) <<< 8;
+                busy        <= 1'b1;
+                mac_phase   <= MAC_PHASE_ISSUE;
+                weight_addr <= {WEIGHT_ADDR_WIDTH{1'b0}};
+            end else if (busy) begin
+                case (mac_phase)
+                    MAC_PHASE_ISSUE: begin
+                        input_sample_reg <= flat_input_flat[(input_idx+1)*16-1 -: 16];
+                        mac_phase        <= MAC_PHASE_ACCUM;
                     end
-                end else begin
-                    // Continue with next input for same neuron
-                    input_idx <= input_idx + 1'b1;
-                end
+
+                    MAC_PHASE_ACCUM: begin
+                        mac_result = accumulator + $signed(input_sample_reg) * $signed(weight_data);
+                        mac_phase  <= MAC_PHASE_ISSUE;
+
+                        if (input_idx == LAST_INPUT) begin
+                            flat_output_flat[(neuron_idx+1)*16-1 -: 16] <= mac_result[23:8];
+
+                            if (neuron_idx == LAST_NEURON) begin
+                                busy <= 1'b0;
+                                done <= 1'b1;
+                            end else begin
+                                neuron_idx  <= neuron_idx + 1'b1;
+                                input_idx   <= 8'd0;
+                                accumulator <= $signed(layer2_disc_bias[neuron_idx + 1]) <<< 8;
+                            end
+                        end else begin
+                            input_idx   <= input_idx + 1'b1;
+                            accumulator <= mac_result;
+                        end
+
+                        if (!(input_idx == LAST_INPUT && neuron_idx == LAST_NEURON))
+                            weight_addr <= weight_addr + 1'b1;
+                    end
+                endcase
             end else begin
-                // idle: clear done after one cycle so user can pulse start again
-                if (done)
-                    done <= 1'b0;
+                mac_phase <= MAC_PHASE_ISSUE;
             end
         end
     end
 
 endmodule
+
+`endif // LAYER2_DISCRIMINATOR_V

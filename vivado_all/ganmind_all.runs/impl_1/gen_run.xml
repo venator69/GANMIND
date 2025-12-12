@@ -1,20 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7z020clg400-1" LaunchTime="1765006791">
-  <File Type="ROUTE-BLACKBOX-DCP" Name="gan_serial_axi_wrapper_routed_bb.dcp"/>
-  <File Type="OPT-UTIL" Name="gan_serial_axi_wrapper_utilization_opted.rpt"/>
-  <File Type="ROUTE-PWR" Name="gan_serial_axi_wrapper_power_routed.rpt"/>
+<GenRun Id="impl_1" LaunchPart="xc7z020clg400-1" LaunchTime="1765284675">
   <File Type="PA-TCL" Name="gan_serial_axi_wrapper.tcl"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="gan_serial_axi_wrapper_methodology_drc_opted.rpt"/>
-  <File Type="INIT-TIMING" Name="gan_serial_axi_wrapper_timing_summary_init.rpt"/>
-  <File Type="ROUTE-PWR-SUM" Name="gan_serial_axi_wrapper_power_summary_routed.pb"/>
-  <File Type="OPT-RQA-PB" Name="gan_serial_axi_wrapper_rqa_opted.pb"/>
   <File Type="REPORTS-TCL" Name="gan_serial_axi_wrapper_reports.tcl"/>
-  <File Type="ROUTE-TIMING-PB" Name="gan_serial_axi_wrapper_timing_summary_routed.pb"/>
-  <File Type="OPT-UTIL-PB" Name="gan_serial_axi_wrapper_utilization_opted.pb"/>
+  <File Type="INIT-TIMING" Name="gan_serial_axi_wrapper_timing_summary_init.rpt"/>
   <File Type="OPT-DCP" Name="gan_serial_axi_wrapper_opt.dcp"/>
   <File Type="OPT-DRC" Name="gan_serial_axi_wrapper_drc_opted.rpt"/>
+  <File Type="OPT-UTIL" Name="gan_serial_axi_wrapper_utilization_opted.rpt"/>
+  <File Type="OPT-UTIL-PB" Name="gan_serial_axi_wrapper_utilization_opted.pb"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="gan_serial_axi_wrapper_methodology_drc_opted.rpt"/>
   <File Type="OPT-HWDEF" Name="gan_serial_axi_wrapper.hwdef"/>
   <File Type="OPT-TIMING" Name="gan_serial_axi_wrapper_timing_summary_opted.rpt"/>
+  <File Type="OPT-RQA-PB" Name="gan_serial_axi_wrapper_rqa_opted.pb"/>
   <File Type="PWROPT-DCP" Name="gan_serial_axi_wrapper_pwropt.dcp"/>
   <File Type="PWROPT-DRC" Name="gan_serial_axi_wrapper_drc_pwropted.rpt"/>
   <File Type="PWROPT-TIMING" Name="gan_serial_axi_wrapper_timing_summary_pwropted.rpt"/>
@@ -26,19 +22,17 @@
   <File Type="PLACE-CTRL" Name="gan_serial_axi_wrapper_control_sets_placed.rpt"/>
   <File Type="PLACE-SIMILARITY" Name="gan_serial_axi_wrapper_incremental_reuse_placed.rpt"/>
   <File Type="PLACE-PRE-SIMILARITY" Name="gan_serial_axi_wrapper_incremental_reuse_pre_placed.rpt"/>
-  <File Type="BG-BIN" Name="gan_serial_axi_wrapper.bin"/>
   <File Type="PLACE-TIMING" Name="gan_serial_axi_wrapper_timing_summary_placed.rpt"/>
-  <File Type="ROUTE-PWR-RPX" Name="gan_serial_axi_wrapper_power_routed.rpx"/>
   <File Type="PLACE-RQA-PB" Name="gan_serial_axi_wrapper_rqa_placed.pb"/>
   <File Type="POSTPLACE-PWROPT-DCP" Name="gan_serial_axi_wrapper_postplace_pwropt.dcp"/>
   <File Type="POSTPLACE-PWROPT-TIMING" Name="gan_serial_axi_wrapper_timing_summary_postplace_pwropted.rpt"/>
   <File Type="PHYSOPT-DCP" Name="gan_serial_axi_wrapper_physopt.dcp"/>
   <File Type="PHYSOPT-DRC" Name="gan_serial_axi_wrapper_drc_physopted.rpt"/>
   <File Type="PHYSOPT-TIMING" Name="gan_serial_axi_wrapper_timing_summary_physopted.rpt"/>
-  <File Type="ROUTE-UTIL" Name="gan_serial_axi_wrapper_utilization_routed.rpt"/>
   <File Type="ROUTE-ERROR-DCP" Name="gan_serial_axi_wrapper_routed_error.dcp"/>
   <File Type="ROUTE-DCP" Name="gan_serial_axi_wrapper_routed.dcp"/>
-  <File Type="ROUTE-TIMINGSUMMARY" Name="gan_serial_axi_wrapper_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="gan_serial_axi_wrapper_routed_bb.dcp"/>
+  <File Type="ROUTE-UTIL" Name="gan_serial_axi_wrapper_utilization_routed.rpt"/>
   <File Type="ROUTE-UTIL-PB" Name="gan_serial_axi_wrapper_utilization_routed.pb"/>
   <File Type="ROUTE-DRC" Name="gan_serial_axi_wrapper_drc_routed.rpt"/>
   <File Type="ROUTE-DRC-PB" Name="gan_serial_axi_wrapper_drc_routed.pb"/>
@@ -46,24 +40,30 @@
   <File Type="ROUTE-METHODOLOGY-DRC" Name="gan_serial_axi_wrapper_methodology_drc_routed.rpt"/>
   <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="gan_serial_axi_wrapper_methodology_drc_routed.rpx"/>
   <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="gan_serial_axi_wrapper_methodology_drc_routed.pb"/>
-  <File Type="ROUTE-RQS-PB" Name="gan_serial_axi_wrapper_rqs_routed.pb"/>
+  <File Type="ROUTE-PWR" Name="gan_serial_axi_wrapper_power_routed.rpt"/>
+  <File Type="ROUTE-PWR-SUM" Name="gan_serial_axi_wrapper_power_summary_routed.pb"/>
+  <File Type="ROUTE-PWR-RPX" Name="gan_serial_axi_wrapper_power_routed.rpx"/>
   <File Type="ROUTE-STATUS" Name="gan_serial_axi_wrapper_route_status.rpt"/>
   <File Type="ROUTE-STATUS-PB" Name="gan_serial_axi_wrapper_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="gan_serial_axi_wrapper_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="gan_serial_axi_wrapper_timing_summary_routed.pb"/>
   <File Type="ROUTE-TIMING-RPX" Name="gan_serial_axi_wrapper_timing_summary_routed.rpx"/>
   <File Type="ROUTE-SIMILARITY" Name="gan_serial_axi_wrapper_incremental_reuse_routed.rpt"/>
   <File Type="ROUTE-CLK" Name="gan_serial_axi_wrapper_clock_utilization_routed.rpt"/>
   <File Type="ROUTE-BUS-SKEW" Name="gan_serial_axi_wrapper_bus_skew_routed.rpt"/>
   <File Type="ROUTE-BUS-SKEW-PB" Name="gan_serial_axi_wrapper_bus_skew_routed.pb"/>
   <File Type="ROUTE-BUS-SKEW-RPX" Name="gan_serial_axi_wrapper_bus_skew_routed.rpx"/>
+  <File Type="ROUTE-RQS-PB" Name="gan_serial_axi_wrapper_rqs_routed.pb"/>
   <File Type="POSTROUTE-PHYSOPT-DCP" Name="gan_serial_axi_wrapper_postroute_physopt.dcp"/>
   <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="gan_serial_axi_wrapper_postroute_physopt_bb.dcp"/>
   <File Type="POSTROUTE-PHYSOPT-TIMING" Name="gan_serial_axi_wrapper_timing_summary_postroute_physopted.rpt"/>
   <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="gan_serial_axi_wrapper_timing_summary_postroute_physopted.pb"/>
   <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="gan_serial_axi_wrapper_timing_summary_postroute_physopted.rpx"/>
   <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="gan_serial_axi_wrapper_bus_skew_postroute_physopted.rpt"/>
-  <File Type="BG-BIT" Name="gan_serial_axi_wrapper.bit"/>
   <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="gan_serial_axi_wrapper_bus_skew_postroute_physopted.pb"/>
   <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="gan_serial_axi_wrapper_bus_skew_postroute_physopted.rpx"/>
+  <File Type="BG-BIT" Name="gan_serial_axi_wrapper.bit"/>
+  <File Type="BG-BIN" Name="gan_serial_axi_wrapper.bin"/>
   <File Type="BITSTR-MSK" Name="gan_serial_axi_wrapper.msk"/>
   <File Type="BITSTR-RBT" Name="gan_serial_axi_wrapper.rbt"/>
   <File Type="BITSTR-NKY" Name="gan_serial_axi_wrapper.nky"/>
@@ -211,6 +211,34 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PPRDIR/../Willthon/GANMIND/src/layers/layer1_discriminator.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../Willthon/GANMIND/src/layers/layer2_discriminator.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../Willthon/GANMIND/src/layers/layer3_discriminator.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../Willthon/GANMIND/src/layers/pipelined_mac.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PPRDIR/../Willthon/GANMIND/src/top/gan_serial_axi_wrapper.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -227,38 +255,6 @@
       </FileInfo>
     </File>
     <File Path="$PPRDIR/../Willthon/GANMIND/src/CombinationalDone/tb/combinational_done_tb.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/../Willthon/GANMIND/src/layers/layer1_discriminator.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/../Willthon/GANMIND/src/layers/layer2_discriminator.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/../Willthon/GANMIND/src/layers/layer3_discriminator.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/../Willthon/GANMIND/src/layers/pipelined_mac.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -338,6 +334,34 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PPRDIR/../Willthon/GANMIND/src/layers/hex_data/Discriminator_Layer1_Biases.hex"/>
+    <File Path="$PPRDIR/../Willthon/GANMIND/src/layers/hex_data/Discriminator_Layer1_Biases_All.hex"/>
+    <File Path="$PPRDIR/../Willthon/GANMIND/src/layers/hex_data/Discriminator_Layer1_Weights_All.hex"/>
+    <File Path="$PPRDIR/../Willthon/GANMIND/src/layers/hex_data/Discriminator_Layer1_Weights_Neuron1.hex"/>
+    <File Path="$PPRDIR/../Willthon/GANMIND/src/layers/hex_data/Discriminator_Layer2_Biases.hex"/>
+    <File Path="$PPRDIR/../Willthon/GANMIND/src/layers/hex_data/Discriminator_Layer2_Biases_All.hex"/>
+    <File Path="$PPRDIR/../Willthon/GANMIND/src/layers/hex_data/Discriminator_Layer2_Weights_All.hex"/>
+    <File Path="$PPRDIR/../Willthon/GANMIND/src/layers/hex_data/Discriminator_Layer2_Weights_Neuron1.hex"/>
+    <File Path="$PPRDIR/../Willthon/GANMIND/src/layers/hex_data/Discriminator_Layer3_Biases.hex"/>
+    <File Path="$PPRDIR/../Willthon/GANMIND/src/layers/hex_data/Discriminator_Layer3_Biases_All.hex"/>
+    <File Path="$PPRDIR/../Willthon/GANMIND/src/layers/hex_data/Discriminator_Layer3_Weights_All.hex"/>
+    <File Path="$PPRDIR/../Willthon/GANMIND/src/layers/hex_data/Discriminator_Layer3_Weights_Neuron1.hex"/>
+    <File Path="$PPRDIR/../Willthon/GANMIND/src/layers/hex_data/Generator_Layer1_Biases.hex"/>
+    <File Path="$PPRDIR/../Willthon/GANMIND/src/layers/hex_data/Generator_Layer1_Biases_All.hex"/>
+    <File Path="$PPRDIR/../Willthon/GANMIND/src/layers/hex_data/Generator_Layer1_Weights_All.hex"/>
+    <File Path="$PPRDIR/../Willthon/GANMIND/src/layers/hex_data/Generator_Layer1_Weights_Neuron1.hex"/>
+    <File Path="$PPRDIR/../Willthon/GANMIND/src/layers/hex_data/Generator_Layer2_Biases.hex"/>
+    <File Path="$PPRDIR/../Willthon/GANMIND/src/layers/hex_data/Generator_Layer2_Biases_All.hex"/>
+    <File Path="$PPRDIR/../Willthon/GANMIND/src/layers/hex_data/Generator_Layer2_Weights_All.hex"/>
+    <File Path="$PPRDIR/../Willthon/GANMIND/src/layers/hex_data/Generator_Layer2_Weights_Neuron1.hex"/>
+    <File Path="$PPRDIR/../Willthon/GANMIND/src/layers/hex_data/Generator_Layer3_Biases.hex"/>
+    <File Path="$PPRDIR/../Willthon/GANMIND/src/layers/hex_data/Generator_Layer3_Biases_All.hex"/>
+    <File Path="$PPRDIR/../Willthon/GANMIND/src/layers/hex_data/Generator_Layer3_Weights_All.hex"/>
+    <File Path="$PPRDIR/../Willthon/GANMIND/src/layers/hex_data/Generator_Layer3_Weights_Neuron1.hex"/>
+    <File Path="$PPRDIR/../Willthon/GANMIND/src/layers/hex_data/layer1_disc_bias.hex"/>
+    <File Path="$PPRDIR/../Willthon/GANMIND/src/layers/hex_data/layer1_disc_weights.hex"/>
+    <File Path="$PPRDIR/../Willthon/GANMIND/src/layers/hex_data/layer1_gen_bias.hex"/>
+    <File Path="$PPRDIR/../Willthon/GANMIND/src/layers/hex_data/layer1_gen_weights.hex"/>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
       <Option Name="TopModule" Val="gan_serial_axi_wrapper"/>
@@ -345,20 +369,32 @@
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">
     <Filter Type="Constrs"/>
+    <File Path="$PPRDIR/gan_mind.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="ConstrsType" Val="XDC"/>
     </Config>
   </FileSet>
   <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1" RelGenDir="$PGENDIR/utils_1">
     <Filter Type="Utils"/>
+    <File Path="$PSRCDIR/utils_1/imports/synth_1/gan_serial_axi_wrapper.dcp">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedInSteps" Val="synth_1"/>
+        <Attr Name="AutoDcp" Val="1"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="TopAutoSet" Val="TRUE"/>
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2025">
-      <Desc>Default settings for Implementation.</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2025"/>
     <Step Id="init_design"/>
     <Step Id="opt_design"/>
     <Step Id="power_opt_design"/>

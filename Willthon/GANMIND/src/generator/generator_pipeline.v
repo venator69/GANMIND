@@ -166,7 +166,7 @@ module generator_pipeline (
         .done           (layer3_done)
     );
 
-    always @(posedge clk or posedge rst) begin
+    always @(posedge clk) begin
         if (rst) begin
             state             <= IDLE;
             start_l1          <= 1'b0;

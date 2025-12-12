@@ -1,0 +1,65 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
+| Date         : Mon Dec  8 13:24:46 2025
+| Host         : DESKTOP-3S5LN80 running 64-bit major release  (build 9200)
+| Command      : report_timing -max_paths 20 -path_type summary -sort_by group -file D:/GANMIND/GANMIND/vivado_all/reports/20251208_132442Z_period10.00/timing_paths.rpt
+| Design       : gan_serial_axi_wrapper
+| Device       : 7z020-clg400
+| Speed File   : -1  PRODUCTION 1.12 2019-11-22
+| Design State : Routed
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Report
+
+Startpoint                     Endpoint                       Slack(ns)     
+----------------------------------------------------------------------------
+frame_stream_buffer_reg[3911]/C
+                               m_axis_frame_tdata[7]          -8.099        
+frame_stream_idx_reg[0]_rep__0/C
+                               m_axis_frame_tdata[8]          -8.095        
+frame_stream_idx_reg[3]/C      m_axis_frame_tdata[13]         -7.904        
+frame_stream_idx_reg[0]/C      m_axis_frame_tdata[6]          -7.872        
+frame_stream_idx_reg[1]_rep__4/C
+                               m_axis_frame_tdata[15]         -7.748        
+frame_stream_idx_reg[3]/C      m_axis_frame_tdata[11]         -7.567        
+frame_stream_idx_reg[1]_rep__3/C
+                               m_axis_frame_tdata[14]         -7.561        
+frame_stream_idx_reg[2]_rep__6/C
+                               m_axis_frame_tlast             -7.125        
+frame_stream_active_reg/C      m_axis_frame_tvalid            -6.335        
+u_gan_serial_top/u_loader/u_pixel_fifo/full_reg/C
+                               s_axis_pixel_tready            -5.276        
+u_gan_serial_top/u_vector_upsampler/processing_reg/C
+                               u_gan_serial_top/u_vector_upsampler/vector_out_reg[2445]/D
+                                                              -5.009        
+u_gan_serial_top/u_vector_upsampler/processing_reg/C
+                               u_gan_serial_top/u_vector_upsampler/vector_out_reg[9005]/D
+                                                              -4.945        
+u_gan_serial_top/u_vector_upsampler/processing_reg/C
+                               u_gan_serial_top/u_vector_upsampler/vector_out_reg[781]/D
+                                                              -4.899        
+u_gan_serial_top/u_vector_upsampler/processing_reg/C
+                               u_gan_serial_top/u_vector_upsampler/vector_out_reg[2829]/D
+                                                              -4.881        
+u_gan_serial_top/u_vector_upsampler/processing_reg/C
+                               u_gan_serial_top/u_vector_upsampler/vector_out_reg[7213]/D
+                                                              -4.853        
+u_gan_serial_top/u_vector_upsampler/processing_reg/C
+                               u_gan_serial_top/u_vector_upsampler/vector_out_reg[2861]/D
+                                                              -4.833        
+u_gan_serial_top/u_vector_upsampler/processing_reg/C
+                               u_gan_serial_top/u_vector_upsampler/vector_out_reg[2797]/D
+                                                              -4.808        
+u_gan_serial_top/u_vector_upsampler/processing_reg/C
+                               u_gan_serial_top/u_vector_upsampler/vector_out_reg[2701]/D
+                                                              -4.766        
+u_gan_serial_top/u_vector_upsampler/processing_reg/C
+                               u_gan_serial_top/u_vector_upsampler/vector_out_reg[621]/D
+                                                              -4.765        
+u_gan_serial_top/u_vector_upsampler/processing_reg/C
+                               u_gan_serial_top/u_vector_upsampler/vector_out_reg[3821]/D
+                                                              -4.763        
+
+
+

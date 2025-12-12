@@ -96,55 +96,61 @@ module gan_serial_axi_wrapper #(
     localparam integer ADDR_LSB = calc_clog2(C_S_AXI_DATA_WIDTH/8);
     localparam integer REG_ADDR_WIDTH = (C_S_AXI_ADDR_WIDTH > ADDR_LSB) ? (C_S_AXI_ADDR_WIDTH - ADDR_LSB) : 1;
 
-    reg  axi_awready_int;
-    reg  axi_wready_int;
     reg  [1:0] axi_bresp_int;
     reg  axi_bvalid_int;
-    reg  axi_arready_int;
-    reg  [C_S_AXI_ADDR_WIDTH-1:0] axi_awaddr_int;
-    reg  [C_S_AXI_ADDR_WIDTH-1:0] axi_araddr_int;
     reg  [C_S_AXI_DATA_WIDTH-1:0] axi_rdata_int;
     reg  [1:0] axi_rresp_int;
     reg  axi_rvalid_int;
 
-    assign s_axi_awready = axi_awready_int;
-    assign s_axi_wready  = axi_wready_int;
+    reg  write_buf_valid;
+    reg  [C_S_AXI_ADDR_WIDTH-1:0] write_buf_addr;
+    reg  [C_S_AXI_DATA_WIDTH-1:0] write_buf_data;
+    reg  [C_S_AXI_DATA_WIDTH/8-1:0] write_buf_strb;
+
+    reg  read_buf_valid;
+    reg  [C_S_AXI_ADDR_WIDTH-1:0] read_buf_addr;
+
+    assign s_axi_awready = (!write_buf_valid && s_axi_wvalid);
+    assign s_axi_wready  = (!write_buf_valid && s_axi_awvalid);
     assign s_axi_bresp   = axi_bresp_int;
     assign s_axi_bvalid  = axi_bvalid_int;
-    assign s_axi_arready = axi_arready_int;
+    assign s_axi_arready = !read_buf_valid;
     assign s_axi_rdata   = axi_rdata_int;
     assign s_axi_rresp   = axi_rresp_int;
     assign s_axi_rvalid  = axi_rvalid_int;
 
     wire axi_reset = ~axi_aresetn;
 
-    always @(posedge axi_aclk) begin
-        if (axi_reset) begin
-            axi_awready_int <= 1'b0;
-        end else begin
-            if (!axi_awready_int && s_axi_awvalid && s_axi_wvalid)
-                axi_awready_int <= 1'b1;
-            else
-                axi_awready_int <= 1'b0;
-        end
-    end
+    localparam integer AXIS_COUNTER_WIDTH_INT = calc_clog2(S_AXIS_TDATA_WIDTH + 1);
+    localparam integer AXIS_COUNTER_WIDTH = (AXIS_COUNTER_WIDTH_INT == 0) ? 1 : AXIS_COUNTER_WIDTH_INT;
+    localparam [AXIS_COUNTER_WIDTH-1:0] AXIS_WORD_SIZE = S_AXIS_TDATA_WIDTH;
+
+    reg [S_AXIS_TDATA_WIDTH-1:0] axis_shift_reg;
+    reg [AXIS_COUNTER_WIDTH-1:0] axis_shift_count;
+    reg                          axis_tlast_pending;
+    reg                          axis_ingress_toggle;
+
+    wire [AXIS_COUNTER_WIDTH-1:0] axis_count_one = {{(AXIS_COUNTER_WIDTH-1){1'b0}}, 1'b1};
+    wire axis_shift_empty = (axis_shift_count == {AXIS_COUNTER_WIDTH{1'b0}});
+
+    wire write_buf_push = (!write_buf_valid && s_axi_awvalid && s_axi_wvalid);
+    wire write_fire     = write_buf_valid;
 
     always @(posedge axi_aclk) begin
         if (axi_reset) begin
-            axi_awaddr_int <= {C_S_AXI_ADDR_WIDTH{1'b0}};
-        end else if (!axi_awready_int && s_axi_awvalid && s_axi_wvalid) begin
-            axi_awaddr_int <= s_axi_awaddr;
-        end
-    end
-
-    always @(posedge axi_aclk) begin
-        if (axi_reset) begin
-            axi_wready_int <= 1'b0;
+            write_buf_valid <= 1'b0;
+            write_buf_addr  <= {C_S_AXI_ADDR_WIDTH{1'b0}};
+            write_buf_data  <= {C_S_AXI_DATA_WIDTH{1'b0}};
+            write_buf_strb  <= {C_S_AXI_DATA_WIDTH/8{1'b0}};
         end else begin
-            if (!axi_wready_int && s_axi_wvalid && s_axi_awvalid)
-                axi_wready_int <= 1'b1;
-            else
-                axi_wready_int <= 1'b0;
+            if (write_buf_push) begin
+                write_buf_valid <= 1'b1;
+                write_buf_addr  <= s_axi_awaddr;
+                write_buf_data  <= s_axi_wdata;
+                write_buf_strb  <= s_axi_wstrb;
+            end else if (write_fire) begin
+                write_buf_valid <= 1'b0;
+            end
         end
     end
 
@@ -153,7 +159,7 @@ module gan_serial_axi_wrapper #(
             axi_bvalid_int <= 1'b0;
             axi_bresp_int  <= 2'b00;
         end else begin
-            if (axi_awready_int && s_axi_awvalid && !axi_bvalid_int && axi_wready_int && s_axi_wvalid) begin
+            if (write_fire && !axi_bvalid_int) begin
                 axi_bvalid_int <= 1'b1;
                 axi_bresp_int  <= 2'b00;
             end else if (axi_bvalid_int && s_axi_bready) begin
@@ -162,16 +168,19 @@ module gan_serial_axi_wrapper #(
         end
     end
 
+    wire read_buf_push = (!read_buf_valid && s_axi_arvalid);
+    wire read_fire     = read_buf_valid && !axi_rvalid_int;
+
     always @(posedge axi_aclk) begin
         if (axi_reset) begin
-            axi_arready_int <= 1'b0;
-            axi_araddr_int  <= {C_S_AXI_ADDR_WIDTH{1'b0}};
+            read_buf_valid <= 1'b0;
+            read_buf_addr  <= {C_S_AXI_ADDR_WIDTH{1'b0}};
         end else begin
-            if (!axi_arready_int && s_axi_arvalid) begin
-                axi_arready_int <= 1'b1;
-                axi_araddr_int  <= s_axi_araddr;
-            end else begin
-                axi_arready_int <= 1'b0;
+            if (read_buf_push) begin
+                read_buf_valid <= 1'b1;
+                read_buf_addr  <= s_axi_araddr;
+            end else if (read_fire) begin
+                read_buf_valid <= 1'b0;
             end
         end
     end
@@ -181,7 +190,7 @@ module gan_serial_axi_wrapper #(
             axi_rvalid_int <= 1'b0;
             axi_rresp_int  <= 2'b00;
         end else begin
-            if (axi_arready_int && s_axi_arvalid && !axi_rvalid_int) begin
+            if (read_fire) begin
                 axi_rvalid_int <= 1'b1;
                 axi_rresp_int  <= 2'b00;
             end else if (axi_rvalid_int && s_axi_rready) begin
@@ -199,11 +208,8 @@ module gan_serial_axi_wrapper #(
     localparam integer REG_REAL_SCORE  = 3;
     localparam integer REG_FRAME_WORDS = 4;
 
-    wire write_fire = axi_awready_int && s_axi_awvalid && s_axi_wvalid && axi_wready_int;
-    wire read_fire  = axi_arready_int && s_axi_arvalid;
-
-    wire [REG_ADDR_WIDTH-1:0] wr_addr_index = axi_awaddr_int[C_S_AXI_ADDR_WIDTH-1:ADDR_LSB];
-    wire [REG_ADDR_WIDTH-1:0] rd_addr_index = axi_araddr_int[C_S_AXI_ADDR_WIDTH-1:ADDR_LSB];
+    wire [REG_ADDR_WIDTH-1:0] wr_addr_index = write_buf_addr[C_S_AXI_ADDR_WIDTH-1:ADDR_LSB];
+    wire [REG_ADDR_WIDTH-1:0] rd_addr_index = read_buf_addr[C_S_AXI_ADDR_WIDTH-1:ADDR_LSB];
 
     reg start_latch;
     reg start_pulse_reg;
@@ -219,7 +225,7 @@ module gan_serial_axi_wrapper #(
             start_pulse_reg <= 1'b0;
 
             if (write_fire && (wr_addr_index == REG_CONTROL)) begin
-                if (s_axi_wstrb[0] && s_axi_wdata[0])
+                if (write_buf_strb[0] && write_buf_data[0])
                     start_latch <= 1'b1;
             end
 
@@ -239,14 +245,45 @@ module gan_serial_axi_wrapper #(
     // -------------------------------------------------------------------------
     // Connection to gan_serial_top
     // -------------------------------------------------------------------------
-    wire pixel_bit      = s_axis_pixel_tdata[0];
-    wire pixel_bit_valid= s_axis_pixel_tvalid;
+    wire pixel_bit;
+    wire pixel_bit_valid;
     wire pixel_bit_ready;
 
-    assign s_axis_pixel_tready = pixel_bit_ready;
-    // tlast is unused internally; tie off to keep lint silent.
-    wire unused_tlast;
-    assign unused_tlast = s_axis_pixel_tlast;
+    wire axis_last_bit = (axis_shift_count == axis_count_one);
+    assign pixel_bit       = axis_shift_reg[0];
+    assign pixel_bit_valid = !axis_shift_empty;
+
+    wire bit_fire        = pixel_bit_valid && pixel_bit_ready;
+    assign s_axis_pixel_tready = axis_shift_empty || (axis_last_bit && pixel_bit_ready);
+    wire axis_word_accept = s_axis_pixel_tvalid && s_axis_pixel_tready;
+    wire axis_tlast_fire  = axis_tlast_pending && bit_fire && axis_last_bit;
+
+    always @(posedge axi_aclk) begin
+        if (axi_reset) begin
+            axis_shift_reg     <= {S_AXIS_TDATA_WIDTH{1'b0}};
+            axis_shift_count   <= {AXIS_COUNTER_WIDTH{1'b0}};
+            axis_tlast_pending <= 1'b0;
+        end else begin
+            if (axis_word_accept) begin
+                axis_shift_reg     <= s_axis_pixel_tdata;
+                axis_shift_count   <= AXIS_WORD_SIZE;
+                axis_tlast_pending <= s_axis_pixel_tlast;
+            end else if (bit_fire && !axis_shift_empty) begin
+                axis_shift_reg     <= axis_shift_reg >> 1;
+                axis_shift_count   <= axis_shift_count - axis_count_one;
+                if (axis_last_bit)
+                    axis_tlast_pending <= 1'b0;
+            end
+        end
+    end
+
+    always @(posedge axi_aclk) begin
+        if (axi_reset) begin
+            axis_ingress_toggle <= 1'b0;
+        end else if (axis_tlast_fire) begin
+            axis_ingress_toggle <= ~axis_ingress_toggle;
+        end
+    end
 
     wire                   gan_busy;
     wire                   gan_done;
@@ -283,43 +320,61 @@ module gan_serial_axi_wrapper #(
 
     reg [FRAME_BUFFER_BITS-1:0] frame_stream_buffer;
     reg                        frame_stream_active;
-    reg [FRAME_INDEX_WIDTH-1:0] frame_stream_idx;
+    reg [FRAME_INDEX_WIDTH-1:0] frame_stream_next_idx;
+    reg [FRAME_INDEX_WIDTH-1:0] frame_word_stage_idx;
+    reg [PIXEL_WORD_WIDTH-1:0]  frame_word_stage;
+    reg                        frame_word_stage_valid;
 
     wire frame_stream_idle = !frame_stream_active;
+    wire frame_output_advance = frame_word_stage_valid && m_axis_frame_tready;
 
     always @(posedge axi_aclk) begin
         if (axi_reset || start_pulse) begin
-            frame_stream_buffer  <= {FRAME_BUFFER_BITS{1'b0}};
-            frame_stream_active  <= 1'b0;
-            frame_stream_idx     <= {FRAME_INDEX_WIDTH{1'b0}};
-            frame_stream_consumed<= 1'b0;
+            frame_stream_buffer     <= {FRAME_BUFFER_BITS{1'b0}};
+            frame_stream_active     <= 1'b0;
+            frame_stream_next_idx   <= {FRAME_INDEX_WIDTH{1'b0}};
+            frame_word_stage        <= {PIXEL_WORD_WIDTH{1'b0}};
+            frame_word_stage_idx    <= {FRAME_INDEX_WIDTH{1'b0}};
+            frame_word_stage_valid  <= 1'b0;
+            frame_stream_consumed   <= 1'b0;
         end else begin
             if (frame_stream_idle && gan_generated_valid && !frame_stream_consumed) begin
-                frame_stream_buffer  <= gan_generated_frame_flat;
-                frame_stream_active  <= 1'b1;
-                frame_stream_idx     <= {FRAME_INDEX_WIDTH{1'b0}};
-                frame_stream_consumed<= 1'b1;
-            end else if (frame_stream_active && m_axis_frame_tvalid && m_axis_frame_tready) begin
-                if (frame_stream_idx == FRAME_WORD_COUNT-1) begin
-                    frame_stream_active <= 1'b0;
-                end else begin
-                    frame_stream_idx <= frame_stream_idx + 1'b1;
-                end
+                frame_stream_buffer     <= gan_generated_frame_flat;
+                frame_stream_active     <= 1'b1;
+                frame_stream_next_idx   <= {FRAME_INDEX_WIDTH{1'b0}};
+                frame_word_stage_valid  <= 1'b0;
+                frame_stream_consumed   <= 1'b1;
             end
+
+            if (frame_stream_active && !frame_word_stage_valid) begin
+                frame_word_stage       <= frame_stream_buffer[(frame_stream_next_idx+1)*PIXEL_WORD_WIDTH-1 -: PIXEL_WORD_WIDTH];
+                frame_word_stage_idx   <= frame_stream_next_idx;
+                frame_word_stage_valid <= 1'b1;
+                if (frame_stream_next_idx != FRAME_WORD_COUNT-1)
+                    frame_stream_next_idx <= frame_stream_next_idx + 1'b1;
+            end
+
+            if (frame_output_advance) begin
+                frame_word_stage_valid <= 1'b0;
+                if (frame_word_stage_idx == FRAME_WORD_COUNT-1)
+                    frame_stream_active <= 1'b0;
+            end
+
+            if (!frame_stream_active && !frame_word_stage_valid)
+                frame_stream_next_idx <= {FRAME_INDEX_WIDTH{1'b0}};
         end
     end
 
-    wire [PIXEL_WORD_WIDTH-1:0] current_frame_word = frame_stream_buffer[(frame_stream_idx+1)*PIXEL_WORD_WIDTH-1 -: PIXEL_WORD_WIDTH];
-
-    assign m_axis_frame_tvalid = frame_stream_active;
-    assign m_axis_frame_tdata  = frame_stream_active ? current_frame_word : {M_AXIS_TDATA_WIDTH{1'b0}};
-    assign m_axis_frame_tlast  = frame_stream_active && (frame_stream_idx == FRAME_WORD_COUNT-1);
+    assign m_axis_frame_tvalid = frame_stream_active && frame_word_stage_valid;
+    assign m_axis_frame_tdata  = frame_word_stage_valid ? frame_word_stage : {M_AXIS_TDATA_WIDTH{1'b0}};
+    assign m_axis_frame_tlast  = frame_stream_active && frame_word_stage_valid && (frame_word_stage_idx == FRAME_WORD_COUNT-1);
 
     // -------------------------------------------------------------------------
     // AXI-Lite readback multiplexor
     // -------------------------------------------------------------------------
     wire [31:0] status_word = {
-        26'd0,
+        25'd0,
+        axis_ingress_toggle,
         disc_real_is_real,
         disc_fake_is_real,
         gan_generated_valid,

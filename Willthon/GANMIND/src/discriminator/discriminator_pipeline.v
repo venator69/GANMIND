@@ -162,7 +162,7 @@ module discriminator_pipeline (
         .done       (l3_done)
     );
 
-    always @(posedge clk or posedge rst) begin
+    always @(posedge clk) begin
         if (rst) begin
             state             <= IDLE;
             start_l1          <= 1'b0;
@@ -196,9 +196,9 @@ module discriminator_pipeline (
 
                 LOAD: begin
                     busy <= 1'b1;
-                    if (!sample_fifo_empty && sample_load_idx < SAMPLE_COUNT) begin
+                    if (!sample_fifo_empty && sample_load_idx < SAMPLE_COUNT)
                         sample_fifo_rd_en <= 1'b1;
-                    end
+
                     if (sample_fifo_rd_valid) begin
                         sample_buffer[(sample_load_idx+1)*16-1 -: 16] <= sample_fifo_rd_data;
                         if (sample_load_idx == SAMPLE_COUNT-1) begin
@@ -229,9 +229,9 @@ module discriminator_pipeline (
                 L3: begin
                     busy <= 1'b1;
                     if (l3_done) begin
-                        disc_real_flag   <= l3_decision;
+                        disc_real_flag     <= l3_decision;
                         score_fifo_wr_data <= l3_score;
-                        state            <= OUTPUT;
+                        state              <= OUTPUT;
                     end
                 end
 

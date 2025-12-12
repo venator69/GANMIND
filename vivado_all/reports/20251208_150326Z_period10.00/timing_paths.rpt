@@ -1,0 +1,50 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
+| Date         : Mon Dec  8 15:03:30 2025
+| Host         : DESKTOP-3S5LN80 running 64-bit major release  (build 9200)
+| Command      : report_timing -max_paths 20 -path_type summary -sort_by group -file D:/GANMIND/GANMIND/vivado_all/reports/20251208_150326Z_period10.00/timing_paths.rpt
+| Design       : gan_serial_axi_wrapper
+| Device       : 7z020-clg400
+| Speed File   : -1  PRODUCTION 1.12 2019-11-22
+| Design State : Routed
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Report
+
+Startpoint                     Endpoint                       Slack(ns)     
+----------------------------------------------------------------------------
+frame_word_stage_valid_reg_replica_4/C
+                               m_axis_frame_tdata[15]         -3.854        
+frame_word_stage_valid_reg_replica_3/C
+                               m_axis_frame_tlast             -3.784        
+frame_word_stage_valid_reg_replica_2/C
+                               m_axis_frame_tdata[6]          -3.597        
+frame_stream_active_reg/C      m_axis_frame_tvalid            -3.468        
+write_buf_valid_reg/C          s_axi_wready                   -3.313        
+frame_word_stage_valid_reg_replica_1/C
+                               m_axis_frame_tdata[7]          -3.268        
+frame_word_stage_valid_reg_replica/C
+                               m_axis_frame_tdata[8]          -3.080        
+write_buf_valid_reg/C          s_axi_awready                  -3.066        
+read_buf_valid_reg/C           s_axi_arready                  -3.055        
+frame_word_stage_valid_reg_replica/C
+                               m_axis_frame_tdata[14]         -3.051        
+frame_word_stage_valid_reg_replica_5/C
+                               m_axis_frame_tdata[13]         -3.025        
+frame_word_stage_valid_reg_replica/C
+                               m_axis_frame_tdata[11]         -2.926        
+u_gan_serial_top/u_loader/u_pixel_fifo/full_reg/C
+                               s_axis_pixel_tready            -2.793        
+axi_rvalid_int_reg/C           s_axi_rvalid                   -2.750        
+axi_rdata_int_reg[5]/C         s_axi_rdata[5]                 -2.698        
+axi_rdata_int_reg[4]/C         s_axi_rdata[4]                 -2.665        
+axi_rdata_int_reg[31]_lopt_replica_12/C
+                               s_axi_rdata[26]                -2.593        
+axi_rdata_int_reg[1]/C         s_axi_rdata[1]                 -2.583        
+axi_rdata_int_reg[31]_lopt_replica_14/C
+                               s_axi_rdata[28]                -2.565        
+axi_rdata_int_reg[9]/C         s_axi_rdata[9]                 -2.524        
+
+
+

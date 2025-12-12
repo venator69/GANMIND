@@ -1,0 +1,1278 @@
+#-----------------------------------------------------------
+# Vivado v2025.1 (64-bit)
+# SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Mon Dec  8 20:44:00 2025
+# Process ID         : 14208
+# Current directory  : D:/GANMIND/GANMIND
+# Command line       : vivado.exe -mode batch -source vivado_all/analyze_timing.tcl
+# Log file           : D:/GANMIND/GANMIND/vivado.log
+# Journal file       : D:/GANMIND/GANMIND\vivado.jou
+# Running On         : DESKTOP-3S5LN80
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26100
+# Processor Detail   : Intel(R) Core(TM) i7-9750H CPU @ 2.60GHz
+# CPU Frequency      : 2592 MHz
+# CPU Physical cores : 6
+# CPU Logical cores  : 12
+# Host memory        : 17095 MB
+# Swap memory        : 27782 MB
+# Total Virtual      : 44877 MB
+# Available Virtual  : 8218 MB
+#-----------------------------------------------------------
+source vivado_all/analyze_timing.tcl
+# set clock_period_ns 10.0      
+# set rerun true                
+# set idx 0
+# while {$idx < [llength $argv]} {
+#     set flag [lindex $argv $idx]
+#     switch -- $flag {
+#         -clock_period {
+#             incr idx
+#             if {$idx >= [llength $argv]} {
+#                 error "-clock_period expects a numeric argument"
+#             }
+#             set clock_period_ns [lindex $argv $idx]
+#         }
+#         -reuse_runs {
+#             set rerun false
+#         }
+#         default {
+#             error "Unknown argument: $flag"
+#         }
+#     }
+#     incr idx
+# }
+# set script_dir    [file dirname [file normalize [info script]]]
+# set project_file  [file join $script_dir ganmind_all.xpr]
+# set report_root   [file join $script_dir reports]
+# file mkdir $report_root
+# if {![file exists $project_file]} {
+#     error "Cannot find project file: $project_file"
+# }
+# puts "INFO: Opening project $project_file"
+INFO: Opening project D:/GANMIND/GANMIND/vivado_all/ganmind_all.xpr
+# open_project $project_file
+INFO: [filemgmt 56-3] Default IP Output Path : Could not find the directory 'D:/GANMIND/GANMIND/vivado_all/ganmind_all.gen/sources_1'.
+Scanning sources...
+Finished scanning sources
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:ac701:part0:1.4 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\ac701\1.4\board.xml as part xc7a200tfbg676-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:emb-plus-vpr-4616:part0:1.0 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\emb-plus-vpr-4616\1.0\board.xml as part xcve2302-sfva784-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:emb-plus-vpr-4616:part0:1.1 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\emb-plus-vpr-4616\1.1\board.xml as part xcve2302-sfva784-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kc705:part0:1.6 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\kc705\1.6\board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kc705:part0:1.7 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\kc705\1.7\board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu105:part0:1.6 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\kcu105\1.6\board.xml as part xcku040-ffva1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu105:part0:1.7 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\kcu105\1.7\board.xml as part xcku040-ffva1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu116:part0:1.4 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\kcu116\1.4\board.xml as part xcku5p-ffvb676-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu116:part0:1.5 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\kcu116\1.5\board.xml as part xcku5p-ffvb676-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu1500:part0:1.2 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\kcu1500\1.2\board.xml as part xcku115-flvb2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:scu35:part0:1.0 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\scu35\1.0\board.xml as part xcsu35p-sbvb625-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:sp701:part0:1.0 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\sp701\1.0\board.xml as part xc7s100fgga676-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:sp701:part0:1.1 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\sp701\1.1\board.xml as part xc7s100fgga676-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:v80:part0:1.0 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\v80\1.0\board.xml as part xcv80-lsva4737-2mhp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vc707:part0:1.4 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vc707\1.4\board.xml as part xc7vx485tffg1761-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vc707:part0:1.5 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vc707\1.5\board.xml as part xc7vx485tffg1761-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vc709:part0:1.8 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vc709\1.8\board.xml as part xc7vx690tffg1761-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:2.2 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vck190\production\2.2\board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.0 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vck190\production\3.0\board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.1 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vck190\production\3.1\board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.2 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vck190\production\3.2\board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.3 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vck190\production\3.3\board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.4 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vck190\production\3.4\board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_newl:part0:1.0 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vck190_newl\production\1.0\board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_newl:part0:1.1 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vck190_newl\production\1.1\board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_newl:part0:1.2 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vck190_newl\production\1.2\board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_newl:part0:1.3 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vck190_newl\production\1.3\board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu108:part0:1.6 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vcu108\1.6\board.xml as part xcvu095-ffva2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu108:part0:1.7 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vcu108\1.7\board.xml as part xcvu095-ffva2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu110:part0:1.4 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vcu110\1.4\board.xml as part xcvu190-flgc2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu118:part0:2.0 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vcu118\2.0\board.xml as part xcvu9p-flga2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu118:part0:2.3 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vcu118\2.3\board.xml as part xcvu9p-flga2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu118:part0:2.4 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vcu118\2.4\board.xml as part xcvu9p-flga2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu128:part0:1.0 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vcu128\production\1.0\board.xml as part xcvu37p-fsvh2892-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu129:part0:1.0 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vcu129\production\1.0\board.xml as part xcvu29p-fsga2577-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu1525:part0:1.3 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vcu1525\1.3\board.xml as part xcvu9p-fsgd2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280:part0:1.0 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vek280\production\1.0\board.xml as part xcve2802-vsvh1760-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280:part0:1.1 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vek280\production\1.1\board.xml as part xcve2802-vsvh1760-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280:part0:1.2 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vek280\production\1.2\board.xml as part xcve2802-vsvh1760-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek385:part0:1.0 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vek385\1.0\board.xml as part xc2ve3858-ssva2112-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vermeo_t1_mpsoc:part0:1.0 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vermeo_t1_mpsoc\1.0\board.xml as part xczu19eg-ffvd1760-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vermeo_t1_rfsoc:part0:1.0 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vermeo_t1_rfsoc\1.0\board.xml as part xczu21dr-ffvd1156-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158:part0:1.0 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vhk158\production\1.0\board.xml as part xcvh1582-vsva3697-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158:part0:1.1 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vhk158\production\1.1\board.xml as part xcvh1582-vsva3697-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158:part0:1.2 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vhk158\production\1.2\board.xml as part xcvh1582-vsva3697-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:2.2 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vmk180\production\2.2\board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.0 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vmk180\production\3.0\board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.1 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vmk180\production\3.1\board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.2 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vmk180\production\3.2\board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.3 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vmk180\production\3.3\board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180_newl:part0:1.0 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vmk180_newl\production\1.0\board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180_newl:part0:1.1 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vmk180_newl\production\1.1\board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120:part0:1.0 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vpk120\production\1.0\board.xml as part xcvp1202-vsva2785-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120:part0:1.1 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vpk120\production\1.1\board.xml as part xcvp1202-vsva2785-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120:part0:1.2 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vpk120\production\1.2\board.xml as part xcvp1202-vsva2785-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180:part0:1.0 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vpk180\production\1.0\board.xml as part xcvp1802-lsvc4072-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180:part0:1.1 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vpk180\production\1.1\board.xml as part xcvp1802-lsvc4072-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180:part0:1.2 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vpk180\production\1.2\board.xml as part xcvp1802-lsvc4072-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu102:part0:3.3 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\zcu102\3.3\board.xml as part xczu9eg-ffvb1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu102:part0:3.4 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\zcu102\3.4\board.xml as part xczu9eg-ffvb1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu111:part0:1.2 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\zcu111\1.2\board.xml as part xczu28dr-ffvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu111:part0:1.3 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\zcu111\1.3\board.xml as part xczu28dr-ffvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu111:part0:1.4 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\zcu111\1.4\board.xml as part xczu28dr-ffvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu1275:part0:1.0 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\zcu1275\1.0\board.xml as part xczu29dr-ffvf1760-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu1285:part0:1.0 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\zcu1285\1.0\board.xml as part xczu39dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208:part0:2.0 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\zcu208\production\2.0\board.xml as part xczu48dr-fsvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\zcu208ld\production\2.0\board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216:part0:2.0 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\zcu216\production\2.0\board.xml as part xczu49dr-ffvf1760-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\zcu216ld\production\2.0\board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670:part0:2.0 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\zcu670\2.0\board.xml as part xczu67dr-fsve1156-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\zcu670ld\1.0\board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+WARNING: [Project 1-5713] Board part '' set for the project  is not found. BoardPart property will be unset. Please select board from latest repo build 
+open_project: Time (s): cpu = 00:00:13 ; elapsed = 00:00:11 . Memory (MB): peak = 493.027 ; gain = 212.426
+# set repo_root   [file normalize [file join $script_dir ..]]
+# set gan_src_dir [file join $repo_root Willthon GANMIND]
+# set hex_dir     [file join $gan_src_dir src layers hex_data]
+# set src_fs      [get_filesets sources_1]
+# if {![file isdirectory $hex_dir]} {
+#     puts "WARN: Hex data directory not found at $hex_dir; $readmemh will likely fail"
+# } else {
+#     set hex_files [glob -nocomplain -directory $hex_dir *.hex]
+#     if {[llength $hex_files] == 0} {
+#         puts "WARN: No .hex files found under $hex_dir; $readmemh will likely fail"
+#     } else {
+#         set added_hex false
+#         foreach hex_file $hex_files {
+#             set norm_hex [file normalize $hex_file]
+#             set proj_hex [string map {\\ /} $norm_hex]
+#             if {[llength [get_files -quiet $proj_hex]] == 0} {
+#                 puts "INFO: Adding hex init file $proj_hex to sources_1"
+#                 add_files -fileset $src_fs $proj_hex
+#                 set added_hex true
+#             }
+#         }
+#         if {$added_hex} {
+#             update_compile_order -fileset $src_fs
+#         }
+#     }
+# 
+#     set hex_define_path [string map {\\ /} [file normalize $hex_dir]]
+#     set hex_define [format {HEX_DATA_ROOT="%s"} $hex_define_path]
+#     set current_defines [get_property verilog_define $src_fs]
+#     if {$current_defines eq ""} {
+#         set current_defines {}
+#     }
+#     if {[lsearch -exact $current_defines $hex_define] < 0} {
+#         puts "INFO: Injecting HEX_DATA_ROOT define => $hex_define_path"
+#         lappend current_defines $hex_define
+#         set_property verilog_define $current_defines $src_fs
+#     }
+# }
+# if {$rerun} {
+#     puts "INFO: Resetting runs"
+#     catch {reset_run impl_1}
+#     catch {reset_run synth_1}
+# 
+#     puts "INFO: Launching synth_1"
+#     launch_runs synth_1
+#     wait_on_run synth_1
+# 
+#     puts "INFO: Launching impl_1 (route_design)"
+#     launch_runs impl_1 -to_step route_design
+#     wait_on_run impl_1
+# } else {
+#     puts "INFO: -reuse_runs set; skipping new synth/impl"
+# }
+INFO: Resetting runs
+INFO: [Project 1-1161] Replacing file D:/GANMIND/GANMIND/vivado_all/ganmind_all.srcs/utils_1/imports/synth_1/gan_serial_axi_wrapper.dcp with file D:/GANMIND/GANMIND/vivado_all/ganmind_all.runs/synth_1/gan_serial_axi_wrapper.dcp
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory D:/GANMIND/GANMIND/vivado_all/ganmind_all.runs/synth_1
+
+INFO: Launching synth_1
+[Mon Dec  8 20:44:20 2025] Launched synth_1...
+Run output will be captured here: D:/GANMIND/GANMIND/vivado_all/ganmind_all.runs/synth_1/runme.log
+[Mon Dec  8 20:44:20 2025] Waiting for synth_1 to finish...
+
+*** Running vivado
+    with args -log gan_serial_axi_wrapper.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source gan_serial_axi_wrapper.tcl
+
+
+
+****** Vivado v2025.1 (64-bit)
+  **** SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+  **** IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+  **** SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+  **** Start of session at: Mon Dec  8 20:44:23 2025
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source gan_serial_axi_wrapper.tcl -notrace
+create_project: Time (s): cpu = 00:00:13 ; elapsed = 00:00:10 . Memory (MB): peak = 491.027 ; gain = 210.902
+Command: read_checkpoint -auto_incremental -incremental D:/GANMIND/GANMIND/vivado_all/ganmind_all.srcs/utils_1/imports/synth_1/gan_serial_axi_wrapper.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from D:/GANMIND/GANMIND/vivado_all/ganmind_all.srcs/utils_1/imports/synth_1/gan_serial_axi_wrapper.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+read_checkpoint: Time (s): cpu = 00:00:04 ; elapsed = 00:00:11 . Memory (MB): peak = 496.066 ; gain = 5.039
+Command: synth_design -top gan_serial_axi_wrapper -part xc7z020clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 17696
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1219.469 ; gain = 492.309
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-6901] identifier 'gan_done' is used before its declaration [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_axi_wrapper.v:226]
+INFO: [Synth 8-6157] synthesizing module 'gan_serial_axi_wrapper' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_axi_wrapper.v:27]
+INFO: [Synth 8-6157] synthesizing module 'gan_serial_top' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:63]
+INFO: [Synth 8-6157] synthesizing module 'pixel_serial_loader' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/interfaces/pixel_serial_loader.v:26]
+INFO: [Synth 8-6157] synthesizing module 'sync_fifo' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/fifo/sync_fifo.v:9]
+	Parameter DATA_WIDTH bound to: 16 - type: integer 
+	Parameter DEPTH bound to: 1024 - type: integer 
+	Parameter ADDR_WIDTH bound to: 10 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'sync_fifo' (0#1) [D:/GANMIND/GANMIND/Willthon/GANMIND/src/fifo/sync_fifo.v:9]
+INFO: [Synth 8-226] default block is never used [D:/GANMIND/GANMIND/Willthon/GANMIND/src/interfaces/pixel_serial_loader.v:133]
+INFO: [Synth 8-6155] done synthesizing module 'pixel_serial_loader' (0#1) [D:/GANMIND/GANMIND/Willthon/GANMIND/src/interfaces/pixel_serial_loader.v:26]
+INFO: [Synth 8-6157] synthesizing module 'frame_sampler' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/interfaces/frame_sampler.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'frame_sampler' (0#1) [D:/GANMIND/GANMIND/Willthon/GANMIND/src/interfaces/frame_sampler.v:14]
+INFO: [Synth 8-6157] synthesizing module 'seed_lfsr_bank' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/generator/seed_lfsr_bank.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'seed_lfsr_bank' (0#1) [D:/GANMIND/GANMIND/Willthon/GANMIND/src/generator/seed_lfsr_bank.v:13]
+INFO: [Synth 8-6157] synthesizing module 'generator_pipeline' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/generator/generator_pipeline.v:38]
+INFO: [Synth 8-6157] synthesizing module 'sync_fifo__parameterized0' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/fifo/sync_fifo.v:9]
+	Parameter DATA_WIDTH bound to: 16 - type: integer 
+	Parameter DEPTH bound to: 64 - type: integer 
+	Parameter ADDR_WIDTH bound to: 6 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'sync_fifo__parameterized0' (0#1) [D:/GANMIND/GANMIND/Willthon/GANMIND/src/fifo/sync_fifo.v:9]
+INFO: [Synth 8-6157] synthesizing module 'sync_fifo__parameterized1' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/fifo/sync_fifo.v:9]
+	Parameter DATA_WIDTH bound to: 16 - type: integer 
+	Parameter DEPTH bound to: 128 - type: integer 
+	Parameter ADDR_WIDTH bound to: 7 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'sync_fifo__parameterized1' (0#1) [D:/GANMIND/GANMIND/Willthon/GANMIND/src/fifo/sync_fifo.v:9]
+INFO: [Synth 8-6157] synthesizing module 'layer1_generator' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer1_generator.v:8]
+INFO: [Synth 8-3876] $readmem data file 'D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/hex_data/layer1_gen_weights.hex' is read successfully [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer1_generator.v:28]
+INFO: [Synth 8-3876] $readmem data file 'D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/hex_data/layer1_gen_bias.hex' is read successfully [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer1_generator.v:29]
+INFO: [Synth 8-6155] done synthesizing module 'layer1_generator' (0#1) [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer1_generator.v:8]
+INFO: [Synth 8-6157] synthesizing module 'layer2_generator' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer2_generator.v:8]
+INFO: [Synth 8-3876] $readmem data file 'D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/hex_data/Generator_Layer2_Weights_All.hex' is read successfully [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer2_generator.v:28]
+INFO: [Synth 8-3876] $readmem data file 'D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/hex_data/Generator_Layer2_Biases_All.hex' is read successfully [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer2_generator.v:29]
+INFO: [Synth 8-6155] done synthesizing module 'layer2_generator' (0#1) [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer2_generator.v:8]
+INFO: [Synth 8-6157] synthesizing module 'layer3_generator' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer3_generator.v:8]
+INFO: [Synth 8-3876] $readmem data file 'D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/hex_data/Generator_Layer3_Weights_All.hex' is read successfully [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer3_generator.v:28]
+INFO: [Synth 8-3876] $readmem data file 'D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/hex_data/Generator_Layer3_Biases_All.hex' is read successfully [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer3_generator.v:29]
+INFO: [Synth 8-6155] done synthesizing module 'layer3_generator' (0#1) [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer3_generator.v:8]
+INFO: [Synth 8-6155] done synthesizing module 'generator_pipeline' (0#1) [D:/GANMIND/GANMIND/Willthon/GANMIND/src/generator/generator_pipeline.v:38]
+INFO: [Synth 8-6157] synthesizing module 'vector_sigmoid' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/interfaces/vector_sigmoid.v:24]
+INFO: [Synth 8-6157] synthesizing module 'sigmoid_approx' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/interfaces/sigmoid_approx.v:13]
+	Parameter DATA_WIDTH bound to: 16 - type: integer 
+	Parameter Q_FRAC bound to: 8 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'sigmoid_approx' (0#1) [D:/GANMIND/GANMIND/Willthon/GANMIND/src/interfaces/sigmoid_approx.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'vector_sigmoid' (0#1) [D:/GANMIND/GANMIND/Willthon/GANMIND/src/interfaces/vector_sigmoid.v:24]
+INFO: [Synth 8-6157] synthesizing module 'vector_expander' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/interfaces/vector_expander.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'vector_expander' (0#1) [D:/GANMIND/GANMIND/Willthon/GANMIND/src/interfaces/vector_expander.v:14]
+INFO: [Synth 8-6157] synthesizing module 'vector_upsampler' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/interfaces/vector_upsampler.v:16]
+INFO: [Synth 8-6155] done synthesizing module 'vector_upsampler' (0#1) [D:/GANMIND/GANMIND/Willthon/GANMIND/src/interfaces/vector_upsampler.v:16]
+INFO: [Synth 8-6157] synthesizing module 'discriminator_pipeline' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/discriminator/discriminator_pipeline.v:37]
+INFO: [Synth 8-6157] synthesizing module 'sync_fifo__parameterized2' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/fifo/sync_fifo.v:9]
+	Parameter DATA_WIDTH bound to: 16 - type: integer 
+	Parameter DEPTH bound to: 256 - type: integer 
+	Parameter ADDR_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'sync_fifo__parameterized2' (0#1) [D:/GANMIND/GANMIND/Willthon/GANMIND/src/fifo/sync_fifo.v:9]
+INFO: [Synth 8-6157] synthesizing module 'sync_fifo__parameterized3' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/fifo/sync_fifo.v:9]
+	Parameter DATA_WIDTH bound to: 16 - type: integer 
+	Parameter DEPTH bound to: 4 - type: integer 
+	Parameter ADDR_WIDTH bound to: 2 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'sync_fifo__parameterized3' (0#1) [D:/GANMIND/GANMIND/Willthon/GANMIND/src/fifo/sync_fifo.v:9]
+INFO: [Synth 8-6157] synthesizing module 'layer1_discriminator' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer1_discriminator.v:8]
+INFO: [Synth 8-3876] $readmem data file 'D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/hex_data/Discriminator_Layer1_Weights_All.hex' is read successfully [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer1_discriminator.v:28]
+INFO: [Synth 8-3876] $readmem data file 'D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/hex_data/Discriminator_Layer1_Biases_All.hex' is read successfully [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer1_discriminator.v:29]
+INFO: [Synth 8-6155] done synthesizing module 'layer1_discriminator' (0#1) [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer1_discriminator.v:8]
+INFO: [Synth 8-6157] synthesizing module 'layer2_discriminator' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer2_discriminator.v:8]
+INFO: [Synth 8-3876] $readmem data file 'D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/hex_data/Discriminator_Layer2_Weights_All.hex' is read successfully [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer2_discriminator.v:28]
+INFO: [Synth 8-3876] $readmem data file 'D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/hex_data/Discriminator_Layer2_Biases_All.hex' is read successfully [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer2_discriminator.v:29]
+INFO: [Synth 8-6155] done synthesizing module 'layer2_discriminator' (0#1) [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer2_discriminator.v:8]
+INFO: [Synth 8-6157] synthesizing module 'layer3_discriminator' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer3_discriminator.v:8]
+INFO: [Synth 8-3876] $readmem data file 'D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/hex_data/Discriminator_Layer3_Weights_All.hex' is read successfully [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer3_discriminator.v:29]
+INFO: [Synth 8-3876] $readmem data file 'D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/hex_data/Discriminator_Layer3_Biases_All.hex' is read successfully [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer3_discriminator.v:30]
+INFO: [Synth 8-6157] synthesizing module 'pipelined_mac' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'pipelined_mac' (0#1) [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer3_discriminator' (0#1) [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer3_discriminator.v:8]
+INFO: [Synth 8-6155] done synthesizing module 'discriminator_pipeline' (0#1) [D:/GANMIND/GANMIND/Willthon/GANMIND/src/discriminator/discriminator_pipeline.v:37]
+INFO: [Synth 8-226] default block is never used [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:509]
+INFO: [Synth 8-6155] done synthesizing module 'gan_serial_top' (0#1) [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_top.v:63]
+INFO: [Synth 8-6155] done synthesizing module 'gan_serial_axi_wrapper' (0#1) [D:/GANMIND/GANMIND/Willthon/GANMIND/src/top/gan_serial_axi_wrapper.v:27]
+WARNING: [Synth 8-7137] Register mem_reg in module sync_fifo has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code 
+WARNING: [Synth 8-4767] Trying to implement RAM 'mem_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+	1: RAM is sensitive to asynchronous reset signal. this RTL style is not supported. 
+RAM "mem_reg" dissolved into registers
+WARNING: [Synth 8-6014] Unused sequential element tmp_rem_reg was removed.  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/interfaces/frame_sampler.v:82]
+WARNING: [Synth 8-6014] Unused sequential element tmp_src_reg was removed.  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/interfaces/frame_sampler.v:83]
+WARNING: [Synth 8-7137] Register mem_reg in module sync_fifo__parameterized0 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code 
+WARNING: [Synth 8-4767] Trying to implement RAM 'mem_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+	1: RAM is sensitive to asynchronous reset signal. this RTL style is not supported. 
+RAM "mem_reg" dissolved into registers
+WARNING: [Synth 8-7137] Register mem_reg in module sync_fifo__parameterized1 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code 
+WARNING: [Synth 8-4767] Trying to implement RAM 'mem_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+	1: RAM is sensitive to asynchronous reset signal. this RTL style is not supported. 
+RAM "mem_reg" dissolved into registers
+WARNING: [Synth 8-6014] Unused sequential element bias_shifted_reg was removed.  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer1_generator.v:65]
+WARNING: [Synth 8-7137] Register flat_output_flat_reg in module layer1_generator has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer1_generator.v:83]
+WARNING: [Synth 8-6014] Unused sequential element bias_shifted_reg was removed.  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer2_generator.v:57]
+WARNING: [Synth 8-6014] Unused sequential element compute_en_reg was removed.  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer2_generator.v:59]
+WARNING: [Synth 8-6014] Unused sequential element bias_shifted_reg was removed.  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer3_generator.v:56]
+WARNING: [Synth 8-7137] Register flat_output_flat_reg in module layer3_generator has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer3_generator.v:74]
+WARNING: [Synth 8-7137] Register feature_fifo_wr_data_reg in module generator_pipeline has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/generator/generator_pipeline.v:134]
+WARNING: [Synth 8-7137] Register mem_reg in module sync_fifo__parameterized2 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code 
+WARNING: [Synth 8-4767] Trying to implement RAM 'mem_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+	1: RAM is sensitive to asynchronous reset signal. this RTL style is not supported. 
+RAM "mem_reg" dissolved into registers
+WARNING: [Synth 8-7137] Register mem_reg in module sync_fifo__parameterized3 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code 
+WARNING: [Synth 8-4767] Trying to implement RAM 'mem_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+	1: RAM is sensitive to asynchronous reset signal. this RTL style is not supported. 
+RAM "mem_reg" dissolved into registers
+WARNING: [Synth 8-6014] Unused sequential element bias_shifted_reg was removed.  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer1_discriminator.v:59]
+WARNING: [Synth 8-7137] Register flat_output_flat_reg in module layer1_discriminator has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer1_discriminator.v:77]
+WARNING: [Synth 8-6014] Unused sequential element bias_shifted_reg was removed.  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer2_discriminator.v:59]
+WARNING: [Synth 8-7137] Register flat_output_flat_reg in module layer2_discriminator has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer2_discriminator.v:77]
+WARNING: [Synth 8-7137] Register ra_reg[0] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register ra_reg[1] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register ra_reg[2] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register ra_reg[3] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register ra_reg[4] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register ra_reg[5] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register ra_reg[6] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register ra_reg[7] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register ra_reg[8] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register ra_reg[9] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register ra_reg[10] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register ra_reg[11] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register ra_reg[12] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register ra_reg[13] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register ra_reg[14] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register ra_reg[15] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register ra_reg[16] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register ra_reg[17] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register ra_reg[18] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register ra_reg[19] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register ra_reg[20] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register ra_reg[21] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register ra_reg[22] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register ra_reg[23] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register ra_reg[24] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register ra_reg[25] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register ra_reg[26] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register ra_reg[27] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register ra_reg[28] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register ra_reg[29] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register ra_reg[30] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register ra_reg[31] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register rb_reg[0] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register rb_reg[1] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register rb_reg[2] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register rb_reg[3] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register rb_reg[4] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register rb_reg[5] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register rb_reg[6] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register rb_reg[7] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register rb_reg[8] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register rb_reg[9] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register rb_reg[10] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register rb_reg[11] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register rb_reg[12] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register rb_reg[13] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register rb_reg[14] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register rb_reg[15] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register rb_reg[16] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register rb_reg[17] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register rb_reg[18] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register rb_reg[19] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register rb_reg[20] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register rb_reg[21] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register rb_reg[22] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register rb_reg[23] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register rb_reg[24] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register rb_reg[25] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register rb_reg[26] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register rb_reg[27] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register rb_reg[28] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register rb_reg[29] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register rb_reg[30] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register rb_reg[31] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:55]
+WARNING: [Synth 8-7137] Register p_reg[0] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:95]
+WARNING: [Synth 8-7137] Register p_reg[1] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:95]
+WARNING: [Synth 8-7137] Register p_reg[2] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:95]
+WARNING: [Synth 8-7137] Register p_reg[3] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:95]
+WARNING: [Synth 8-7137] Register p_reg[4] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:95]
+WARNING: [Synth 8-7137] Register p_reg[5] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:95]
+WARNING: [Synth 8-7137] Register p_reg[6] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:95]
+WARNING: [Synth 8-7137] Register p_reg[7] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:95]
+WARNING: [Synth 8-7137] Register p_reg[8] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:95]
+WARNING: [Synth 8-7137] Register p_reg[9] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:95]
+WARNING: [Synth 8-7137] Register p_reg[10] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:95]
+WARNING: [Synth 8-7137] Register p_reg[11] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:95]
+WARNING: [Synth 8-7137] Register p_reg[12] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:95]
+WARNING: [Synth 8-7137] Register p_reg[13] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:95]
+WARNING: [Synth 8-7137] Register p_reg[14] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:95]
+WARNING: [Synth 8-7137] Register p_reg[15] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:95]
+WARNING: [Synth 8-7137] Register p_reg[16] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:95]
+WARNING: [Synth 8-7137] Register p_reg[17] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:95]
+WARNING: [Synth 8-7137] Register p_reg[18] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:95]
+WARNING: [Synth 8-7137] Register p_reg[19] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:95]
+WARNING: [Synth 8-7137] Register p_reg[20] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:95]
+WARNING: [Synth 8-7137] Register p_reg[21] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:95]
+WARNING: [Synth 8-7137] Register p_reg[22] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:95]
+WARNING: [Synth 8-7137] Register p_reg[23] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:95]
+WARNING: [Synth 8-7137] Register p_reg[24] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:95]
+WARNING: [Synth 8-7137] Register p_reg[25] in module pipelined_mac has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/pipelined_mac.v:95]
+INFO: [Common 17-14] Message 'Synth 8-7137' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+WARNING: [Synth 8-7129] Port s_axis_pixel_tdata[15] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_pixel_tdata[14] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_pixel_tdata[13] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_pixel_tdata[12] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_pixel_tdata[11] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_pixel_tdata[10] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_pixel_tdata[9] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_pixel_tdata[8] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_pixel_tdata[7] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_pixel_tdata[6] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_pixel_tdata[5] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_pixel_tdata[4] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_pixel_tdata[3] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_pixel_tdata[2] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_pixel_tdata[1] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_pixel_tlast in module gan_serial_axi_wrapper is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 1798.910 ; gain = 1071.750
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 1798.910 ; gain = 1071.750
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 1798.910 ; gain = 1071.750
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1941.676 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [D:/GANMIND/GANMIND/vivado_all/gan_mind.xdc]
+Finished Parsing XDC File [D:/GANMIND/GANMIND/vivado_all/gan_mind.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.072 . Memory (MB): peak = 2778.402 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:01:12 ; elapsed = 00:01:18 . Memory (MB): peak = 2824.254 ; gain = 2097.094
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:01:12 ; elapsed = 00:01:18 . Memory (MB): peak = 2824.254 ; gain = 2097.094
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:01:12 ; elapsed = 00:01:18 . Memory (MB): peak = 2824.254 ; gain = 2097.094
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Preparing Guide Design
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Doing Graph Differ : Time (s): cpu = 00:01:17 ; elapsed = 00:01:24 . Memory (MB): peak = 2824.254 ; gain = 2097.094
+---------------------------------------------------------------------------------
+frame_sampler__GB4frame_sampler__GB8frame_sampler__GB2frame_sampler__GB1frame_sampler__GB10gan_serial_top__GCB3layer1_generator__GB1frame_sampler__GB6vector_expanderlayer2_generator__GB2vector_upsampler__GB3sync_fifo__GB0gan_serial_top__GCB2gan_serial_top__GCB1frame_sampler__GB12pixel_serial_loader__GCB6datapath__79_vector_upsampler__GDdatapath__6_pixel_serial_loader__GDgan_serial_axi_wrapper__GC0discriminator_pipeline__GB4vector_upsampler__GB2frame_sampler__GB13pixel_serial_loader__GCB3frame_sampler__GB16layer1_generator__GB2pixel_serial_loader__GCB1frame_sampler__GB3frame_sampler__GB15frame_sampler__GB9layer2_generator__GB0layer2_generator__GB3layer1_generator__GB0discriminator_pipeline__GB2discriminator_pipeline__GB3frame_sampler__GB0datapath__11_pixel_serial_loader__GDlayer3_generatorframe_sampler__GB5frame_sampler__GB7layer1_generator__GB3gan_serial_top__GCB4discriminator_pipeline__GB0generator_pipeline__GCB2layer2_generator__GB1sync_fifo__GB2frame_sampler__GB14discriminator_pipeline__GB1frame_sampler__GB11datapath__75_vector_upsampler__GDcase__1_pixel_serial_loader__GD---------------------------------------------------------------------------------
+Finished Preparing Guide Design : Time (s): cpu = 00:01:45 ; elapsed = 00:01:58 . Memory (MB): peak = 3349.512 ; gain = 2622.352
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:47 ; elapsed = 00:02:00 . Memory (MB): peak = 3349.512 ; gain = 2622.352
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Mimic Skeleton from Reference
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Mimic Skeleton from Reference : Time (s): cpu = 00:01:58 ; elapsed = 00:02:13 . Memory (MB): peak = 3349.512 ; gain = 2622.352
+---------------------------------------------------------------------------------
+
+
+Incremental Synthesis Report Summary:
+
+1. Incremental synthesis run: yes
+
+   Stitch points used : unchanged
+
+
+2. Change Summary
+
+Report Incremental Modules: 
++-+----------------+------------+----------+----------+
+| |Changed Modules |Replication |Instances |Changed % |
++-+----------------+------------+----------+----------+
++-+----------------+------------+----------+----------+
+
+
+   Full Design Size (number of cells) : 1218835
+   Resynthesis Design Size (number of cells) : 122941
+   Resynth % : 10.0868,  Reuse % : 89.9132
+
+3. Reference Checkpoint Information
+
++--------------------------------------------------------------------------------------------------------------------+
+| DCP Location:  | D:/GANMIND/GANMIND/vivado_all/ganmind_all.srcs/utils_1/imports/synth_1/gan_serial_axi_wrapper.dcp |
++--------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------+------------------------------+
+|         DCP Information        |             Value            |
++--------------------------------+------------------------------+
+| Vivado Version                 |                    v2025.1 |
+| DCP State                      |                              |
++--------------------------------+------------------------------+
+
+
+
+Report RTL Partitions: 
++------+---------------------------------------------+------------+----------+
+|      |RTL Partition                                |Replication |Instances |
++------+---------------------------------------------+------------+----------+
+|1     |muxpart__1846_generator_pipeline             |           1|      4080|
+|2     |sync_fifo__GB1                               |           1|     10564|
+|3     |rom__2_layer2_generator                      |           1|     20470|
+|4     |frame_sampler__GB13                          |           1|      8160|
+|5     |frame_sampler__GB14                          |           1|     12240|
+|6     |frame_sampler__GB15                          |           1|     16320|
+|7     |layer2_generator__GB0                        |           1|     39215|
+|8     |layer2_generator__GB3                        |           1|     11891|
+|9     |sync_fifo__GB0_#REUSE#                       |           1|         0|
+|10    |sync_fifo__GB2_#REUSE#                       |           1|         0|
+|11    |datapath__11_pixel_serial_loader__GD_#REUSE# |           1|         0|
+|12    |pixel_serial_loader__GCB1_#REUSE#            |           1|         0|
+|13    |case__1_pixel_serial_loader__GD_#REUSE#      |           1|         0|
+|14    |pixel_serial_loader__GCB3_#REUSE#            |           1|         0|
+|15    |datapath__6_pixel_serial_loader__GD_#REUSE#  |           1|         0|
+|16    |pixel_serial_loader__GCB6_#REUSE#            |           1|         0|
+|17    |frame_sampler__GB0_#REUSE#                   |           1|         0|
+|18    |frame_sampler__GB1_#REUSE#                   |           1|         0|
+|19    |frame_sampler__GB2_#REUSE#                   |           1|         0|
+|20    |frame_sampler__GB3_#REUSE#                   |           1|         0|
+|21    |frame_sampler__GB4_#REUSE#                   |           1|         0|
+|22    |frame_sampler__GB5_#REUSE#                   |           1|         0|
+|23    |frame_sampler__GB6_#REUSE#                   |           1|         0|
+|24    |frame_sampler__GB7_#REUSE#                   |           1|         0|
+|25    |frame_sampler__GB8_#REUSE#                   |           1|         0|
+|26    |frame_sampler__GB9_#REUSE#                   |           1|         0|
+|27    |frame_sampler__GB10_#REUSE#                  |           1|         0|
+|28    |frame_sampler__GB11_#REUSE#                  |           1|         0|
+|29    |frame_sampler__GB12_#REUSE#                  |           1|         0|
+|30    |frame_sampler__GB16_#REUSE#                  |           1|         0|
+|31    |layer1_generator__GB0_#REUSE#                |           1|         0|
+|32    |layer1_generator__GB1_#REUSE#                |           1|         0|
+|33    |layer1_generator__GB2_#REUSE#                |           1|         0|
+|34    |layer1_generator__GB3_#REUSE#                |           1|         0|
+|35    |layer2_generator__GB1_#REUSE#                |           1|         0|
+|36    |layer2_generator__GB2_#REUSE#                |           1|         0|
+|37    |layer3_generator_#REUSE#                     |           1|         0|
+|38    |generator_pipeline__GCB2_#REUSE#             |           1|         0|
+|39    |vector_expander_#REUSE#                      |           1|         0|
+|40    |datapath__79_vector_upsampler__GD_#REUSE#    |           1|         0|
+|41    |datapath__75_vector_upsampler__GD_#REUSE#    |           1|         0|
+|42    |vector_upsampler__GB2_#REUSE#                |           1|         0|
+|43    |vector_upsampler__GB3_#REUSE#                |           1|         0|
+|44    |discriminator_pipeline__GB0_#REUSE#          |           1|         0|
+|45    |discriminator_pipeline__GB1_#REUSE#          |           1|         0|
+|46    |discriminator_pipeline__GB2_#REUSE#          |           1|         0|
+|47    |discriminator_pipeline__GB3_#REUSE#          |           1|         0|
+|48    |discriminator_pipeline__GB4_#REUSE#          |           1|         0|
+|49    |gan_serial_top__GCB1_#REUSE#                 |           1|         0|
+|50    |gan_serial_top__GCB2_#REUSE#                 |           1|         0|
+|51    |gan_serial_top__GCB3_#REUSE#                 |           1|         0|
+|52    |gan_serial_top__GCB4_#REUSE#                 |           1|         0|
+|53    |gan_serial_axi_wrapper__GC0_#REUSE#          |           1|         0|
++------+---------------------------------------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input    9 Bit       Adders := 3     
++---Registers : 
+	             4096 Bit    Registers := 1     
+	               32 Bit    Registers := 1     
+	                9 Bit    Registers := 4     
+	                1 Bit    Registers := 2     
++---ROMs : 
+	                    ROMs := 1     
++---Muxes : 
+	   2 Input 4096 Bit        Muxes := 4     
+	   2 Input   32 Bit        Muxes := 3     
+	   2 Input    9 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 8     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7129] Port s_axis_pixel_tdata[15] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_pixel_tdata[14] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_pixel_tdata[13] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_pixel_tdata[12] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_pixel_tdata[11] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_pixel_tdata[10] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_pixel_tdata[9] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_pixel_tdata[8] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_pixel_tdata[7] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_pixel_tdata[6] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_pixel_tdata[5] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_pixel_tdata[4] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_pixel_tdata[3] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_pixel_tdata[2] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_pixel_tdata[1] in module gan_serial_axi_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_pixel_tlast in module gan_serial_axi_wrapper is either unconnected or has no load
+DSP Report: Generating DSP next_acc, operation Mode is: C'+A*B.
+DSP Report: register accumulator_reg is absorbed into DSP next_acc.
+DSP Report: operator next_acc is absorbed into DSP next_acc.
+DSP Report: operator current_product is absorbed into DSP next_acc.
+INFO: [Synth 8-4471] merging register 'input_idx_reg[8:0]' into 'input_idx_reg[8:0]' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer2_generator.v:47]
+INFO: [Synth 8-4471] merging register 'neuron_idx_reg[8:0]' into 'neuron_idx_reg[8:0]' [D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/layer2_generator.v:48]
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:02:53 ; elapsed = 00:03:20 . Memory (MB): peak = 3349.512 ; gain = 2622.352
+---------------------------------------------------------------------------------
+ Sort Area is layer2_generator__GB0 next_acc_0 : 0 0 : 1188 1188 : Used 1 time 0
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
++-----------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name      | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++-----------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|layer2_generator | C'+A*B      | 16     | 10     | 32     | -      | 32     | 0    | 0    | 1    | -    | -     | 0    | 0    | 
++-----------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Stitch Unchanged AreaOpt Partitions
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Stitch Unchanged AreaOpt Partitions : Time (s): cpu = 00:03:05 ; elapsed = 00:03:34 . Memory (MB): peak = 3383.812 ; gain = 2656.652
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:03:33 ; elapsed = 00:04:09 . Memory (MB): peak = 3658.691 ; gain = 2931.531
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:06:00 ; elapsed = 00:06:52 . Memory (MB): peak = 5816.957 ; gain = 5089.797
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-7052] The timing for the instance u_gan_serial_topi_23/u_gan_serial_top/u_generator/u_l2/neuron_idx_reg_rep (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:06:10 ; elapsed = 00:08:45 . Memory (MB): peak = 5816.957 ; gain = 5089.797
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Stitch Unchanged Partitions
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Stitch Unchanged Partitions : Time (s): cpu = 00:06:21 ; elapsed = 00:08:58 . Memory (MB): peak = 5816.957 ; gain = 5089.797
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+INFO: [Synth 8-7052] The timing for the instance u_gan_serial_top/u_generator/u_l2/neuron_idx_reg_rep (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:07:07 ; elapsed = 00:09:54 . Memory (MB): peak = 5816.957 ; gain = 5089.797
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:07:08 ; elapsed = 00:09:54 . Memory (MB): peak = 5816.957 ; gain = 5089.797
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:07:26 ; elapsed = 00:10:15 . Memory (MB): peak = 5816.957 ; gain = 5089.797
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:07:27 ; elapsed = 00:10:16 . Memory (MB): peak = 5816.957 ; gain = 5089.797
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:07:47 ; elapsed = 00:10:38 . Memory (MB): peak = 5816.957 ; gain = 5089.797
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:07:48 ; elapsed = 00:10:39 . Memory (MB): peak = 5816.957 ; gain = 5089.797
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+DSP Final Report (the ' indicates corresponding REG is set)
++-----------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name      | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++-----------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|layer1_generator | C+A*B       | 30     | 18     | 48     | -      | 32     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|layer2_generator | C'+A*B      | 30     | 18     | 48     | -      | 32     | 0    | 0    | 1    | -    | -     | 0    | 0    | 
+|layer3_generator | C+A*B       | 30     | 18     | 48     | -      | 32     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
++-----------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |BUFG     |     1|
+|2     |CARRY4   |    62|
+|3     |DSP48E1  |     3|
+|5     |LUT1     |    32|
+|6     |LUT2     |  3412|
+|7     |LUT3     |   566|
+|8     |LUT4     |  9232|
+|9     |LUT5     |  3274|
+|10    |LUT6     | 35537|
+|11    |MUXF7    | 10773|
+|12    |MUXF8    |  5347|
+|13    |RAMB18E1 |     1|
+|14    |FDCE     | 31891|
+|15    |FDPE     |    15|
+|16    |FDRE     | 25535|
+|17    |IBUF     |    19|
+|18    |OBUF     |    60|
++------+---------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:07:48 ; elapsed = 00:10:39 . Memory (MB): peak = 5816.957 ; gain = 5089.797
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 16 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:06:49 ; elapsed = 00:10:01 . Memory (MB): peak = 5816.957 ; gain = 4064.453
+Synthesis Optimization Complete : Time (s): cpu = 00:07:48 ; elapsed = 00:10:42 . Memory (MB): peak = 5816.957 ; gain = 5089.797
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 5816.957 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 16186 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.070 . Memory (MB): peak = 5816.957 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: 5b199a24
+INFO: [Common 17-83] Releasing license: Synthesis
+81 Infos, 146 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:08:27 ; elapsed = 00:11:28 . Memory (MB): peak = 5816.957 ; gain = 5320.891
+Write ShapeDB Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.351 . Memory (MB): peak = 5816.957 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'D:/GANMIND/GANMIND/vivado_all/ganmind_all.runs/synth_1/gan_serial_axi_wrapper.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:33 ; elapsed = 00:00:36 . Memory (MB): peak = 5816.957 ; gain = 0.000
+INFO: [Vivado 12-24828] Executing command : report_utilization -file gan_serial_axi_wrapper_utilization_synth.rpt -pb gan_serial_axi_wrapper_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Mon Dec  8 20:56:55 2025...
+[Mon Dec  8 20:57:02 2025] synth_1 finished
+wait_on_runs: Time (s): cpu = 00:00:01 ; elapsed = 00:12:42 . Memory (MB): peak = 505.105 ; gain = 0.000
+INFO: Launching impl_1 (route_design)
+[Mon Dec  8 20:57:03 2025] Launched impl_1...
+Run output will be captured here: D:/GANMIND/GANMIND/vivado_all/ganmind_all.runs/impl_1/runme.log
+[Mon Dec  8 20:57:03 2025] Waiting for impl_1 to finish...
+
+*** Running vivado
+    with args -log gan_serial_axi_wrapper.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source gan_serial_axi_wrapper.tcl -notrace
+
+
+
+****** Vivado v2025.1 (64-bit)
+  **** SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+  **** IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+  **** SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+  **** Start of session at: Mon Dec  8 20:57:12 2025
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source gan_serial_axi_wrapper.tcl -notrace
+create_project: Time (s): cpu = 00:00:13 ; elapsed = 00:00:10 . Memory (MB): peak = 491.113 ; gain = 211.312
+Command: link_design -top gan_serial_axi_wrapper -part xc7z020clg400-1
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.791 . Memory (MB): peak = 845.180 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 16186 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2025.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [D:/GANMIND/GANMIND/vivado_all/gan_mind.xdc]
+Finished Parsing XDC File [D:/GANMIND/GANMIND/vivado_all/gan_mind.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.048 . Memory (MB): peak = 1043.855 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+7 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+link_design completed successfully
+link_design: Time (s): cpu = 00:00:21 ; elapsed = 00:00:26 . Memory (MB): peak = 1043.855 ; gain = 552.742
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 1055.500 ; gain = 11.645
+
+Starting Cache Timing Information Task
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Ending Cache Timing Information Task | Checksum: d0e0a2ff
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1664.230 ; gain = 608.730
+
+Starting Logic Optimization Task
+
+Phase 1 Initialization
+
+Phase 1.1 Core Generation And Design Setup
+Phase 1.1 Core Generation And Design Setup | Checksum: d0e0a2ff
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.070 . Memory (MB): peak = 2105.184 ; gain = 0.000
+
+Phase 1.2 Setup Constraints And Sort Netlist
+Phase 1.2 Setup Constraints And Sort Netlist | Checksum: d0e0a2ff
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.152 . Memory (MB): peak = 2105.184 ; gain = 0.000
+Phase 1 Initialization | Checksum: d0e0a2ff
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.159 . Memory (MB): peak = 2105.184 ; gain = 0.000
+
+Phase 2 Timer Update And Timing Data Collection
+
+Phase 2.1 Timer Update
+Phase 2.1 Timer Update | Checksum: d0e0a2ff
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 2105.184 ; gain = 0.000
+
+Phase 2.2 Timing Data Collection
+Phase 2.2 Timing Data Collection | Checksum: d0e0a2ff
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 2105.184 ; gain = 0.000
+Phase 2 Timer Update And Timing Data Collection | Checksum: d0e0a2ff
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 2105.184 ; gain = 0.000
+
+Phase 3 Retarget
+INFO: [Opt 31-1851] Number of loadless carry chains removed were: 0
+INFO: [Opt 31-1834] Total Chains To Be Transformed Were: 0 AND Number of Transformed insts Created are: 0
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 3 Retarget | Checksum: 10b26b9cd
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 2105.184 ; gain = 0.000
+Retarget | Checksum: 10b26b9cd
+INFO: [Opt 31-389] Phase Retarget created 200 cells and removed 200 cells
+
+Phase 4 Constant propagation
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Phase 4 Constant propagation | Checksum: 12586bf6e
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 2105.184 ; gain = 0.000
+Constant propagation | Checksum: 12586bf6e
+INFO: [Opt 31-389] Phase Constant propagation created 361 cells and removed 1843 cells
+
+Phase 5 Sweep
+INFO: [Constraints 18-11670] Building netlist checker database with flags, 0x8
+Done building netlist checker database: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.042 . Memory (MB): peak = 2105.184 ; gain = 0.000
+INFO: [Constraints 18-11670] Building netlist checker database with flags, 0x8
+Done building netlist checker database: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.043 . Memory (MB): peak = 2105.184 ; gain = 0.000
+Phase 5 Sweep | Checksum: 1cdd7b3d3
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:08 . Memory (MB): peak = 2105.184 ; gain = 0.000
+Sweep | Checksum: 1cdd7b3d3
+INFO: [Opt 31-389] Phase Sweep created 17 cells and removed 0 cells
+
+Phase 6 BUFG optimization
+INFO: [Opt 31-129] Inserted BUFG to drive high-fanout reset|set|enable net. BUFG cell: u_gan_serial_top/u_vector_upsampler/rst_BUFG_inst, Net: u_gan_serial_top/u_vector_upsampler/rst
+Phase 6 BUFG optimization | Checksum: 119c4edb3
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:09 . Memory (MB): peak = 2105.184 ; gain = 0.000
+BUFG optimization | Checksum: 119c4edb3
+INFO: [Opt 31-662] Phase BUFG optimization created 1 cells of which 1 are BUFGs and removed 0 cells.
+
+Phase 7 Shift Register Optimization
+INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
+Phase 7 Shift Register Optimization | Checksum: 119c4edb3
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:10 . Memory (MB): peak = 2105.184 ; gain = 0.000
+Shift Register Optimization | Checksum: 119c4edb3
+INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
+
+Phase 8 Post Processing Netlist
+Phase 8 Post Processing Netlist | Checksum: 119c4edb3
+
+Time (s): cpu = 00:00:12 ; elapsed = 00:00:10 . Memory (MB): peak = 2105.184 ; gain = 0.000
+Post Processing Netlist | Checksum: 119c4edb3
+INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
+
+Phase 9 Finalization
+
+Phase 9.1 Finalizing Design Cores and Updating Shapes
+Phase 9.1 Finalizing Design Cores and Updating Shapes | Checksum: 13acd4466
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:13 . Memory (MB): peak = 2105.184 ; gain = 0.000
+
+Phase 9.2 Verifying Netlist Connectivity
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.220 . Memory (MB): peak = 2105.184 ; gain = 0.000
+Phase 9.2 Verifying Netlist Connectivity | Checksum: 13acd4466
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:14 . Memory (MB): peak = 2105.184 ; gain = 0.000
+Phase 9 Finalization | Checksum: 13acd4466
+
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:14 . Memory (MB): peak = 2105.184 ; gain = 0.000
+Opt_design Change Summary
+=========================
+
+
+-------------------------------------------------------------------------------------------------------------------------
+|  Phase                        |  #Cells created  |  #Cells Removed  |  #Constrained objects preventing optimizations  |
+-------------------------------------------------------------------------------------------------------------------------
+|  Retarget                     |             200  |             200  |                                              0  |
+|  Constant propagation         |             361  |            1843  |                                              0  |
+|  Sweep                        |              17  |               0  |                                              0  |
+|  BUFG optimization            |               1  |               0  |                                              0  |
+|  Shift Register Optimization  |               0  |               0  |                                              0  |
+|  Post Processing Netlist      |               0  |               0  |                                              0  |
+-------------------------------------------------------------------------------------------------------------------------
+
+
+Ending Logic Optimization Task | Checksum: 13acd4466
+
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:14 . Memory (MB): peak = 2105.184 ; gain = 0.000
+
+Starting Power Optimization Task
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
+INFO: [Pwropt 34-9] Applying IDT optimizations ...
+INFO: [Pwropt 34-10] Applying ODC optimizations ...
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+
+
+Starting PowerOpt Patch Enables Task
+INFO: [Pwropt 34-162] WRITE_MODE attribute of 0 BRAM(s) out of a total of 1 has been updated to save power. Run report_power_opt to get a complete listing of the BRAMs updated.
+INFO: [Pwropt 34-201] Structural ODC has moved 0 WE to EN ports
+Number of BRAM Ports augmented: 0 newly gated: 0 Total Ports: 2
+Ending PowerOpt Patch Enables Task | Checksum: 13acd4466
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.305 . Memory (MB): peak = 2395.520 ; gain = 0.000
+Ending Power Optimization Task | Checksum: 13acd4466
+
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:15 . Memory (MB): peak = 2395.520 ; gain = 290.336
+
+Starting Final Cleanup Task
+Ending Final Cleanup Task | Checksum: 13acd4466
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.011 . Memory (MB): peak = 2395.520 ; gain = 0.000
+
+Starting Netlist Obfuscation Task
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.056 . Memory (MB): peak = 2395.520 ; gain = 0.000
+Ending Netlist Obfuscation Task | Checksum: 13acd4466
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.065 . Memory (MB): peak = 2395.520 ; gain = 0.000
+INFO: [Common 17-83] Releasing license: Implementation
+34 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+opt_design: Time (s): cpu = 00:01:07 ; elapsed = 00:00:51 . Memory (MB): peak = 2395.520 ; gain = 1351.664
+INFO: [Vivado 12-24828] Executing command : report_drc -file gan_serial_axi_wrapper_drc_opted.rpt -pb gan_serial_axi_wrapper_drc_opted.pb -rpx gan_serial_axi_wrapper_drc_opted.rpx
+Command: report_drc -file gan_serial_axi_wrapper_drc_opted.rpt -pb gan_serial_axi_wrapper_drc_opted.pb -rpx gan_serial_axi_wrapper_drc_opted.rpx
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/2025.1/Vivado/data/ip'.
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 2-168] The results of DRC are in file D:/GANMIND/GANMIND/vivado_all/ganmind_all.runs/impl_1/gan_serial_axi_wrapper_drc_opted.rpt.
+report_drc completed successfully
+report_drc: Time (s): cpu = 00:00:08 ; elapsed = 00:00:05 . Memory (MB): peak = 2395.520 ; gain = 0.000
+generate_parallel_reports: Time (s): cpu = 00:00:08 ; elapsed = 00:00:05 . Memory (MB): peak = 2395.520 ; gain = 0.000
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Write ShapeDB Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.380 . Memory (MB): peak = 2395.520 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'D:/GANMIND/GANMIND/vivado_all/ganmind_all.runs/impl_1/gan_serial_axi_wrapper_opt.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 2395.520 ; gain = 0.000
+Command: place_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-83] Releasing license: Implementation
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors, 10 Warnings
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 2 CPUs
+
+Starting Placer Task
+
+Phase 1 Placer Initialization
+
+Phase 1.1 Placer Initialization Netlist Sorting
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.059 . Memory (MB): peak = 2395.520 ; gain = 0.000
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 10b67fcce
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.072 . Memory (MB): peak = 2395.520 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.047 . Memory (MB): peak = 2395.520 ; gain = 0.000
+
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: c2097956
+
+Time (s): cpu = 00:00:14 ; elapsed = 00:00:11 . Memory (MB): peak = 2395.520 ; gain = 0.000
+
+Phase 1.3 Build Placer Netlist Model
+WARNING: [Place 30-770] High register utilization is forcing place_design to place up to 8 registers per slice which may impact placement success and/or routing congestion.
+Phase 1.3 Build Placer Netlist Model | Checksum: ce8f635b
+
+Time (s): cpu = 00:00:49 ; elapsed = 00:00:37 . Memory (MB): peak = 2609.203 ; gain = 213.684
+
+Phase 1.4 Constrain Clocks/Macros
+Phase 1.4 Constrain Clocks/Macros | Checksum: ce8f635b
+
+Time (s): cpu = 00:00:49 ; elapsed = 00:00:37 . Memory (MB): peak = 2609.203 ; gain = 213.684
+Phase 1 Placer Initialization | Checksum: ce8f635b
+
+Time (s): cpu = 00:00:49 ; elapsed = 00:00:37 . Memory (MB): peak = 2609.203 ; gain = 213.684
+
+Phase 2 Global Placement
+
+Phase 2.1 Floorplanning
+Phase 2.1 Floorplanning | Checksum: 10e22b16c
+
+Time (s): cpu = 00:01:12 ; elapsed = 00:00:51 . Memory (MB): peak = 2609.203 ; gain = 213.684
+
+Phase 2.2 Update Timing before SLR Path Opt
+Phase 2.2 Update Timing before SLR Path Opt | Checksum: ea842244
+
+Time (s): cpu = 00:01:24 ; elapsed = 00:00:59 . Memory (MB): peak = 2609.203 ; gain = 213.684
+
+Phase 2.3 Post-Processing in Floorplanning
+Phase 2.3 Post-Processing in Floorplanning | Checksum: 17a3534ad
+
+Time (s): cpu = 00:01:25 ; elapsed = 00:01:00 . Memory (MB): peak = 2609.203 ; gain = 213.684
+
+Phase 2.4 Global Place Phase1
+Phase 2.4 Global Place Phase1 | Checksum: 7839efe8
+
+Time (s): cpu = 00:04:15 ; elapsed = 00:02:52 . Memory (MB): peak = 2609.203 ; gain = 213.684
+
+Phase 2.5 Global Place Phase2
+
+Phase 2.5.1 UpdateTiming Before Physical Synthesis
+Phase 2.5.1 UpdateTiming Before Physical Synthesis | Checksum: 9671d84f
+
+Time (s): cpu = 00:04:31 ; elapsed = 00:03:01 . Memory (MB): peak = 2609.203 ; gain = 213.684
+
+Phase 2.5.2 Physical Synthesis In Placer
+INFO: [Physopt 32-1035] Found 1327 LUTNM shape to break, 1337 LUT instances to create LUTNM shape
+INFO: [Physopt 32-1044] Break lutnm for timing: one critical 124, two critical 1203, total 1000, new lutff created 1
+INFO: [Physopt 32-1138] End 1 Pass. Optimized 1544 nets or LUTs. Breaked 1000 LUTs, combined 544 existing LUTs and moved 0 existing LUT
+INFO: [Physopt 32-1408] Pass 1. Identified 13 candidate nets for high-fanout optimization.
+INFO: [Physopt 32-81] Processed net u_gan_serial_top/u_generator/u_l2/Q[1]. Replicated 69 times.
+INFO: [Physopt 32-81] Processed net u_gan_serial_top/u_generator/u_l2/Q[0]. Replicated 69 times.
+INFO: [Physopt 32-81] Processed net u_gan_serial_top/u_generator/u_l2/Q[3]. Replicated 65 times.
+INFO: [Physopt 32-81] Processed net u_gan_serial_top/u_generator/u_l2/Q[2]. Replicated 65 times.
+INFO: [Physopt 32-81] Processed net u_gan_serial_top/u_generator/u_l2/Q[4]. Replicated 65 times.
+INFO: [Physopt 32-81] Processed net u_gan_serial_top/u_generator/u_l1/input_idx_reg_n_0_[1]. Replicated 13 times.
+INFO: [Physopt 32-81] Processed net u_gan_serial_top/u_vector_upsampler/out_idx_reg_rep[5]. Replicated 48 times.
+INFO: [Physopt 32-81] Processed net u_gan_serial_top/u_generator/u_l2/Q[5]. Replicated 63 times.
+INFO: [Physopt 32-81] Processed net u_gan_serial_top/u_generator/u_l2/Q[6]. Replicated 29 times.
+INFO: [Physopt 32-81] Processed net u_gan_serial_top/u_vector_upsampler/out_idx_reg_rep[4]. Replicated 44 times.
+INFO: [Physopt 32-81] Processed net u_gan_serial_top/u_generator/u_l1/input_idx_reg_n_0_[4]. Replicated 12 times.
+INFO: [Physopt 32-81] Processed net frame_stream_next_idx[1]. Replicated 19 times.
+INFO: [Physopt 32-81] Processed net frame_stream_next_idx[2]. Replicated 9 times.
+INFO: [Physopt 32-232] Optimized 13 nets. Created 570 new instances.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 13 nets or cells. Created 570 new cells, deleted 0 existing cell and moved 0 existing cell
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.714 . Memory (MB): peak = 2609.203 ; gain = 0.000
+INFO: [Physopt 32-457] Pass 1. Identified 1 candidate cell for DSP register optimization.
+INFO: [Physopt 32-665] Processed cell u_gan_serial_top/u_generator/u_l2/next_acc. 32 registers were pushed out.
+INFO: [Physopt 32-775] End 2 Pass. Optimized 1 net or cell. Created 32 new cells, deleted 0 existing cell and moved 0 existing cell
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.162 . Memory (MB): peak = 2609.203 ; gain = 0.000
+INFO: [Physopt 32-1123] No candidate cells found for Shift Register to Pipeline optimization
+INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-1401] No candidate cells found for Shift Register optimization.
+INFO: [Physopt 32-677] No candidate cells for Shift Register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-526] No candidate cells for BRAM register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-846] No candidate cells for URAM register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-846] No candidate cells for URAM register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-949] No candidate nets found for dynamic/static region interface net replication
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.044 . Memory (MB): peak = 2609.203 ; gain = 0.000
+
+Summary of Physical Synthesis Optimizations
+============================================
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Optimization                                     |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  LUT Combining                                    |         1000  |            544  |                  1544  |           0  |           1  |  00:00:03  |
+|  Retime                                           |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Very High Fanout                                 |          570  |              0  |                    13  |           0  |           1  |  00:00:27  |
+|  DSP Register                                     |           32  |              0  |                     1  |           0  |           1  |  00:00:00  |
+|  Shift Register to Pipeline                       |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Shift Register                                   |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  BRAM Register                                    |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  URAM Register                                    |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Dynamic/Static Region Interface Net Replication  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Total                                            |         1602  |            544  |                  1558  |           0  |           9  |  00:00:30  |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Phase 2.5.2 Physical Synthesis In Placer | Checksum: 144e08588
+
+Time (s): cpu = 00:05:10 ; elapsed = 00:03:40 . Memory (MB): peak = 2609.203 ; gain = 213.684
+Phase 2.5 Global Place Phase2 | Checksum: 1a3396f28
+
+Time (s): cpu = 00:05:29 ; elapsed = 00:03:54 . Memory (MB): peak = 2609.203 ; gain = 213.684
+Phase 2 Global Placement | Checksum: 1a3396f28
+
+Time (s): cpu = 00:05:29 ; elapsed = 00:03:54 . Memory (MB): peak = 2609.203 ; gain = 213.684
+
+Phase 3 Detail Placement
+
+Phase 3.1 Commit Multi Column Macros
+Phase 3.1 Commit Multi Column Macros | Checksum: 1a1e18c29
+
+Time (s): cpu = 00:05:43 ; elapsed = 00:04:03 . Memory (MB): peak = 2609.203 ; gain = 213.684
+
+Phase 3.2 Commit Most Macros & LUTRAMs
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 24fe72dda
+
+Time (s): cpu = 00:06:16 ; elapsed = 00:04:26 . Memory (MB): peak = 2609.203 ; gain = 213.684
+
+Phase 3.3 Area Swap Optimization
+Phase 3.3 Area Swap Optimization | Checksum: 28f625d18
+
+Time (s): cpu = 00:06:18 ; elapsed = 00:04:29 . Memory (MB): peak = 2609.203 ; gain = 213.684
+
+Phase 3.4 Pipeline Register Optimization
+Phase 3.4 Pipeline Register Optimization | Checksum: 2741506a6
+
+Time (s): cpu = 00:06:18 ; elapsed = 00:04:29 . Memory (MB): peak = 2609.203 ; gain = 213.684
+
+Phase 3.5 Fast Optimization
+Phase 3.5 Fast Optimization | Checksum: 224bacf8c
+
+Time (s): cpu = 00:06:53 ; elapsed = 00:04:55 . Memory (MB): peak = 2609.203 ; gain = 213.684
+
+Phase 3.6 Small Shape Detail Placement
+Phase 3.6 Small Shape Detail Placement | Checksum: 1be7f3c9b
+
+Time (s): cpu = 00:07:32 ; elapsed = 00:05:36 . Memory (MB): peak = 2609.203 ; gain = 213.684
+Phase 3 Detail Placement | Checksum: 1be7f3c9b
+
+Time (s): cpu = 00:07:32 ; elapsed = 00:05:36 . Memory (MB): peak = 2609.203 ; gain = 213.684
+ERROR: [Place 30-487] The packing of instances into the device could not be obeyed. There are a total of 13300 slices in the device, of which 13238 slices are available, however, the unplaced instances require 14502 slices. Please analyze your design to determine if the number of LUTs, FFs, and/or control sets can be reduced.
+
+Number of control sets and instances constrained to the design
+	Control sets: 2150
+	Luts: 45826 (combined) 51991 (total), available capacity: 53200 
+	Flip flops: 56640, available capacity: 106400
+	NOTE: each slice can only accommodate 1 unique control set so FFs cannot be packed to fully fill every slice
+
+
+ERROR: [Place 30-99] Placer failed with error: 'Detail Placement failed please check previous errors for details.'
+Please review all ERROR, CRITICAL WARNING, and WARNING messages during placement to understand the cause for failure.
+
+Phase 4 Add Constraints
+
+Phase 4.1 Add User PBlocks
+Phase 4.1 Add User PBlocks | Checksum: e69f2d8c
+
+Time (s): cpu = 00:07:33 ; elapsed = 00:05:36 . Memory (MB): peak = 2609.203 ; gain = 213.684
+Phase 4 Add Constraints | Checksum: e69f2d8c
+
+Time (s): cpu = 00:07:33 ; elapsed = 00:05:36 . Memory (MB): peak = 2609.203 ; gain = 213.684
+Ending Placer Task | Checksum: e5eba6a0
+
+Time (s): cpu = 00:07:33 ; elapsed = 00:05:36 . Memory (MB): peak = 2609.203 ; gain = 213.684
+87 Infos, 1 Warnings, 0 Critical Warnings and 3 Errors encountered.
+place_design failed
+ERROR: [Common 17-69] Command failed: Placer could not place all instances
+INFO: [Common 17-206] Exiting Vivado at Mon Dec  8 21:04:36 2025...
+[Mon Dec  8 21:04:40 2025] impl_1 finished
+ERROR: [Vivado 12-13638] Failed runs(s) : 'impl_1'
+wait_on_runs: Time (s): cpu = 00:00:00 ; elapsed = 00:07:37 . Memory (MB): peak = 505.105 ; gain = 0.000
+ERROR: [Common 17-39] 'wait_on_runs' failed due to earlier errors.
+
+    while executing
+"wait_on_run impl_1"
+    invoked from within
+"if {$rerun} {
+    puts "INFO: Resetting runs"
+    catch {reset_run impl_1}
+    catch {reset_run synth_1}
+
+    puts "INFO: Launching synth_1"
+    launc..."
+    (file "vivado_all/analyze_timing.tcl" line 99)
+INFO: [Common 17-206] Exiting Vivado at Mon Dec  8 21:04:41 2025...

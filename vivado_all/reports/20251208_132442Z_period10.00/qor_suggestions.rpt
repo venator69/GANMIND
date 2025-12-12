@@ -1,0 +1,73 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
+| Date         : Mon Dec  8 13:24:54 2025
+| Host         : DESKTOP-3S5LN80 running 64-bit major release  (build 9200)
+| Command      : report_qor_suggestions -name ganmind_qor -file D:/GANMIND/GANMIND/vivado_all/reports/20251208_132442Z_period10.00/qor_suggestions.rpt
+| Design       : gan_serial_axi_wrapper
+| Device       : xc7z020
+| Design State : Routed
+| ML Models    : v2021.2.0
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Report QoR Suggestions
+
+Table of Contents
+-----------------
+1. QoR Suggestions Report Summary
+2. ML Strategies
+3. QoR Suggestions - Timing
+4. QoR Suggestions - XDC
+
+1. QoR Suggestions Report Summary
+---------------------------------
+
++-----------------+---------------+-----------+--------------+----------------+-----------+-------------+----------------------+------------------------------------------------------------------------------------------+-------------+
+|       Name      |       Id      |   Status  | Generated At | Applicable For | Automatic |    Scope    | Incremental Friendly |                                        Description                                       |    Source   |
++-----------------+---------------+-----------+--------------+----------------+-----------+-------------+----------------------+------------------------------------------------------------------------------------------+-------------+
+| RQS_TIMING-3-1  | RQS_TIMING-3  | Generated | route_design | place_design   | Yes       | GLOBALSCOPE | No                   | Critical nets with loads placed far apart. Apply FORCE_MAX_FANOUT to the critical nets   | Current Run |
+|                 |               |           |              |                |           |             |                      | after synthesis to replicate drivers and improve timing.                                 |             |
+| RQS_TIMING-59-1 | RQS_TIMING-59 | Generated | route_design | place_design   | Yes       | GLOBALSCOPE | No                   | Replicate the nets driven by LUTs in setup critical paths can improve timing             | Current Run |
+| RQS_XDC-1-1     | RQS_XDC-1     | Generated | route_design | synth_design   | No        | GLOBALSCOPE | No                   | Paths above Max Net/LUT budgeting. Review paths and either reduce logic delays, add      | Current Run |
+|                 |               |           |              |                |           |             |                      | pipelining or increase path requirements.                                                |             |
++-----------------+---------------+-----------+--------------+----------------+-----------+-------------+----------------------+------------------------------------------------------------------------------------------+-------------+
+* By default the number of failing paths is limited to 100. Use the -max_paths options to override.
+
+
+2. ML Strategies
+----------------
+
++---+----+---------+---------+
+| # | Id | Command | Options |
++---+----+---------+---------+
+
+
+3. QoR Suggestions - Timing
+---------------------------
+
++-----------------+-------------+--------------+--------+--------+--------+--------+--------+----------------+-------+--------+--------------+-------------------+------------------------------------------------------+-------------------------------------------------------------+
+|       Name      | No of Paths | Logic Levels | Routes |  Slack |  Req.  |  Skew  | Fanout | Datapath Delay | Cell% | Route% | Source Clock | Destination Clock |                      Startpoint                      |                           Endpoint                          |
++-----------------+-------------+--------------+--------+--------+--------+--------+--------+----------------+-------+--------+--------------+-------------------+------------------------------------------------------+-------------------------------------------------------------+
+| RQS_TIMING-3-1  | 2           | 8            | 5      | -8.095 | 10.000 | -4.903 | 120    | 10.657         | 45.00 | 55.00  | axi_clk      | axi_clk           | frame_stream_idx_reg[0]_rep__0/C                     | m_axis_frame_tdata[8]                                       |
+|                 | 4           | 6            | 4      | -7.904 | 10.000 | -4.897 | 344    | 10.472         | 42.50 | 57.50  | axi_clk      | axi_clk           | frame_stream_idx_reg[3]/C                            | m_axis_frame_tdata[13]                                      |
+|                 | 2           | 8            | 5      | -7.872 | 10.000 | -4.898 | 123    | 10.439         | 44.60 | 55.40  | axi_clk      | axi_clk           | frame_stream_idx_reg[0]/C                            | m_axis_frame_tdata[6]                                       |
+|                 | 2           | 7            | 6      | -7.748 | 10.000 | -4.987 | 101    | 10.226         | 41.30 | 58.70  | axi_clk      | axi_clk           | frame_stream_idx_reg[1]_rep__4/C                     | m_axis_frame_tdata[15]                                      |
+|                 | 2           | 8            | 5      | -7.561 | 10.000 | -4.982 | 106    | 10.044         | 46.20 | 53.80  | axi_clk      | axi_clk           | frame_stream_idx_reg[1]_rep__3/C                     | m_axis_frame_tdata[14]                                      |
+|                 | 2           | 3            | 3      | -7.125 | 10.000 | -4.992 | 125    | 9.598          | 36.80 | 63.20  | axi_clk      | axi_clk           | frame_stream_idx_reg[2]_rep__6/C                     | m_axis_frame_tlast                                          |
+|                 | 2           | 1            | 1      | -6.335 | 10.000 | -4.983 | 13     | 8.817          | 36.70 | 63.30  | axi_clk      | axi_clk           | frame_stream_active_reg/C                            | m_axis_frame_tvalid                                         |
+|                 | 2           | 2            | 2      | -5.276 | 10.000 | -4.980 | 8      | 7.761          | 41.40 | 58.60  | axi_clk      | axi_clk           | u_gan_serial_top/u_loader/u_pixel_fifo/full_reg/C    | s_axis_pixel_tready                                         |
+|                 | 180         | 2            | 3      | -5.009 | 10.000 | -0.132 | 132    | 14.872         | 5.600 | 94.40  | axi_clk      | axi_clk           | u_gan_serial_top/u_vector_upsampler/processing_reg/C | u_gan_serial_top/u_vector_upsampler/vector_out_reg[2445]/D  |
+| RQS_TIMING-59-1 | 1           | 3            | 4      | -4.003 | 10.000 | -0.213 | -      | 13.786         | 7.000 | 93.00  | axi_clk      | axi_clk           | u_gan_serial_top/u_vector_upsampler/processing_reg/C | u_gan_serial_top/u_vector_upsampler/vector_out_reg[12333]/D |
++-----------------+-------------+--------------+--------+--------+--------+--------+--------+----------------+-------+--------+--------------+-------------------+------------------------------------------------------+-------------------------------------------------------------+
+
+
+4. QoR Suggestions - XDC
+------------------------
+
++-------------+-------------+--------------+--------+--------+--------+--------+----------------+-------+--------+--------------+-------------------+---------------------------------+-----------------------+---------------------------+---------------------------+-----------------+-----------------+
+|     Name    | No of Paths | Logic Levels | Routes |  Slack |  Req.  |  Skew  | Datapath Delay | Cell% | Route% | Source Clock | Destination Clock |            Startpoint           |        Endpoint       | Path budget for Net check | Path budget for Lut check | Net check slack | LUT check slack |
++-------------+-------------+--------------+--------+--------+--------+--------+----------------+-------+--------+--------------+-------------------+---------------------------------+-----------------------+---------------------------+---------------------------+-----------------+-----------------+
+| RQS_XDC-1-1 | 7           | 8            | 5      | -8.099 | 10.000 | -4.900 | 10.664         | 44.60 | 55.40  | axi_clk      | axi_clk           | frame_stream_buffer_reg[3911]/C | m_axis_frame_tdata[7] | 0                         | 8                         | -4.205          | -0.310          |
++-------------+-------------+--------------+--------+--------+--------+--------+----------------+-------+--------+--------------+-------------------+---------------------------------+-----------------------+---------------------------+---------------------------+-----------------+-----------------+
+
+

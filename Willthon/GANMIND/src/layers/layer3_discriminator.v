@@ -1,10 +1,8 @@
-`ifndef HEX_DATA_ROOT
-`define HEX_DATA_ROOT "src/layers/hex_data"
-`endif
+`ifndef LAYER3_DISCRIMINATOR_V
+`define LAYER3_DISCRIMINATOR_V
 
-`ifndef LAYER3_DISC_PIPELINED_MAC_INCLUDED
-`define LAYER3_DISC_PIPELINED_MAC_INCLUDED
-`include "pipelined_mac.v"
+`ifndef HEX_DATA_ROOT
+`define HEX_DATA_ROOT "D:/GANMIND/GANMIND/Willthon/GANMIND/src/layers/hex_data"
 `endif
 
 module layer3_discriminator (
@@ -23,8 +21,8 @@ module layer3_discriminator (
     // ==========================================
     // 1. Memory untuk Parameter (Weights & Biases)
     // ==========================================
-    reg signed [15:0] w [0:31]; // Weights array (dari file hex)
-    reg signed [15:0] b [0:0];  // Bias (dari file hex)
+    (* rom_style = "block" *) reg signed [15:0] w [0:31]; // Weights array (dari file hex)
+    (* rom_style = "block" *) reg signed [15:0] b [0:0];  // Bias (dari file hex)
 
     initial begin
         // Load data hex
@@ -75,24 +73,21 @@ module layer3_discriminator (
     // ==========================================
     // 4. Decision Logic
     // ==========================================
-    always @(posedge clk or posedge rst) begin
+    always @(posedge clk) begin
         if (rst) begin
-            score_out <= 16'sd0;
+            score_out     <= 16'sd0;
             decision_real <= 1'b0;
-            done <= 1'b0;
+            done          <= 1'b0;
         end else begin
-            // Pass sinyal done dari MAC ke output modul ini
-            done <= mac_done; 
-            
+            done <= mac_done;
+
             if (mac_done) begin
                 score_out <= mac_result;
-                // Logika Keputusan: Real jika score > 0
-                if (mac_result > 16'sd0) 
-                    decision_real <= 1'b1;
-                else 
-                    decision_real <= 1'b0;
+                decision_real <= (mac_result > 16'sd0);
             end
         end
     end
 
 endmodule
+
+`endif // LAYER3_DISCRIMINATOR_V
